@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>Hexo</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="JQueryJQuery是Js的一个库，存放用Js代码写的function，其简化了JS代码 你的第一个JQuery代码123456789101112131415161718192021222324252627282930&lt;!DOCTYPE html&gt;&lt;html lang&#x3D;&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset&#x3D;&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/01/02/JQuery/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JQueryJQuery是Js的一个库，存放用Js代码写的function，其简化了JS代码 你的第一个JQuery代码123456789101112131415161718192021222324252627282930&lt;!DOCTYPE html&gt;&lt;html lang&#x3D;&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset&#x3D;&amp;qu">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-02T09:58:01.229Z">
+<meta property="article:modified_time" content="2021-08-29T08:02:46.322Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+    <link rel="stylesheet" href="/css/style.css?v=1641541780861">
+     
+    
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1641541780861">
+    
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://avatars.githubusercontent.com/u/74764646" alt="John Doe"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="John Doe">
+            <img src="https://avatars.githubusercontent.com/u/74764646" alt="John Doe" alt="John Doe">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>15</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=pjh202522.github.io" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/11767462" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/pjh202522" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+    
+    
+
+    
+    
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 John Doe
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a><script data-ad-client="ca-pub-2058306854838448" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="" class="lazyload">
+              <h1></h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年01月02日</a>
+    <a><i class="nexmoefont icon-areachart"></i>2.1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 9 分钟</a>
+</div>
+
+      
+
+      <h1 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h1><p>JQuery是Js的一个库，存放用Js代码写的function，其简化了JS代码</p>
+<h2 id="你的第一个JQuery代码"><a href="#你的第一个JQuery代码" class="headerlink" title="你的第一个JQuery代码"></a>你的第一个JQuery代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--指定jquery库文件位置--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;WEB-INF/JS/jquery-3.4.1.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">        <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="javascript">        * @$(document) $是JQuery中的函数名称，document是函数的参数，作用是document对象变成JQuery函数库可以使用的对象</span></span></span><br><span class="line"><span class="comment"><span class="javascript">        * <span class="doctag">@ready </span>是JQuery中的函数，是准备的意思，当页面的dom对象加载成功后会执行ready函数的内容。ready相当于JS中的onLoad事件</span></span></span><br><span class="line"><span class="comment"><span class="javascript">        * <span class="doctag">@function</span>() 自定义的表示onLoad后要执行的代码功能</span></span></span><br><span class="line"><span class="comment"><span class="javascript">        * */</span></span></span><br><span class="line"><span class="javascript">        </span></span><br><span class="line"><span class="javascript">        <span class="comment">//标准写法</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">/*$(document).ready(function () &#123;</span></span></span><br><span class="line"><span class="comment"><span class="javascript">            //自定义功能</span></span></span><br><span class="line"><span class="comment"><span class="javascript">            alert(&quot;Hello JQuery&quot;)</span></span></span><br><span class="line"><span class="comment"><span class="javascript">        &#125;)*/</span></span></span><br><span class="line"><span class="javascript">        </span></span><br><span class="line"><span class="javascript">        <span class="comment">//简写方式</span></span></span><br><span class="line"><span class="javascript">        $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            alert(<span class="string">&quot;Hello JQuery&quot;</span>)</span></span><br><span class="line"><span class="javascript">        &#125;)</span></span><br><span class="line"><span class="javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<ol>
+<li><p>使用JQuery，首先要将JQuery库引入。使用第七行代码，此处src后面写你JQuery库文件存放的位置。</p>
+<p> [^第七行代码]: <script type="text/javascript" src="WEB-INF/JS/jquery-3.4.1.js"></script></p>
+</li>
+<li><p>$(document).ready()与jQuery()、$()、window.jQuery()是等价的，所以$(document).ready()可以写成$(function () { alert(“Hello JQuery”) });</p>
+</li>
+</ol>
+<h2 id="DOM对象和JQuery对象"><a href="#DOM对象和JQuery对象" class="headerlink" title="DOM对象和JQuery对象"></a>DOM对象和JQuery对象</h2><p>DOM对象：使用Javascript的语法创建的对象叫做dom对象，也就是JS对象</p>
+<p>JQuery对象：使用JQuery语法表示对象叫做JQuery对象，注意：JQuery表示的对象都是<strong>数组</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//dom对象</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementById(<span class="string">&quot;text1&quot;</span>);</span><br><span class="line"><span class="comment">//jquery对象</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*jobj就是使用jQuery语法表示的对象。也就是jQuery对象，它是一个数组，目前数组中只有一个值</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> jobj = $(<span class="string">&quot;#text1&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>DOM对象和jQuery对象可以相互转换</p>
+<p>其转换的目的在于，使用DOM对象的属性、方法或者jQuery提供的函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//dom对象转换成jQuery对象</span></span><br><span class="line">$(domObj);</span><br><span class="line"><span class="comment">//jQuery对象转换成dom对象</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*从数组中获取第一个对象，第一个对象就是dom对象，使用[0]或者get(0)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">jObj[<span class="number">0</span>];</span><br><span class="line">jObj.get(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h2><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>就是一个字符串，就是定位条件；通知jQuery函数定位满足条件的DOM对象</p>
+<h4 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h4><p>根据ID，class属性，标签类型名定位HTML元素，转为JQuery对象</p>
+<ol>
+<li><p>ID选择器：id在当前页面是唯一值</p>
+<p> 语法：$(“#dom对象的id值”)</p>
+</li>
+<li><p>class选择器：class表示是css中的样式，使用样式的名称定位dom对象</p>
+<p> 语法：$(“.class样式名”)</p>
+</li>
+<li><p>标签选择器：使用标签名称定位dom对象</p>
+<p> 语法：$(“标签名称”)</p>
+</li>
+<li><p>所有选择器：选择所有对象</p>
+<p> 语法：$(“*”)</p>
+</li>
+<li><p>组合选择器：可以混合使用选择器</p>
+<p> 语法：$(“#id,标签名,.class”)</p>
+</li>
+</ol>
+<h4 id="表单选择器"><a href="#表单选择器" class="headerlink" title="表单选择器"></a>表单选择器</h4><p>使用<input>标签的type属性值，定位dom对象</p>
+<p>语法：$(“:type属性”)</p>
+<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>jQuery对象中储存的DOM对象顺序与页面标签声明位置关系</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span> dom1</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span> dom2</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span> dom2</span><br><span class="line"></span><br><span class="line">$(&quot;div&quot;) == [dom1,dom2,dom3]</span><br></pre></td></tr></table></figure>
+
+<p>过滤器就是过滤条件（字符串），对已经定位到数组的dom对象进行筛选，过滤条件不能独立出现在jQuery函数，如果使用只能出现在选择器后方</p>
+<h4 id="基础过滤器"><a href="#基础过滤器" class="headerlink" title="基础过滤器"></a>基础过滤器</h4><ol>
+<li><p>first：选择第一个，保留数组中的第一个DOM对象</p>
+<p> 语法：$(“选择器:first”)</p>
+</li>
+<li><p>last：选择最后一个，保留数组中最后一个DOM对象</p>
+<p> 语法：$(“选择器:last”)</p>
+</li>
+<li><p>eq：选择数组中指定对象</p>
+<p> 语法：$(“选择器:eq(数组索引)”)</p>
+</li>
+<li><p>lt：选择数组中小于指定索引的所有DOM对象</p>
+<p> 语法：$(“选择器:lt(数组索引)”)</p>
+</li>
+<li><p>gt：选择数组中大于指定索引的所有DOM对象</p>
+<p> 语法：$(“选择器:gt(数组索引)”)</p>
+</li>
+</ol>
+<h4 id="表单属性过滤器"><a href="#表单属性过滤器" class="headerlink" title="表单属性过滤器"></a>表单属性过滤器</h4><p>根据表单中dom对象的状态情况，定位dom对象的</p>
+<p>常见的状态：</p>
+<p>enabled、disabled、checked、selected</p>
+<p>语法：</p>
+<ol>
+<li>$(“text:enabled”)</li>
+<li>$(“text:disabled”)</li>
+<li>$(“radio:checked”)</li>
+<li>$(“选择器&gt;option:select”)</li>
+</ol>
+<h3 id="jQuery函数"><a href="#jQuery函数" class="headerlink" title="jQuery函数"></a>jQuery函数</h3><ol>
+<li><p>val</p>
+<p> 操作数组中DOM对象的value属性</p>
+<p> $(选择器).val()：无参调用形式，读取数组中第一个DOM对象的value属性值</p>
+<p> $(选择器).val(值)：有参调用形式，对数组中所有DOM对象的value属性值进行统一赋值</p>
+</li>
+<li><p>text</p>
+<p> 操作数组中所有DOM对象的文本显示内容</p>
+<p> $(选择器).text()：无参调用形式，读取数组中所有DOM对象的文本显示内容，将得到内容拼接为一个字符串返回</p>
+<p> $(选择器).text(值)：有参调用形式，对数组中所有DOM对象的文本显示内容进行统一赋值</p>
+</li>
+<li><p>attr</p>
+<p> 对val和text以外的其他属性操作</p>
+<p> $(选择器).attr(“属性名”)：读取数组中第一个DOM对象的属性值</p>
+<p> $(选择器).attr(“属性名”,”值”)：对数组中所有DOM对象的属性进行统一赋值</p>
+</li>
+<li><p>remove</p>
+<p> $(选择器).remove()：将数组中所有的DOM对象及其子对象一并删除</p>
+</li>
+<li><p>empty</p>
+<p> $(选择器).empty()：将数组中所有的DOM对象的子对象删除</p>
+</li>
+<li><p>append</p>
+<p> 为数组中所有的DOM对象添加子对象</p>
+<p> $(选择器).append(“子对象”)</p>
+</li>
+<li><p>html</p>
+<p> 设置或返回被选元素的内容（innerHTML）</p>
+<p> $(选择器).html()：无参调用，获取DOM数组第一个元素的内容</p>
+<p> $(选择器).html(“值”)：有参调用，用于设置DOM数组所有元素的内容</p>
+</li>
+<li><p>each</p>
+<p> each是对数组，json和dom对象的遍历，对每个元素调用一次函数。</p>
+<p> 语法1：$.each(遍历对象,function(index,element){处理函数})</p>
+<p> 语法2：jQuery对象.each(function(index,element){处理函数})</p>
+<p> index：数组下标</p>
+<p> element：数组对象</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">$.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">index,element</span>)</span>&#123;</span><br><span class="line">	alert(<span class="string">&quot;元素&quot;</span>+index+<span class="string">&quot;值为&quot;</span>+element)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//元素0值为1</span></span><br><span class="line"><span class="comment">//元素1值为2</span></span><br><span class="line"><span class="comment">//元素2值为3</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> json = &#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;zhangsan&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">20</span>&#125;</span><br><span class="line">$.each(json,<span class="function"><span class="keyword">function</span>(<span class="params">index,element</span>)</span>&#123;</span><br><span class="line">	alert(<span class="string">&quot;key为&quot;</span>+index+<span class="string">&quot;，value为&quot;</span>+element)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//key为name，value为zhangsan</span></span><br><span class="line"><span class="comment">//key为age，value为20</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*&lt;button value=&quot;btn1&quot;&gt;1&lt;/button&gt;</span></span><br><span class="line"><span class="comment">&lt;button value=&quot;btn2&quot;&gt;2&lt;/button&gt;</span></span><br><span class="line"><span class="comment">&lt;button value=&quot;btn3&quot;&gt;3&lt;/button&gt;*/</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">index,element</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;元素&quot;</span>+index+<span class="string">&quot;，value为&quot;</span>+element.value+<span class="string">&quot;，innertext为&quot;</span>+element.text)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//元素0，value为btn1，innertext为1</span></span><br><span class="line"><span class="comment">//元素1，value为btn2，innertext为2</span></span><br><span class="line"><span class="comment">//元素2，value为btn3，innertext为3</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="jQuery给DOM对象绑定事件"><a href="#jQuery给DOM对象绑定事件" class="headerlink" title="jQuery给DOM对象绑定事件"></a>jQuery给DOM对象绑定事件</h3><p>语法1：$(选择器).事件名称(事件的处理函数)</p>
+<p>语法2：$(选择器).on(事件名称,事件处理函数)————可以给新创建的对象绑定事件</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>$(选择器)：定位dom对象，dom对象可以有多个，这些dom对象都绑定事件了</li>
+<li>on：函数名称</li>
+<li>事件名称：就是js中的事件名称去掉on，例如onclick == click</li>
+<li>事件的处理函数：就是一个function，当事件发生时，会执行整个函数的内容。</li>
+</ul>
+<h3 id="使用jQuery的函数，实现ajax请求的处理"><a href="#使用jQuery的函数，实现ajax请求的处理" class="headerlink" title="使用jQuery的函数，实现ajax请求的处理"></a>使用jQuery的函数，实现ajax请求的处理</h3><p>在jQuery中简化了对ajax请求的处理，使用三个函数就可以实现ajax请求的处理</p>
+<ol>
+<li>$.ajax()：ajax实现的核心函数</li>
+<li>$.post()：使用post方式做ajax请求</li>
+<li>$.get()：使用get方式做ajax请求</li>
+</ol>
+<p>$.post()和$.get()在内部也是调用的$.ajax()</p>
+<h4 id="ajax-的使用"><a href="#ajax-的使用" class="headerlink" title="$.ajax()的使用"></a>$.ajax()的使用</h4><p>函数的参数表示请求的url，请求方式，参数值等信息；</p>
+<p>参数是一个json格式，如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ajax(&#123;</span><br><span class="line">	<span class="comment">//async:true,</span></span><br><span class="line">    <span class="comment">//contentType:&quot;apllication/json&quot;,</span></span><br><span class="line">    <span class="attr">data</span>:&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;zhangsan&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">20</span>&#125;,</span><br><span class="line">    <span class="attr">dataType</span>:<span class="string">&quot;json&quot;</span>,</span><br><span class="line">    <span class="comment">//error:function() &#123;/*发生错误时执行函数*/&#125;,</span></span><br><span class="line">    <span class="attr">success</span>:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//data 就是responseText，是jQuery处理后的数据</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">url</span>:<span class="string">&quot;myWeb&quot;</span>,</span><br><span class="line">    <span class="comment">//type:&quot;get&quot;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<ul>
+<li><p>async：是一个boolean类型值，默认为true，表示异步请求。可以不写</p>
+</li>
+<li><p>contentType：一个字符串，表示从浏览器发送给服务器的参数的类型。可以不写</p>
+<p>  例如表示参数类型为json，可以写application/json</p>
+</li>
+<li><p><strong>data</strong>：可以是字符串，数组，json，表示请求的参数和参数值。常用的是json格式的数据</p>
+</li>
+<li><p><strong>dataType</strong>：表示期望从服务端返回的数据结构，可选：xml，html，text，json</p>
+<p>  服务器收到dataType的值，我们的servlet就能够知道客户端需要什么类型的数据，那么服务器就可以返回你需要的数据格式</p>
+</li>
+<li><p>error：一个function，表示当请求发送错误时，执行的函数</p>
+</li>
+<li><p><strong>success</strong>：一个function，请求成功了，从服务端返回了数据，会执行success指定函数</p>
+</li>
+<li><p><strong>url</strong>：请求地址</p>
+</li>
+<li><p>type：请求方式，get或者post，默认get</p>
+</li>
+</ul>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>John Doe<br>
+        <strong>Link：</strong><a href="http://example.com/2022/01/02/JQuery/" title="http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;01&#x2F;02&#x2F;JQuery&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;01&#x2F;02&#x2F;JQuery&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="Search" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1641541780863"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>

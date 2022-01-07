@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>Hexo</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Java Web互联网通信 什么是互联网通信 两台计算机通过网络实现文件共享行为，就是互联网通信  互联网通信中的角色划分  客户端：用于发送请求的计算机 服务端：用于接受请求，并满足请求的计算机   互联网通信模型  C&#x2F;S通信模型： client software（客户端软件） 客户端软件专门安装在客户端计算机上 帮助客户端计算机向指定服务端计算机发送请求，索要资源文件 帮助客户端计算机将服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/01/02/Java%20Web/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Java Web互联网通信 什么是互联网通信 两台计算机通过网络实现文件共享行为，就是互联网通信  互联网通信中的角色划分  客户端：用于发送请求的计算机 服务端：用于接受请求，并满足请求的计算机   互联网通信模型  C&#x2F;S通信模型： client software（客户端软件） 客户端软件专门安装在客户端计算机上 帮助客户端计算机向指定服务端计算机发送请求，索要资源文件 帮助客户端计算机将服务">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-02T09:58:01.225Z">
+<meta property="article:modified_time" content="2021-08-16T07:58:27.999Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+    <link rel="stylesheet" href="/css/style.css?v=1641541780871">
+     
+    
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1641541780871">
+    
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://avatars.githubusercontent.com/u/74764646" alt="John Doe"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="John Doe">
+            <img src="https://avatars.githubusercontent.com/u/74764646" alt="John Doe" alt="John Doe">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>15</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=pjh202522.github.io" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/11767462" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/pjh202522" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+    
+    
+
+    
+    
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 John Doe
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a><script data-ad-client="ca-pub-2058306854838448" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="" class="lazyload">
+              <h1></h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年01月02日</a>
+    <a><i class="nexmoefont icon-areachart"></i>18.2k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 79 分钟</a>
+</div>
+
+      
+
+      <h1 id="Java-Web"><a href="#Java-Web" class="headerlink" title="Java Web"></a>Java Web</h1><h2 id="互联网通信"><a href="#互联网通信" class="headerlink" title="互联网通信"></a>互联网通信</h2><ul>
+<li><p>什么是互联网通信</p>
+<p>两台计算机通过网络实现文件共享行为，就是互联网通信</p>
+</li>
+<li><p>互联网通信中的角色划分</p>
+<ul>
+<li>客户端：用于发送请求的计算机</li>
+<li>服务端：用于接受请求，并满足请求的计算机</li>
+</ul>
+</li>
+<li><p>互联网通信模型</p>
+<ul>
+<li>C/S通信模型：<ul>
+<li>client software（客户端软件）<ol>
+<li>客户端软件专门安装在客户端计算机上</li>
+<li>帮助客户端计算机向指定服务端计算机发送请求，索要资源文件</li>
+<li>帮助客户端计算机将服务端计算机发送回来的<strong>二进制数据</strong>文件解析为文字、图片、视频等形式</li>
+</ol>
+</li>
+<li>server software（服务器软件）<ol>
+<li>服务器软件专门安装在服务端计算机上</li>
+<li>服务器软件用于接收来自于特定的客户端软件发送的请求</li>
+<li>服务器软件在接收到请求后自动在服务端计算机上定位被访问的资源文件</li>
+<li>服务器软件自动将定位的文件内容解析为<strong>二进制数据</strong>文件通过网络发送回发起请求的客户端软件上</li>
+</ol>
+</li>
+<li>适用场景：普遍用于个人娱乐市场，比如微信、淘宝、B站、大型网络游戏；企业办公应用较少</li>
+<li>优缺点：<ul>
+<li>优点：<ol>
+<li>安全性较高</li>
+<li>有效降低服务端计算机的工作压力</li>
+</ol>
+</li>
+<li>缺点：<ol>
+<li>增加客户获得服务的成本</li>
+<li>更新较为繁琐</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>B/S通信模型：<ul>
+<li>browser （浏览器）<ol>
+<li>浏览器安装在客户端计算机</li>
+<li>可以向任意服务器发起请求，索要资源文件</li>
+<li>可以将服务端计算机发送回来的<strong>二进制数据</strong>文件解析为文字、图片、视频等形式</li>
+</ol>
+</li>
+<li>server software （服务器软件）<ol>
+<li>服务器软件专门安装在服务端计算机上</li>
+<li>可以接受任意浏览器发送的请求</li>
+<li>自动在服务端计算机上定位被访问的资源文件</li>
+<li>自动将定位的文件内容解析为<strong>二进制数据</strong>文件通过网络发送回发起请求的浏览器上</li>
+</ol>
+</li>
+<li>适用场景：既适用于个人娱乐市场，又广泛适用于企业日常活动</li>
+<li>优缺点：<ul>
+<li>优点：<ol>
+<li>不会增加客户获得服务的成本</li>
+<li>几乎不需要更新浏览器</li>
+</ol>
+</li>
+<li>缺点：<ol>
+<li>几乎无法有效的对服务端计算机资源文件进行保护</li>
+<li>服务端计算机工作压力异常大</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>共享资源文件：</p>
+<ul>
+<li><p>什么是共享资源文件：</p>
+<p>可以通过网络进行传输的文件，都被称为共享资源文件</p>
+<p>所有文件内容都可以通过网络传输，所有文件都是共享资源文件</p>
+</li>
+<li><p>HTTP服务器下对于共享资源文件分类：</p>
+<ol>
+<li><p>静态资源文件</p>
+<ol>
+<li>如果文件内容是固定的，这种文件可以称为静态资源文件（文档，图片，视频）</li>
+<li>如果文件存放的是命令，这些文件只能在浏览器中编译和执行，这种文件可以称为静态资源文件（.html，.css，.js）</li>
+</ol>
+</li>
+<li><p>动态资源文件</p>
+<p>如果文件存放命令，并且命令不能在浏览器中编译和运行，只能在服务端计算机编译运行，这样的文件称为动态资源文件（.class）</p>
+</li>
+<li><p>静态文件和动态文件调用区别</p>
+<p>静态文件被索要时，Http服务器直接通过输出流将静态文件中内容或者命令以二进制形式推送给发起请求的浏览器</p>
+<p>动态文件被索要时，Http服务器需要创建当前class文件的实例对象，通过实例对象调用对应的方法处理用户请求，通过输出流将运行结果以二进制形式推送给发起请求的浏览器</p>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Function</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = a + b;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*这是一段class文件</span></span><br><span class="line"><span class="comment">*http服务器会创建一个实例：Function function = new Function();</span></span><br><span class="line"><span class="comment">*然后调用实例对象的方法：int sum = function.add(a,b);</span></span><br><span class="line"><span class="comment">*最后将结果sum返回给发起请求的浏览器</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>后端开发人员在互联网通信中担负的职责：</p>
+<ul>
+<li>控制浏览器行为<ul>
+<li>控制浏览器请求行为<ol>
+<li>控制浏览器发送的请求地址</li>
+<li>控制浏览器发送请求的方式</li>
+<li>控制浏览器发送请求携带的参数</li>
+</ol>
+</li>
+<li>控制浏览器接受结果行为<ol>
+<li>控制浏览器采用对应编译器将接收到的二进制文件数据解析为文字、视频、图片、命令</li>
+<li>控制浏览器将解析内容或者命令进行执行与展示（全局刷新展示/局部刷新展示）</li>
+<li>控制用户与浏览器之间交流（JavaScript– &gt;jq）</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>开发动态资源文件（class）来解决用户请求</li>
+</ul>
+</li>
+</ul>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><ul>
+<li><p>介绍：</p>
+<ul>
+<li>HTML编程语言是一种专门在浏览器编译与执行的编程语言</li>
+<li>HTML编程语言学称<strong>超文本标记式编程语言</strong></li>
+</ul>
+</li>
+<li><p>作用：</p>
+<ul>
+<li>HTML编程语言通知浏览器将接受的数据以指定方式在窗口展示[前端]</li>
+<li>控制浏览器请求行为[前端/服务端工程师]   <strong>重点</strong></li>
+</ul>
+</li>
+<li><p>HTML编程语言语法规范：</p>
+<ul>
+<li><p>HTML编程语言中所有命令都是声明在标签中，比如<br></p>
+</li>
+<li><p>HTML编程语言中的所有命令都是预先定义好的，不允许开发人员自行创建新的命令</p>
+</li>
+<li><p>HTML编程语言中的所有命令不区分英语字母大小写</p>
+</li>
+<li><p>HTML编程语言中命令开发时主要通过对命令中的属性进行赋值实现开发目的</p>
+<p>属性赋值时内容可以包含在一个””中，也可以包含在一个’’，也可以省略，此时属性之间必须采用空格进行隔离</p>
+</li>
+<li><p>HTML编程语言中命令根据书写方式分为：双目标签命令和单目标签命令</p>
+<ul>
+<li><p>双目标签命令书写时命令分别出现在开始标签和结束标签，比如<tr></tr></p>
+<p>双目标签命令在书写时结束标签是不能省略的</p>
+</li>
+<li><p>单目标签命令书写时命令出现在一个标签内，比如<br/></p>
+<p>单目标签命令表示结束”/“可以省略不写</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">		在一个HTML文件中，所有的HTML标签命令必须声明在&lt;html&gt;&lt;/html&gt;</span></span><br><span class="line"><span class="comment">		&lt;html&gt;&lt;/html&gt;包含两个子标签&lt;head&gt;&lt;/head&gt;和&lt;body&gt;&lt;/body&gt;</span></span><br><span class="line"><span class="comment">		&lt;head&gt;&lt;/head&gt;：设置基础参数信息</span></span><br><span class="line"><span class="comment">		&lt;body&gt;&lt;/body&gt;：负责通知浏览器将指定内容以指定方式在窗口展示</span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&#x27;utf-8&#x27;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">			&lt;h1&gt;&lt;/h1&gt;标题标签</span></span><br><span class="line"><span class="comment">			数字可以在1-6中间选择，数字越大字体大小越小</span></span><br><span class="line"><span class="comment">			&lt;p&gt;&lt;/p&gt;段落标签：包含其中的字符为一段话，段落结尾自动换行</span></span><br><span class="line"><span class="comment">		--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>一级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    	Hello,World!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    	Hello,World!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">			&lt;ol&gt;&lt;/ol&gt;有序标签</span></span><br><span class="line"><span class="comment">			&lt;ul&gt;&lt;/ul&gt;无序标签</span></span><br><span class="line"><span class="comment">			子标签&lt;li&gt;&lt;/li&gt;：该标签会根据序列标签给其中的展示内容顺序添加序号或无序添加小圆点</span></span><br><span class="line"><span class="comment">			序列标签可以嵌套</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			这些标签主要用于制作导航页</span></span><br><span class="line"><span class="comment">		--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>中国<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>美国<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>俄罗斯<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>米饭<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>面包<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>西伯利亚大土豆<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>中国</span><br><span class="line">                <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">            		<span class="tag">&lt;<span class="name">li</span>&gt;</span>米饭<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span>面条<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span>包子<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        		<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>美国</span><br><span class="line">                <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">            		<span class="tag">&lt;<span class="name">li</span>&gt;</span>面包<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span>牛排<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span>炸鸡<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        		<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>俄罗斯</span><br><span class="line">                <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">            		<span class="tag">&lt;<span class="name">li</span>&gt;</span>西伯利亚大土豆<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span>赫鲁晓夫大玉米<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span>坚不可摧大列巴<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        		<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">			 &lt;table&gt;&lt;/table&gt;表格标签</span></span><br><span class="line"><span class="comment">			子标签&lt;tr&gt;&lt;/tr&gt;：行</span></span><br><span class="line"><span class="comment">				子标签&lt;td&gt;&lt;/td&gt;：单元格</span></span><br><span class="line"><span class="comment">			属性</span></span><br><span class="line"><span class="comment">			border：表格边框宽度</span></span><br><span class="line"><span class="comment">			align：文本对齐方式</span></span><br><span class="line"><span class="comment">			style：更改默认样式</span></span><br><span class="line"><span class="comment">			rowspan：设置单元格高度</span></span><br><span class="line"><span class="comment">			colspon：设置单元格宽度</span></span><br><span class="line"><span class="comment">		--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;2&quot;</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span> <span class="attr">style</span>=<span class="string">&quot;background-color:blue&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 国家 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 中国 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 美国 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 俄罗斯 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color:yellow&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">&quot;3&quot;</span>&gt;</span> 食物 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 米饭 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 面包 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 土豆 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color:yellow&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 面条 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 牛排 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 玉米 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color:yellow&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 包子 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 炸鸡 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 大列巴 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">			&lt;img/&gt;图片标签：在浏览器中展示一张图片</span></span><br><span class="line"><span class="comment">			&lt;center&gt;&lt;/center&gt;居中格式</span></span><br><span class="line"><span class="comment">			&lt;div&gt;&lt;/div&gt;内容展示方块</span></span><br><span class="line"><span class="comment">			&lt;font&gt;&lt;/font&gt;文字标签：展示一行文字</span></span><br><span class="line"><span class="comment">			属性</span></span><br><span class="line"><span class="comment">			src：图片的地址</span></span><br><span class="line"><span class="comment">			title：图片的标题</span></span><br><span class="line"><span class="comment">			width：宽度</span></span><br><span class="line"><span class="comment">			height：高度</span></span><br><span class="line"><span class="comment">		--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">font</span> <span class="attr">style</span>=<span class="string">&quot;font-size:50&quot;</span>&gt;</span>我看不懂但我大受震撼<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;OIP.jpg&quot;</span> <span class="attr">title</span>=<span class="string">&quot;猫&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>浏览器发送请求的三要素：</strong>(very important)</p>
+<ul>
+<li><p>控制浏览器发送的请求地址</p>
+<ul>
+<li><p>超链接标签命令：</p>
+<ol>
+<li><p>格式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;请求地址&quot;</span>&gt;</span>提示信息<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://www.baidu.com/">百度一下</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.taobao.com/">淘宝：淘你所想</a></p>
+<p><a href="file:///C:/Users/yueyinghaibao/Desktop/OIP.jpg">Myjpg</a></p>
+</li>
+<li><p>工作原理：</p>
+<p>不会被浏览器自动执行，在用户单击超链接标签命令时，这个命令才会执行</p>
+<p>执行要求浏览器立刻按照href属性地址发送请求</p>
+</li>
+</ol>
+</li>
+<li><p>表单标签命令</p>
+<ol>
+<li><p>格式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;请求地址&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>/&gt;</span> <span class="comment">&lt;!--提交按钮--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<form action="http://www.baidu.com">
+    <input type="submit" value="百度一下"/> <!--提交按钮-->
+</form></li>
+<li><p>工作原理：</p>
+<p>不会被浏览器自动执行，在用户单击提交按钮时，这个命令才会执行</p>
+<p>执行时要求浏览器立刻按照action属性地址发送请求</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>控制浏览器发送请求的方式</p>
+<ul>
+<li><p>请求方式：决定浏览器发送请求时的行为特征</p>
+</li>
+<li><p>浏览器可以选择请求方式：7种，目前只考虑<strong>POST请求方式</strong>和<strong>GET请求方式</strong></p>
+<ul>
+<li><p>GET请求方式：</p>
+<ol>
+<li>要求浏览器发送请求时，其携带的<strong>请求参数数量</strong>不能超过4K（超量截断）</li>
+<li>要求浏览器发送请求时，必须在浏览器地址栏上将<strong>请求参数信息</strong>展示出来</li>
+<li>要求浏览器发送请求时，必须将请求参数信息保存在HTTP请求协议包中的<strong>请求头</strong></li>
+<li>要求浏览器在接收到服务器返回的资源文件内容后，必须将资源文件内容保存在浏览器的缓存中</li>
+</ol>
+</li>
+<li><p>POST请求方式：</p>
+<ol>
+<li>要求浏览器发送请求时，可以携带任意数量的<strong>请求参数</strong></li>
+<li>要求浏览器发送请求时，必须在浏览器地址栏隐藏<strong>请求参数信息</strong></li>
+<li>要求浏览器发送请求时，必须将请求参数信息保存在HTTP请求协议包中的<strong>请求体</strong></li>
+<li>禁止浏览器将服务器返回资源文件内容进行保存</li>
+</ol>
+</li>
+<li><p>控制浏览器发送请求时采用GET请求方式</p>
+<ol>
+<li>超链接标签命令</li>
+<li>表单标签存在一个method属性，通过这个属性可以要求浏览器采用对应请求方式发送请求，默认为GET方式</li>
+</ol>
+</li>
+<li><p>控制浏览器发送请求时采用POST请求方式</p>
+<p>表单标签method属性设置为POST方式：<form method="post"></form></p>
+</li>
+</ul>
+</li>
+<li><p>请求方式的适用场景</p>
+<ul>
+<li>考虑到post请求方式，用户可以将<strong>病毒</strong>发送到服务器上进行攻击，因此绝大多数门户网站拒绝接受POST请求，日常开发过程中绝大多数请求都是GET</li>
+<li>在某些特殊场景下必须使用POST<ol>
+<li>文件上传</li>
+<li>发起登录验证请求</li>
+<li>索要服务器中实时变化数据时</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>控制浏览器发送请求携带的参数</p>
+<ul>
+<li><p>请求参数作用：</p>
+<p>当用户通过浏览器访问服务端计算机动态资源文件时，往往需要调用其中的方法。</p>
+<p>浏览器发送请求时需要携带调用方法需要的实参（请求参数）</p>
+</li>
+<li><p>请求参数格式：</p>
+<p>浏览器发送请求时：请求地址?请求参数1=值&amp;请求参数2=值2</p>
+</li>
+<li><p>浏览器发送请求时携带的请求参数来源：</p>
+<ul>
+<li><p>通过超链接标签命令指定请求参数</p>
+<p>例如：<a target="_blank" rel="noopener" href="http://www.baidu.com?username=123&password=123">百度</a></p>
+<p>弊端：这种方式发送的请求参数内容时固定的</p>
+</li>
+<li><p>通过表单域标签命令指定请求参数</p>
+<ol>
+<li><p>一组声明在form标签内部的标签命令</p>
+</li>
+<li><p>提示用户填写请求参数内容，用于提供相对灵活的请求参数内容</p>
+</li>
+<li><p>所有表单域标签都有两个属性<strong>name</strong>和<strong>value</strong></p>
+<p>name属性声明<strong>请求参数名</strong>，value属性声明<strong>请求参数值</strong></p>
+</li>
+</ol>
+<p>例如：</p>
+<form action="http://www.baidu.com">
+    <input type="text" name="username" value="123"/>
+    <input type="submit"/>
+</form></li>
+<li><p>表单域标签分类：</p>
+<ol>
+<li><p>```html<br><input/>形式：</p>
+<form action="http://www.baidu.com" method="POST">
+    用户姓名:<input type="text" name="username"/><br/><!--文本框-->
+    用户密码:<input type="password" name="password"/><br/><!--password文本框，不会展示出来-->
+    用户性别:<input type="radio" name="sex" value="man"/>男 <input type="radio" name="sex" value="woman"/>女<br/><!--radio单选框，name相同才是一组单选框-->
+    擅长技术:<input type="checkbox" name="jishu" value="java"/>JAVA
+            <input type="checkbox" name="jishu" value="c++"/>C++
+            <input type="checkbox" name="jishu" value="mysql"/>MySql<br/>
+            <!--checkbox多选框，name相同才是一组多选框-->
+    用户头像:<input type="file" name="myfile"/><br/>
+    <input type="submit"/><!--用于提交请求参数-->
+    <input type="reset"/><!--用于重置请求参数-->
+</form>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">2. ```html</span><br><span class="line">   &lt;select&gt;&lt;/select&gt;形式</span><br><span class="line">   </span><br><span class="line">   &lt;form action=&quot;http://www.baidu.com&quot;&gt;</span><br><span class="line">       籍贯:&lt;select name=&quot;home&quot;&gt;</span><br><span class="line">       	&lt;option value=&quot;bj&quot;&gt;北京&lt;/option&gt;</span><br><span class="line">       	&lt;option value=&quot;sh&quot;&gt;上海&lt;/option&gt;</span><br><span class="line">       	&lt;option value=&quot;tj&quot;&gt;天津&lt;/option&gt;</span><br><span class="line">       	&lt;/select&gt;</span><br><span class="line">       &lt;input type=&quot;submit&quot;/&gt;</span><br><span class="line">       &lt;input type=&quot;reset&quot;/&gt;</span><br><span class="line">   &lt;/form&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>```html</p>
+<textarea></textarea>
+
+<form action="http://www.baidu.com" method="POST">
+    用户姓名:<input type="text" name="username"/><br/><!--文本框-->
+    用户密码:<input type="password" name="password"/><br/><!--password文本框，不会展示出来-->
+    用户性别:<input type="radio" name="sex" value="man"/>男 <input type="radio" name="sex" value="woman"/>女<br/><!--radio单选框，name相同才是一组单选框-->
+    擅长技术:<input type="checkbox" name="jishu" value="java"/>JAVA
+            <input type="checkbox" name="jishu" value="c++"/>C++
+            <input type="checkbox" name="jishu" value="mysql"/>MySql<br/>
+            <!--checkbox多选框，name相同才是一组多选框-->
+    用户头像:<input type="file" name="myfile"/><br/>
+    
+<pre><code>备注信息:&lt;textarea name=&quot;ta&quot; rows=&quot;5&quot; cols=&quot;30&quot;&gt;&lt;/textarea&gt;&lt;br/&gt;
+        &lt;!--文本栏，rows和cols分别设置展示的行数和列数--&gt;
+&lt;input type=&quot;submit&quot;/&gt;&lt;!--用于提交请求参数--&gt;
+&lt;input type=&quot;reset&quot;/&gt;&lt;!--用于重置请求参数--&gt;
+</code></pre>
+</form>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">      - 表单域标签value属性默认值</span><br><span class="line"></span><br><span class="line">        1. 大多数表单域标签value属性默认是空字符串，例如：username=&#x27;&#x27;</span><br><span class="line">        2. 对于radio和checkbox来说，value属性默认值为&#x27;on&#x27;的字符串</span><br><span class="line"></span><br><span class="line">      - 表单域标签作为请求参数条件</span><br><span class="line"></span><br><span class="line">        对于大多数表单域标签来说，只要同时满足以下两个条件，就可以作为请求参数</span><br><span class="line"></span><br><span class="line">        1. 必须声明在form标签内</span><br><span class="line">        2. 必须声明name参数</span><br><span class="line"></span><br><span class="line">        对于radio和checkbox标签来说在满足上述两个条件的同时，还需要满足第三个条件才可以作为请求参数</span><br><span class="line"></span><br><span class="line">        3. radio和checkbox必须在被选中的情况下才可以作为请求参数</span><br><span class="line"></span><br><span class="line">        此外，如果表单域标签用disabled来修饰，则它不能作为请求参数发送给服务端</span><br><span class="line"></span><br><span class="line">        顺带一提readonly和disabled的区别：</span><br><span class="line"></span><br><span class="line">        - readonly：设置当前标签只能读不能修改，readonly不会影响表单域标签作为请求参数条件</span><br><span class="line">        - disabled：设置当前标签为不可用状态，此时标签中的value不能被修改，disabled修饰的表单域标签永远不能作为请求参数发送给服务端</span><br><span class="line"></span><br><span class="line">## CSS</span><br><span class="line"></span><br><span class="line">- 是一种专门在浏览器编译并执行的编程语言</span><br><span class="line"></span><br><span class="line">  用于定位浏览器中**HTML标签**并对定位的HTML标签中**样式属性**进行统一管理</span><br><span class="line"></span><br><span class="line">- HTML标签属性分类</span><br><span class="line"></span><br><span class="line">  - 基本属性：</span><br><span class="line"></span><br><span class="line">    大多数HTML标签都拥有的属性，是一个很庞大的群体</span><br><span class="line"></span><br><span class="line">    比如id属性，用来区分HTML标签，不允许有相同的id</span><br><span class="line"></span><br><span class="line">    比如name属性，允许一组标签有相同的name</span><br><span class="line"></span><br><span class="line">  - 样式属性：</span><br><span class="line"></span><br><span class="line">    是一个非常庞大的群体，通知浏览器将HTML标签中的数据在浏览器中以指定形态展示</span><br><span class="line"></span><br><span class="line">    比如&lt;div style=&quot;background-color:red;width:300;height:300&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  - 工作状态属性：</span><br><span class="line"></span><br><span class="line">    只存在于表单域标签中，用于表示表单域标签状态</span><br><span class="line"></span><br><span class="line">    check：存在于radio和checkbox中，表示标签是否被选中</span><br><span class="line"></span><br><span class="line">    disabled：表示标签处于不可用的状态</span><br><span class="line"></span><br><span class="line">    readonly：表示标签处于只读状态</span><br><span class="line"></span><br><span class="line">    selected：存在于option标签中，表示标签是否被选中</span><br><span class="line"></span><br><span class="line">  - 监听属性：</span><br><span class="line"></span><br><span class="line">    监听属性用户与HTML标签之前进行通信，监听属性用于监听用户再何时对当前标签进行何种操作，当指定操作产生时，监听属性将会通知浏览器调用对应的JavaScript方法来处理当前请求</span><br><span class="line"></span><br><span class="line">- 样式属性开发难度：</span><br><span class="line"></span><br><span class="line">  - 由于网页经常出现大量的HTML标签拥有相同的样式属性设置，因此导致前端工程师进行大量重复性开发操作</span><br><span class="line">  - 当用户修改需求时，导致前端工程师进行大量重复维护工作</span><br><span class="line"></span><br><span class="line">- CSS的作用</span><br><span class="line"></span><br><span class="line">  - 通知浏览器将所有满足定位条件的HTML标签进行统一定位</span><br><span class="line">  - 通知浏览器对已经定位HTML标签中样式属性进行集中统一赋值管理</span><br><span class="line"></span><br><span class="line">- CSS选择器：</span><br><span class="line"></span><br><span class="line">  - 实际上就是一组定位条件用于定位HTML标签，有9个大类</span><br><span class="line"></span><br><span class="line">  - 语法格式：</span><br><span class="line"></span><br><span class="line">    ```html</span><br><span class="line">    &lt;html&gt;</span><br><span class="line">        &lt;head&gt;</span><br><span class="line">            &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">                定位条件&#123;</span><br><span class="line">                    样式属性1:值1;</span><br><span class="line">                    样式属性2:值2</span><br><span class="line">                &#125;</span><br><span class="line">            &lt;/style&gt;</span><br><span class="line">        &lt;/head&gt;</span><br><span class="line">    &lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ID选择器：</p>
+<ul>
+<li><p>根据HTML标签中ID属性的值进行定位</p>
+</li>
+<li><p>语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">	<span class="selector-id">#id</span>编号&#123;</span></span><br><span class="line"><span class="css">		样式属性<span class="number">1</span>:值<span class="number">1</span>;</span></span><br><span class="line"><span class="css">		样式属性<span class="number">2</span>:值<span class="number">2</span></span></span><br><span class="line"><span class="css">	&#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>标签类型选择器：</p>
+<ul>
+<li><p>根据HTML标签类型进行定位</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">	标签类型名&#123;</span></span><br><span class="line"><span class="css">		样式属性<span class="number">1</span>:值<span class="number">1</span>;</span></span><br><span class="line"><span class="css">		样式属性<span class="number">2</span>:值<span class="number">2</span></span></span><br><span class="line"><span class="css">	&#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>层级选择器</p>
+<ul>
+<li><p>HTML标签之间的关系：</p>
+<ul>
+<li>父子关系：即包含关系</li>
+<li>兄弟关系：一组标签拥有相同的父标签，并且彼此之间没有任何包含关系，即为兄弟</li>
+</ul>
+</li>
+<li><p>根据标签之间的关系进行定位</p>
+</li>
+<li><p>示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--父子关系--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">	定位父标签条件 定位子标签条件&#123;</span></span><br><span class="line"><span class="css">		样式属性<span class="number">1</span>:值<span class="number">1</span>;</span></span><br><span class="line"><span class="css">		样式属性<span class="number">2</span>:值<span class="number">2</span></span></span><br><span class="line"><span class="css">	&#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>自定义选择器</p>
+<ul>
+<li><p>如果一组HTML标签没有相同的特征，但是需要对指定属性赋值相同的内容，此时将自定义选择器绑定到对应的标签上</p>
+</li>
+<li><p>语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">	.自定义选择器名&#123;</span></span><br><span class="line"><span class="css">		样式属性<span class="number">1</span>:值<span class="number">1</span>;</span></span><br><span class="line"><span class="css">		样式属性<span class="number">2</span>:值<span class="number">2</span></span></span><br><span class="line"><span class="css">	&#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;自定义选择器名&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;自定义选择器名&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="HTTP网络协议包"><a href="#HTTP网络协议包" class="headerlink" title="HTTP网络协议包"></a>HTTP网络协议包</h2><ul>
+<li><p>网络协议包：</p>
+<ul>
+<li>在网络中传递信息都是以<strong>二进制</strong>形式存在的</li>
+<li>接收方<strong>浏览器/服务器</strong>在接收到信息后，要做的第一件事就是将<strong>二进制数据</strong>进行编译成<strong>文字、图片、视频、命令</strong></li>
+<li>传递信息数据量往往比较巨大，导致接收方很难在一组连续二进制得到对应数据</li>
+<li>网络协议包是一组有规律的二进制数据，在这组数据存在固定空间，每一个空间专门存放特定信息，这样接收方在接收到网络协议包之后就可以到固定空间得到对应信息，网络协议包出现极大降低了接收方对接收二进制数据编译难度</li>
+</ul>
+</li>
+<li><p>常见网络协议包：</p>
+<ul>
+<li><p>FTP网络协议包（文件传输协议）</p>
+</li>
+<li><p>HTTP网络协议包（超文本传输协议）</p>
+<p>在基于B/S结构下互联网通信过程中，所有网络中传递信息都是保存在HTTP网络协议包</p>
+<ul>
+<li><p>分类：</p>
+<ul>
+<li><p>HTTP请求协议包</p>
+<p>在浏览器准备发送请求时，负责创建与一个HTTP请求协议包</p>
+<p>浏览器将请求信息以二进制形式保存在HTTP请求协议包各个空间</p>
+<p>由浏览器负责将HTTP请求协议包推送到指定服务端计算机</p>
+<ul>
+<li><p>内部空间：</p>
+<ol>
+<li><p>按照自上而下去划分，分为四个空间</p>
+</li>
+<li><p>空间划分：</p>
+<p>请求行：包括URL（请求地址）和method（请求方式）</p>
+<p>请求头：包括请求参数信息（GET）</p>
+<p>空白行（不可见）：没有任何内容，起到隔离作用</p>
+<p>请求体（不可见）：包括请求参数信息（POST）</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>HTTP响应协议包</p>
+<p>HTTP服务器在定位到被访问的资源文件之后，负责创建一个HTTP响应协议包</p>
+<p>HTTP服务器将定位文件内容或者文件命令以二进制形式写入到HTTP响应协议包各个空间</p>
+<p>由HTTP服务器负责将HTTP响应协议包推送回发起请求的浏览器上</p>
+<ul>
+<li><p>内部空间：</p>
+<ol>
+<li><p>按照自上而下去划分，分为四个空间</p>
+</li>
+<li><p>空间划分：</p>
+<p>状态行：包括HTTP状态码</p>
+<p>响应头：包括content-type（内容类型属性）指定浏览器采用对应编译器对响应体中的二进制数据进行解析</p>
+<p>空白行：没有任何内容，起到隔离作用</p>
+<p>响应体：可能包括被访问的静态资源文件内容、静态资源文件命令、动态资源文件运行结果（二进制形式）</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="HTTP服务器"><a href="#HTTP服务器" class="headerlink" title="HTTP服务器"></a>HTTP服务器</h2><ul>
+<li>服务器：是一种安装在服务端计算机的资源文件调度器，每一种服务器专门接受特定的请求协议。对特定的文件进行调度管理。</li>
+<li>HTTP服务器是服务器中一种，其行为和HTTP协议相关</li>
+<li>HTTP服务器可以接收来自浏览器发送的HTTP请求协议包，并自动对HTTP请求协议包内容进行解析</li>
+<li>解析后，自动定位被访问的文件，并将定位的文件内容写入到HTTP响应协议包中</li>
+<li>最后，负责将HTTP响应协议包推送回发起请求的浏览器上</li>
+<li>分类：<ul>
+<li>JBOSS服务器：不支持servlet/JSP规范，一般和Tomcat和Jetty绑定使用</li>
+<li>Glassfish服务器（开发中）：未来可期，颠覆式的改变现如今的服务器体系。</li>
+<li>Jetty服务器：</li>
+<li>Weblogic服务器：</li>
+<li>Websphere服务器：目前最强大的web服务器，往往运用在电子商务应用领域。主要安装在Linux中</li>
+<li>Tomcat服务器：轻量化且标准化规范，但不适用于中大型系统和高并发状态，因此往往安装在个人计算机中以模拟B/S互联网通讯流程。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Tomcat服务器"><a href="#Tomcat服务器" class="headerlink" title="Tomcat服务器"></a>Tomcat服务器</h3><ul>
+<li><p>Tomcat服务器内部工作文件作用：</p>
+<ul>
+<li>bin文件夹：Tomcat管理命令</li>
+<li>conf文件夹：Tomcat配置文件</li>
+<li>lib文件夹：Tomcat使用的jar</li>
+<li>logs文件夹：Tomcat日志信息</li>
+<li>temp文件夹：Tomcat临时文件</li>
+<li>webapps文件夹：Tomcat默认资源文件</li>
+<li>work文件夹：Tomcat工作空间</li>
+</ul>
+</li>
+</ul>
+<h3 id="创建网站"><a href="#创建网站" class="headerlink" title="创建网站"></a>创建网站</h3><ul>
+<li><p>步骤略</p>
+</li>
+<li><p>网站内部结构</p>
+<ul>
+<li><p>src文件夹：存放作为动态资源文件的Java文件</p>
+</li>
+<li><p>web文件夹：</p>
+<p>存放作为静态资源文件图片、HTML、CSS、js；</p>
+<p>存放网站运行时依赖的jar MYSQL驱动；</p>
+<p>存放网站的核心配置文件（web.xml）</p>
+<ul>
+<li>WEB-INF：依赖的jar MYSQL驱动/核心配置文件<ul>
+<li>lib文件夹：依赖的jar MYSQL驱动</li>
+<li>web.xml：通知Tomcat当前网站那些Java类是</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Servlet规范"><a href="#Servlet规范" class="headerlink" title="Servlet规范"></a>Servlet规范</h2><ul>
+<li><p>Servlet规范来自于JAVAEE规范中的一种</p>
+</li>
+<li><p>作用：</p>
+<ul>
+<li>在Servlet规范中，指定<strong>动态资源文件</strong>开发步骤</li>
+<li>在Servlet规范中，指定HTTP服务器调用动态资源文件的规则</li>
+<li>在Servlet规范中，指定HTTP服务器管理动态资源文件实例对象规则</li>
+</ul>
+</li>
+<li><p>Servlet接口实现类：</p>
+<ul>
+<li>Servlet接口来自于Servlet规范下的一个接口，这个接口存在HTTP服务器提供jar包</li>
+<li>Tomcat服务器下lib文件有一个Servlet-api.jar存放servlet接口（javax.servlet.Servlet接口）</li>
+<li>Servlet规范中认为，HTTP服务器能调用的动态资源文件必须是一个Servlet接口实现类</li>
+<li>包含的方法：<ul>
+<li>init</li>
+<li>getServletConfig</li>
+<li>service——唯一有用需要我们自己实现的方法</li>
+<li>getServletInfo</li>
+<li>destroy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Tomcat根据Servlet规范调用Servlet接口实现类规则：</p>
+<ul>
+<li><p>Tomcat有权创建Servlet接口实现类实例对象：</p>
+<p>Servlet oneServlet = new OneServlet();</p>
+</li>
+<li><p>Tomcat根据实例对象调用service方法处理当前请求：</p>
+<p>oneServlet.service();</p>
+</li>
+<li><p>service方法实际是由父类HttpServlet实现的，大体为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">service</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Method method = getMethod();</span><br><span class="line">    <span class="keyword">if</span>(method == <span class="string">&quot;GET&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.doGet();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(method == <span class="string">&quot;POST&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>在子类OneServlet中实现doGet或doPost方法</p>
+</li>
+<li><p>通过父类决定在何种情况下调用子类中的方法——设计模式——模板设计模式</p>
+</li>
+</ul>
+</li>
+<li><p>Servlet接口实现类开发步骤</p>
+<ul>
+<li><p>创建一个java类继承于HttpServlet父类，使之成为一个Servlet接口实现类</p>
+</li>
+<li><p>重写HttpServlet父类两个方法：doGet或者doPost</p>
+</li>
+<li><p>将Servlet接口实现类信息<strong>注册</strong>到Tomcat服务器：</p>
+<p>网站==&gt;web==&gt;WEB-INF==&gt;web.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--将servlet接口实现类类路径地址交给Tomcat--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>one<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span><span class="comment">&lt;!--声明一个变量储存servlet接口实现类路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.pjh.controller.OneServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span><span class="comment">&lt;!--声明一个servlet接口实现类路径--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	此时</span></span><br><span class="line"><span class="comment">	Tomcat String one = &quot;com.pjh.controller.OneServlet&quot;</span></span><br><span class="line"><span class="comment">	为了降低用户访问Servlet接口实现类难度，需要设置简短请求别名</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>one<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/one<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span><span class="comment">&lt;!--设置简短的请求别名，别名在书写时必须以/开头--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Servlet对象生命周期：</p>
+<ul>
+<li><p>网站中所有的Servlet接口实现类的实例对象，都是由HTTP服务器负责创建</p>
+<p>开发人员不能手动创建Servlet接口实现类的实例对象</p>
+</li>
+<li><p>在默认情况下，HTTP服务器接收到对于当前Servlet接口实现类第一次请求时自动创建这个Servlet接口实现类的实例对象</p>
+<p>在手动配置情况下，要求HTTP服务器在启动时自动创建某个Servlet接口实现类的实例对象</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>one<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span><span class="comment">&lt;!--声明一个变量储存servlet接口实现类路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.pjh.controller.OneServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span><span class="comment">&lt;!--声明一个servlet接口实现类路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>30<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span><span class="comment">&lt;!--填写一个大于0的整数即可--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在HTTP服务器运行期间，一个Servlet接口实现类只能被创建一个实例对象</p>
+</li>
+<li><p>在HTTP服务器关闭时刻，自动将网站中所有的Servlet对象进行销毁</p>
+</li>
+</ul>
+</li>
+<li><p>HttpServletResponse接口和HttpServletRequest接口</p>
+<ul>
+<li><p>HttpServletResponse接口：</p>
+<ul>
+<li><p>HttpServletResponse接口来自于Servlet规范中，存在于Tomcat的servlet-api.jar中</p>
+</li>
+<li><p>HttpServletResponse接口实现类由Http服务器负责提供</p>
+</li>
+<li><p>HttpServletResponse接口负责将doGet或者doPost方法执行结果写入到<strong>响应体</strong>交给浏览器</p>
+</li>
+<li><p>开发人员习惯于将HttpServletResponse接口修饰的对象称为<strong>响应对象</strong></p>
+</li>
+<li><p>主要功能：</p>
+<ol>
+<li>将执行结果以二进制形式写入到<strong>响应体</strong>中</li>
+<li>设置响应头中content-type属性值，从而控制浏览器使用对应编译器将响应体二进制数据编译为文字、图片、视频、命令</li>
+<li>设置响应头中location属性，将一个请求地址赋值给location从而控制浏览器向指定服务器发送请求</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    String result = <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line">    <span class="comment">//响应对象将结果写入到响应体中——start</span></span><br><span class="line">        <span class="comment">//通过响应对象向Tomcat索要输出流</span></span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line">        <span class="comment">//通过输出流，将执行结果以二进制形式写入响应体中</span></span><br><span class="line">        out.write(result);</span><br><span class="line">    	<span class="comment">//或者out.print(); 会将一切数据当作字符串打印出来</span></span><br><span class="line">    	<span class="comment">//而write会将数字当作ascii码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>浏览器在接收到相应包之后，根据<strong>响应头中content-type</strong>属性的值，来采用对应编译器对<strong>响应体中二进制内容</strong>进行编译处理，在默认情况下，content-type属性的值为”text”，此时浏览器会采用<strong>文本编译器</strong>对响应体二进制数据进行解析。</p>
+<p>因此若需要编译命令，则一定要在得到输出流之前，通过响应对象对响应头中的content-type属性进行一次重新赋值用来指定浏览器采用正确的编译器</p>
+</li>
+<li><p>通过sendRedirect方法可以远程控制浏览器请求行为：请求地址，请求方式，请求参数。例如，当响应头中存在location属性，则会自动通过地址栏向location指定网站发送请求。</p>
+</li>
+</ul>
+</li>
+<li><p>HttpServletRequest接口</p>
+<ul>
+<li><p>HttpServletRequest接口来自于Servlet规范中，存在于Tomcat的servlet-api.jar中</p>
+</li>
+<li><p>HttpServletRequest接口实现类由Http服务器负责提供</p>
+</li>
+<li><p>HttpServletRequest接口负责在doGet/doPost方法运行时读取Http请求协议包中信息</p>
+</li>
+<li><p>开发人员习惯于将HttpServletResponse接口修饰的对象称为<strong>请求对象</strong></p>
+</li>
+<li><p>主要功能：</p>
+<ol>
+<li>读取Http请求协议包中请求行信息</li>
+<li>可以读取保存在Http请求协议包中请求头或者请求体中请求参数信息</li>
+<li>可以代替浏览器向Http服务器申请资源文件调用</li>
+</ol>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过请求对象，读取请求行中url信息</span></span><br><span class="line">String url = request.getRequestURL().toString();</span><br><span class="line"><span class="comment">//通过请求对象，读取请求行中method信息</span></span><br><span class="line">String method = request.getMethod();</span><br><span class="line"><span class="comment">//通过请求对象，读取请求行中uri属性</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* URI:资源文件精准定位地址，在请求行并没有URI这个属性</span></span><br><span class="line"><span class="comment">* 实际上是URL中截取的一个字符串，</span></span><br><span class="line"><span class="comment">* 这个字符串格式：/网站名/资源文件名</span></span><br><span class="line"><span class="comment">* URI用于让Http服务器对被访问的资源文件进行定位</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">String uri = request.getRequestURI();</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过请求对象获得请求头中所有请求参数名</span></span><br><span class="line"><span class="comment">//将所有请求参数名称保存在一个枚举对象进行返回</span></span><br><span class="line">Enumeration&lt;String&gt; parameterNames = request.getParameterNames();</span><br><span class="line"><span class="keyword">while</span>(parameterNames.hasMoreElements()) &#123;</span><br><span class="line">	String paramName = parameterNames.nextElement();</span><br><span class="line">	<span class="comment">//通过请求对象读取指定的请求参数的值</span></span><br><span class="line">	String parameter = request.getParameter(paramName);</span><br><span class="line">	System.out.println(<span class="string">&quot;请求参数名称：&quot;</span>+paramName+<span class="string">&quot; 请求参数值：&quot;</span>+parameter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>当用Post方式发送中文参数时，getParameter得到了乱码，其原因在于：</p>
+<p>  浏览器以GET方式发送请求，请求参数保存在请求头里，在Http服务器之后，第一件事就是进行解码。请求头二进制数据由Tomcat负责解码，Tomcat9.0默认使用utf-8字符集，可以解释一切国家文字</p>
+<p>  而以Post方式发送请求，请求参数保存在请求体里，在Http服务器之后，第一件事就是进行解码。请求体二进制数据由request请求对象负责解码，默认使用ISO-8859-1字符集，如果请求参数内容为中文，将无法解码</p>
+<p>  解决方案：</p>
+<p>  在post请求方式下，在读取请求体内容前，应该通知请求对象使用utf-8对请求参数重新解码</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>请求对象和响应对象的生命周期：</p>
+<ul>
+<li>在Http服务器在接收到浏览器发送的Http请求协议包之后，自动为当前Http请求协议包生成一个请求对象和响应对象</li>
+<li>在Http服务器调用doGet/doPost方式时，负责将请求对象和响应对象作为实参传递到方法，确保doGet/doPost正确执行</li>
+<li>在Http服务器准备推送Http响应协议包之前，负责将本次请求关联的请求对象和响应对象销毁</li>
+<li>请求对象和响应对象生命周期贯穿一次请求的处理过程中</li>
+<li>请求对象和响应对象相当于用户在服务端得代言人</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>欢迎资源文件</p>
+<ul>
+<li><p>前提：用户只会记住网站名，不会记住网站里的资源文件</p>
+</li>
+<li><p>默认欢迎资源文件：用户向Http服务器发送针对某个网站的默认请求，服务器自动从当前网站返回的资源文件</p>
+</li>
+<li><p>Tomcat对于默认欢迎资源文件定位规则</p>
+<ul>
+<li><p>规则位置：Tomcat安装位置/conf/web.xml</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.htm<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>设置默认欢迎资源文件规则</p>
+<ul>
+<li><p>规则位置：网站/web/WEB-INF/web.xml</p>
+</li>
+<li><p>规则命令：</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>login.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>user/find<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span><span class="comment">&lt;!--servlet作为默认欢迎资源时，开头斜线必须抹掉--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>网站设置自定义默认文件定位规则，此时Tomcat自带的定位规则将失效</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Http状态码：</p>
+<ul>
+<li><p>是有三位数字组成的一个符号</p>
+</li>
+<li><p>Http服务器在推送响应包之前，根据本次请求处理情况将Http状态码写入到响应包中<strong>状态行</strong>上</p>
+</li>
+<li><p>如果Http服务器针对本次请求，返回了对应资源文件。通过Http状态码通知浏览器应该如何处理这个结果</p>
+<p>  如果Http服务器针对本次请求，无法返回对应资源文件。通过Http状态码向浏览器解释无法提供服务的原因</p>
+</li>
+<li><p>分类：</p>
+<ul>
+<li><p>组成：100-599，分为5个大类</p>
+</li>
+<li><p>1xx：</p>
+<p>  最有特征的100：通知浏览器本次返回的资源文件并不是一个独立的资源文件，需要浏览器在接收响应包后，继续向Http服务器索要依赖的其他资源文件</p>
+</li>
+<li><p>2xx：</p>
+<p>  最有特征的200：通知浏览器本次返回的资源文件是一个独立的资源文件，浏览器在接收响应包后不需要继续向Http服务器索要其他资源文件</p>
+</li>
+<li><p>3xx：</p>
+<p>  最有特征的302：通知浏览器本次返回的不是一个资源文件，而是一个资源文件地址，需要浏览器根据这个地址向Http服务器索要这个资源文件</p>
+<p>  例如response.sendRedirect(“资源文件地址”)写入到响应头中location</p>
+<p>  而这个行为导致Tomcat将302写入状态行</p>
+</li>
+<li><p>4xx：</p>
+<p>  最有特征的404：通知浏览器，由于在服务端没有定位到被访问的资源文件，因此无法提供帮助</p>
+<p>  最有特征的405：通知浏览器，在服务端已经定位到被访问的资源文件（servlet），但是这个servlet对于浏览器发送的请求方式无法处理</p>
+</li>
+<li><p>5xx：</p>
+<p>  最有特征的500：通知浏览器，在服务端已经定位到被访问的资源文件（servlet），这个servlet对于浏览器发送的请求方式可以处理，但是servlet在处理时，由于java异常导致处理失败</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>多个Servlet之间调用问题（<strong>重点</strong>）：</p>
+<ul>
+<li><p>前题条件：</p>
+<p>  某些来自于浏览器发送请求，往往需要服务端中多个servlet协同处理。但是浏览器一次只能访问一个Servlet，导致用户需要手动通过浏览器发起多次请求才能得到服务。</p>
+<p>  这样增加用户获得服务难度，导致用户放弃访问当前网站</p>
+</li>
+<li><p>提高用户使用感受规则：</p>
+<p>  无论本次请求涉及到多少个Servlet，用户只需要手动通知浏览器发起一次请求即可</p>
+</li>
+<li><p>调用规则：</p>
+<ul>
+<li><p>重定向解决方案：</p>
+<ol>
+<li><p>工作原理：</p>
+<p> 用户第一次通过手动方式通知浏览器访问OneServlet，OneServlet工作完毕后，将TwoServlet地址写入到响应头location属性中，导致Tomcat将302状态码写入到状态行。</p>
+<p> 在浏览器接收到这个响应包后，会读取到302状态，此时浏览器自动根据响应头中location属性地址发起第二次请求，访问TwoServlet去完成请求中剩余任务</p>
+</li>
+<li><p>实现命令：</p>
+<p> response.sendRedirect(“请求地址”)</p>
+<p> 将地址写入到响应包中响应头中location属性</p>
+</li>
+<li><p>特征：</p>
+<ol>
+<li><p>请求地址：</p>
+<p> 即可以把当前网站内部的资源文件地址发送给浏览器（/网站名/资源文件名）</p>
+<p> 也可以把其他网站的资源文件地址发送给浏览器（<a href="http://ip地址:端口号/网站名/资源文件名）">http://ip地址:端口号/网站名/资源文件名）</a></p>
+</li>
+<li><p>请求次数：</p>
+<p> 浏览器至少发送两次请求，但只有第一次是用户手动发送的，后续请求都是由浏览器自动发送</p>
+</li>
+<li><p>请求方式：</p>
+<p> 重定向解决方案中，通过地址栏通知浏览器发起下一次请求，因此通过重定向解决方案调用资源文件接收方式一定是GET</p>
+</li>
+</ol>
+</li>
+<li><p>缺点：</p>
+<p> 重定向解决方案需要在浏览器与服务器之间进行多次往返，大量时间消耗在往返次数上，增加用户等待服务的时间</p>
+</li>
+</ol>
+</li>
+<li><p>请求转发解决方案：</p>
+<ol>
+<li><p>工作原理：</p>
+<p> 用户第一次通过手动方式通知浏览器访问OneServlet，OneServlet工作完毕后，通过当前请求对象代替浏览器向Tomcat发送请求，申请调用TwoServlet。</p>
+<p> Tomcat接收到这个请求后，自动调用TwoServlet去完成剩余任务</p>
+</li>
+<li><p>实现命令：请求对象代替浏览器向Tomcat发送请求</p>
+<ol>
+<li><p>通过当前请求对象生成资源文件申请报告对象：</p>
+<p> RequestDispatcher report = request.getRequestDispatcher(“/资源文件名”);    <strong>一定要以/为开头且不要写网站名</strong></p>
+</li>
+<li><p>将报告对象发送给Tomcat：</p>
+<p> report.forward(当前请求对象，当前响应对象);</p>
+</li>
+</ol>
+</li>
+<li><p>优点：</p>
+<ol>
+<li>无论本次涉及到多少个servlet，用户只需要手动通过浏览器发送一次请求</li>
+<li>servlet之间调用发生在服务端计算机上，节省服务端与浏览器之间往返次数增加处理服务速度</li>
+</ol>
+</li>
+<li><p>特征：</p>
+<ol>
+<li><p>请求次数：</p>
+<p> 浏览器只发送一次请求</p>
+</li>
+<li><p>请求地址：</p>
+<p> 只能向Tomcat服务器申请调用当前网站内部的资源文件</p>
+</li>
+<li><p>请求方式：</p>
+<p> 在请求转发过程中，浏览器只发送了一个Http请求协议包。参与本次请求转发的所有Servlet共享同一个请求协议包，因此这些Servlet接收的请求方式与浏览器发送的请求方式保持一致</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>多个Servlet之间数据共享实现方案：</p>
+<ul>
+<li><p>数据共享：OneServlet工作完毕后，将产生数据交给TwoServlet来使用</p>
+</li>
+<li><p>Servlet规范中提供四种方案：</p>
+<ul>
+<li><p>ServletContext接口</p>
+<ol>
+<li><ul>
+<li><p>来自于Servlet规范的一个接口。在Tomcat中存在servlet-api.jar。在Tomcat中负责提供这个接口实现类</p>
+</li>
+<li><p>如果两个servlet来自同一个网站。彼此之间通过网站的ServletContext实例对象实现数据共享</p>
+</li>
+<li><p>开发人员习惯于将ServletContext对象称为<strong>全局作用域对象</strong></p>
+</li>
+</ul>
+</li>
+<li><p>工作原理：</p>
+<p> 每个网站都存在一个全局作用域对象，这个全局作用域对象相当于一个map，在这个网站中OneServlet可以将一个数据存入到全局作用域对象，当前网站中其他Servlet此时都可以从全局作用域对象得到这个数据进行使用</p>
+</li>
+<li><p>全局作用域对象生命周期：</p>
+<ol>
+<li><p>在Http服务器启动过程中，自动为当前网站在内存中创建一个全局作用域对象</p>
+</li>
+<li><p>在Http服务器运行期间，一个网站只存在一个全局作用域对象</p>
+</li>
+<li><p>在Http服务器运行期间，全局作用域对象一直存活</p>
+</li>
+<li><p>在Http服务器准备关闭时，负责将当前网站中全局作用域对象进行销毁处理</p>
+<p> <strong>全局作用域对象生命周期贯穿网站整个运行期间</strong></p>
+</li>
+</ol>
+</li>
+<li><p>命令实现：one共享给two</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> OneServlet extends HttpServlet &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//通过请求对象向Tomcat所有当前网站的全局作用域对象</span></span><br><span class="line">        ServletContext application = request.getServletContext();</span><br><span class="line">        <span class="comment">//将数据添加到全局作用域对象作为共享数据</span></span><br><span class="line">        application.setAttribute(<span class="string">&quot;key1&quot;</span>,data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//————————————————————————————————————————————————————————————————</span></span><br><span class="line"><span class="keyword">public</span> TwoServlet extends HttpServlet &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//通过请求对象向Tomcat所有当前网站的全局作用域对象</span></span><br><span class="line">        ServletContext application = request.getServletContext();</span><br><span class="line">        <span class="comment">//从全局作用域对象得到指定关键字对应数据</span></span><br><span class="line">        Object data = application.getAttribute(<span class="string">&quot;key1&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+<li><p>Cookie类</p>
+<ol>
+<li><p>Cookie来自于Servlet规范中的一个工具类，存在于Tomcat提供servlet-api.jar中</p>
+<p> 如果两个servlet来自同一个网站，并且为同一个浏览器/用户提供服务，此时可以借助Cookie对象进行数据共享</p>
+<p> Cookie存放当前用户的私人数据，在共享数据过程中提高服务质量</p>
+</li>
+<li><p>原理：</p>
+<p> 用户通过浏览器第一次向网站发送请求申请OneServlet。OneServlet在运行过程中创建一个Cookie储存与当前用户相关数据。OneServlet工作完毕后，<strong>将Cookie写入到响应头</strong>交还给当前浏览器。</p>
+<p> 浏览器收到响应包后，将Cookie存储在浏览器的缓存一段时间后，用户通过<strong>同一个浏览器</strong>再次向<strong>同一个网站</strong>发送请求申请TwoServlet时。浏览器需要无条件的将网站之前推送的Cookie，写入请求头中发送过去。</p>
+<p> 此时TwoServlet在运行时，就可以通过读取请求头中Cookie的信息，得到OneServlet提供的共享数据</p>
+</li>
+<li><p>实现命令：one共享给two</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> OneServlet extends HttpServlet &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建一个Cookie对象，保存共享数据（当前用户数据）</span></span><br><span class="line">        Cookie card = <span class="keyword">new</span> Cookie(<span class="string">&quot;key1&quot;</span>,<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">        <span class="comment">//Cookie相当于一个map，但是只能存放一个键值对，这个键值对中的key和value只能是String,key不能是中文</span></span><br><span class="line">        <span class="comment">//将Cookie写入到响应头，交给浏览器</span></span><br><span class="line">        response.addCookie(card);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//————————————————————————————————————————————————————————————————</span></span><br><span class="line"><span class="keyword">public</span> TwoServlet extends HttpServlet &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//调用请求对象从请求头得到浏览器返回的Cookie</span></span><br><span class="line">        Cookie[] cookieArray = request。getCookie();</span><br><span class="line">        <span class="comment">//循环遍历数据得到每个cookie的key和value</span></span><br><span class="line">        <span class="keyword">for</span>(Cookie card:cookieArray) &#123;</span><br><span class="line">            String key = card.getName();</span><br><span class="line">            String value = card.getValue();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>生命周期</p>
+<p> 在默认情况下，Cookie对象存在在浏览器缓存中，浏览器关闭Cookie就销毁了</p>
+<p> 在手动设置情况下，可以要求浏览器将接收的Cookie存放在客户端计算机上硬盘上，同时需要指定Cookie在硬盘上存活时间。在存活时间范围内，关闭浏览器关闭客户端计算机，关闭服务器，都不会导致Cookie被销毁。在存活时间到达时，Cookie自动从硬盘上被删除</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie.setMaxAge(<span class="number">60</span>);</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>HttpSession接口</p>
+<ol>
+<li><p>HttpSession来自于Servlet规范中的一个接口，存在于Tomcat提供servlet-api.jar中。其实现类由Http服务器提供，Tomcat提供实现类存在于Servlet-api.jar中</p>
+<p> 如果两个servlet来自同一个网站，并且为同一个浏览器/用户提供服务，此时可以借助HttpSession对象进行数据共享</p>
+<p> 开发人员习惯于将HttpSession对象称为<strong>会话作用域对象</strong></p>
+</li>
+<li><p>HttpSession与Cookie的区别：</p>
+<ul>
+<li><p>存储位置：</p>
+<p>  Cookie存放在客户端计算机中(浏览器内存/硬盘)；</p>
+<p>  HttpSession存放在服务端计算机内存</p>
+</li>
+<li><p>数据类型：</p>
+<p>  Cookie对象储存共享数据类型只能是String</p>
+<p>  HttpSession对象可以储存任意类型的共享数据object</p>
+</li>
+<li><p>数据数量：</p>
+<p>  一个Cookie只能储存一个共享数据</p>
+<p>  HttpSession使用map集合储存共享数据，所以可以储存任意数量共享数据</p>
+</li>
+</ul>
+</li>
+<li><p>命令实现：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OneServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//调用请求对象向Tomcat索要当前用户在服务端的储物柜</span></span><br><span class="line">        HttpSession session = request.getSession();</span><br><span class="line">        <span class="comment">//将数据储存到用户的储物柜</span></span><br><span class="line">        session.setAttribute(<span class="string">&quot;key1&quot;</span>,共享数据);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> TwoServlet extends HttpServlet &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//调用请求对象向Tomcat索要当前用户在服务端的储物柜</span></span><br><span class="line">        HttpSession session = request.getSession();</span><br><span class="line">        <span class="comment">//从会话作用域中得到OneServlet提供的共享数据</span></span><br><span class="line">        Enumeration goods = session.getAttribute();</span><br><span class="line">        <span class="keyword">while</span>(goods.hasMoreElements())&#123;</span><br><span class="line">			String goodsName = (String)goods.nextElement();</span><br><span class="line">            <span class="keyword">int</span> goodsNum = (<span class="keyword">int</span>)session.getAttribute(goodsName);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>Http服务器是怎么把HttpSession和浏览器关联起来的</p>
+<p> Tomcat在创建一个HttpSession对象时，自动为这个HttpSession对象生成一个唯一编号</p>
+<p> Tomcat将编号保存到<strong>Cookie</strong>对象，推送到当前浏览器缓存</p>
+<p> <strong>Cookie：JSESSIONID = “”</strong></p>
+<p> 当到用户第二次来访时，Tomcat根据请求头JSESSIONID确认用户是否有HttpSession以及哪一个HttpSession是该用户的</p>
+</li>
+<li><p>getSession()和getSession(false)</p>
+<p> getSession()：如果当前用户在服务端已经拥有了自己的私人储物柜要求Tomcat将这个私人储物柜进行返回。如果当前用户尚未在服务端拥有自己的私人储存柜，会创建一个新的。</p>
+<p> getSession()：如果当前用户在服务端已经拥有了自己的私人储物柜要求Tomcat将这个私人储物柜进行返回。如果当前用户尚未在服务端拥有自己的私人储存柜，会返回一个null。</p>
+</li>
+<li><p>HttpSession销毁时机：</p>
+<p> 用户与HttpSession关联时使用的Cookie只能存放在浏览器缓存中；</p>
+<p> 在浏览器关闭时，意味着用户与他的HttpSession关系切断；</p>
+<p> 由于Tomcat无法检测浏览器何时关闭，因此在浏览器关闭时并不会导致Tomcat将关联的HttpSession进行销毁；</p>
+<p> 为了解决这个问题，Tomcat为每一个HttpSession对象设置空闲时间，这个空闲时间默认30分钟，如果当前HttpSession对象空闲时间达到30分钟，此时Tomcat认为用户放弃了自己的HttpSession，此时Tomcat就会销毁掉这个HttpSession。</p>
+</li>
+<li><p>HttpSession空闲时间手动设置</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--在web.xml中--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">session-config</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">session-timeout</span>&gt;</span>5<span class="tag">&lt;/<span class="name">session-timeout</span>&gt;</span> <span class="comment">&lt;!--中间填空闲时间--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">session-config</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>HttpServletRequest接口</p>
+<ol>
+<li><p>在同一个网站中，如果两个Servlet之间通过<strong>请求转发</strong>方式进行调用，彼此之间共享同一个请求协议包。而一个请求协议包只对应一个请求对象因此Servlet之间共享同一个请求对象，此时可以利用这个请求对象在两个Servlet之间实现数据共享</p>
+<p> 在请求对象那个实现Servlet之间数据共享功能时，开发人员将请求对象称为<strong>请求作用域对象</strong></p>
+</li>
+<li><p>命令实现：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OneServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//将数据添加到请求作用域对象中attribute属性</span></span><br><span class="line">        request.setAttribute(<span class="string">&quot;key1&quot;</span>,data);</span><br><span class="line">        <span class="comment">//向Tomcat申请调用TwoServlet</span></span><br><span class="line">        request.getRequestDispatcher(<span class="string">&quot;/two&quot;</span>).forward(request,response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> TwoServlet extends HttpServlet &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//从当前请求对象得到OneServlet写入到共享数据</span></span><br><span class="line">        Object data = request.getAttribute(<span class="string">&quot;key1&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Servlet规范拓展</p>
+<ul>
+<li><p>监听器接口——Listener接口：</p>
+<ul>
+<li><p>介绍：</p>
+<p>  一组来自于servlet规范下的接口，共有八个。存在于Tomcat提供servlet-api.jar中。</p>
+<p>  监听器接口需要由开发人员亲自实现，Http服务器提供jar包并没有对应的实现类</p>
+<p>  监听器接口用于监控<strong>作用域对象生命周期变化时刻</strong>以及<strong>作用域对象共享数据变化时刻</strong></p>
+</li>
+<li><p>作用域对象：</p>
+<p>  在Servlet规范中，认为在服务端内存中可以在某些条件下为两个Servlet之间提供数据共享方案的对象，被称为<strong>作用域对象</strong></p>
+<ul>
+<li>类型：<ol>
+<li>ServletContext：全局作用域对象</li>
+<li>HttpSession：会话作用域对象</li>
+<li>HttpServletRequest：请求作用域对象</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>监听器接口实现类开发规范：三步</p>
+<ul>
+<li>根据监听的实际情况，选择对应监听器接口进行实现</li>
+<li>重写监听器接口声明<strong>监听事件处理办法</strong></li>
+<li>在web.xml文件将监听器接口实现类注册到Http服务器</li>
+</ul>
+</li>
+<li><p>ServletContextListener接口：</p>
+<ul>
+<li><p>通过这个接口合法的检测全局作用域对象被初始化时刻以及被销毁时刻</p>
+</li>
+<li><p>监听时间处理方法：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在全局作用域对象被Http服务器初始化时被调用</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextInitlized</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">//在全局作用域对象被Http服务器销毁时被调用</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextDestroy</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>ServletContextAttributeListener接口：</p>
+<ul>
+<li><p>通过这个接口合法的检测全局作用域对象共享数据变化时刻</p>
+</li>
+<li><p>监听事件处理方法：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在全局作用域对象添加共享数据</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextAdd</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">//在全局作用域对象更新共享数据</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextReplaced</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">//在全局作用域对象删除共享数据</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextRemove</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>过滤器接口——Filter接口：</p>
+<ul>
+<li><p>介绍</p>
+<p>  来自于Servlet规范下接口，存在于Tomcat提供servlet-api.jar中。</p>
+<p>  Filter接口需要由开发人员亲自实现，Http服务器提供jar包并没有对应的实现类</p>
+<p>  Filter接口在Http服务器调用资源文件之前，对Http服务器进行拦截</p>
+</li>
+<li><p>具体作用：</p>
+<p>  拦截Http服务器，帮助Http服务器检测当前请求合法性</p>
+<p>  拦截Http服务器，对当前请求进行增强操作</p>
+</li>
+<li><p>Filter接口实现类开发步骤：三步</p>
+<ul>
+<li>创建一个Java类实现Filter接口</li>
+<li>重写Filter接口中doFilter方法</li>
+<li>web.xml将过滤器接口实现类注册到Http服务器</li>
+</ul>
+</li>
+<li><p>代码实现：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* http://localhost:8080/myWeb/mn.jpg?age=80</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OneFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest req, ServletResponse res, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        String age = req.getParameter(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span>(Integer.valueOf(age) &lt; <span class="number">70</span>) &#123;</span><br><span class="line">            filterChain.doFilter(req, res);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            res.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">            PrintWriter out = res.getWriter();</span><br><span class="line">            out.print(<span class="string">&quot;&lt;center&gt;&lt;font style=&#x27;color:red;font-size:40px&#x27;&gt;爪巴!&lt;/font&gt;&lt;center&gt;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--web.xml中--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>oneFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>OneFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--拦截地址的格式--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	调用具体文件，&lt;url-pattern&gt;/myweb/one&lt;/url-pattern&gt;</span></span><br><span class="line"><span class="comment">	在调用某一个文件夹下所有的资源文件，&lt;url-pattern&gt;/myweb/*&lt;/url-pattern&gt;</span></span><br><span class="line"><span class="comment">	在调用任意文件夹下某种类型文件，&lt;url-pattern&gt;*.jpg&lt;/url-pattern&gt;</span></span><br><span class="line"><span class="comment">	在调用任意文件时，&lt;url-pattern&gt;/*&lt;/url-pattern&gt;  </span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>oneFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span><span class="comment">&lt;!--表示访问所有资源文件都要启用过滤器--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="JSP规范"><a href="#JSP规范" class="headerlink" title="JSP规范"></a>JSP规范</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><ul>
+<li>来自于JAVAEE规范中的一种</li>
+<li>JSP规范制定了如何开发JSP文件代替响应对象将处理结果写入到响应体的开发流程</li>
+<li>JSP规范制定了Http服务器应该如何调用管理JSP文件</li>
+</ul>
+<h3 id="响应对象存在弊端"><a href="#响应对象存在弊端" class="headerlink" title="响应对象存在弊端"></a>响应对象存在弊端</h3><ul>
+<li>适合将数据量较少的处理结果写入到响应体中</li>
+<li>如果处理结果数量太多，使用响应对象增加开发难度</li>
+</ul>
+<h3 id="JSP优势"><a href="#JSP优势" class="headerlink" title="JSP优势"></a>JSP优势</h3><ul>
+<li>JSP文件在互联网通信过程，是响应对象替代品</li>
+<li>降低将处理结果写入到响应体的开发工作量降低处理结果维护难度</li>
+<li>在JSP文件开发中，可以直接将处理结果写入到JSP文件不需要手写out.print命令，在Http服务器调用JSP文件时，根据JSP规范要求自动将JSP文件书写的所有内容通过输出流写入到响应体</li>
+</ul>
+<h3 id="JSP文件运行原理"><a href="#JSP文件运行原理" class="headerlink" title="JSP文件运行原理"></a>JSP文件运行原理</h3><h4 id="HTTP服务器调用JSP文件步骤"><a href="#HTTP服务器调用JSP文件步骤" class="headerlink" title="HTTP服务器调用JSP文件步骤"></a>HTTP服务器调用JSP文件步骤</h4><ul>
+<li>HTTP服务器将JSP文件内容编辑为一个Servlet接口实现类</li>
+<li>HTTP服务器将Servlet接口实现类编译为一个class文件</li>
+<li>HTTP服务器负责创建这个class的实例对象，这个实例对象就是Servlet实例对象</li>
+<li>Http服务器通过Servlet实例对象调用jsp_service方法，将JSP文件内容写入到响应体 </li>
+</ul>
+<h3 id="Servlet与JSP"><a href="#Servlet与JSP" class="headerlink" title="Servlet与JSP"></a>Servlet与JSP</h3><ul>
+<li>分工：<ul>
+<li>Servlet：负责处理业务并得到处理结果</li>
+<li>JSP：不负责业务处理，主要任务将Servlet中处理结果写入到响应体中</li>
+</ul>
+</li>
+<li>调用关系：<ul>
+<li>Servlet工作完毕后，一般通过请求转发方式，向Tomcat中申请调用JSP</li>
+</ul>
+</li>
+<li>如何实现数据共享：<ul>
+<li>Servlet将处理结果添加到请求作用域对象</li>
+<li>JSP文件在运行时从请求作用域对象得到处理结果</li>
+</ul>
+</li>
+</ul>
+<h3 id="JSP-EL工具包"><a href="#JSP-EL工具包" class="headerlink" title="JSP-EL工具包"></a>JSP-EL工具包</h3><ul>
+<li><p>介绍：</p>
+<ul>
+<li>由Java技术开发的一个jar包</li>
+<li>作用是降低JSP文件开发时Java命令开发强度</li>
+<li>Tomcat服务器本身自带了EL工具包</li>
+</ul>
+</li>
+<li><p>EL表达式</p>
+<ul>
+<li><p>命令格式：</p>
+  <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;作用域对象别名.共享数据&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>命令作用：</p>
+<ul>
+<li>EL表达式是EL工具包提供的一种特殊命令格式<strong>表达式命令格式</strong></li>
+<li>EL表达式在JSP文件上使用</li>
+<li>负责在JSP文件上从作用域对象读取指定的共享数据并把它输出到响应体中 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>作用域对象别名</p>
+<ul>
+<li><p>JSP文件可以使用的作用域对象</p>
+<ul>
+<li><p>ServletContext            application：全局作用域对象</p>
+</li>
+<li><p>HttpSession                 session：会话作用域对象</p>
+</li>
+<li><p>HttpServletRequest    request：请求作用域对象</p>
+</li>
+<li><p>PageContext                pageContext：当前页作用域对象</p>
+<p>  [^1]: 是JSP文件里面独有的作用域对象。servlet中不存在;在当前页作用域对象存放的共享数据仅能在当前jsp文件中使用，不能共享给其他Servlet或者其他jsp文件;真实开发过程中，主要用于<strong>JSTL标签</strong>与JSP文件之间数据共享;</p>
+</li>
+</ul>
+</li>
+<li><p>EL表达式提供的作用域对象别名</p>
+<table>
+<thead>
+<tr>
+<th align="center">JSP</th>
+<th align="center">EL表达式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">application</td>
+<td align="center">${applicationScope.共享数据名}</td>
+</tr>
+<tr>
+<td align="center">session</td>
+<td align="center">${sessionScope.共享数据名}</td>
+</tr>
+<tr>
+<td align="center">request</td>
+<td align="center">${requestScope.共享数据名}</td>
+</tr>
+<tr>
+<td align="center">pageContext</td>
+<td align="center">${pageScope.共享数据名}</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>EL表达式将引用对象属性写入到响应体中</p>
+<ul>
+<li>命令格式：${作用域对象别名.共享数据名.属性名}</li>
+<li>命令作用：从作用域对象读取指定共享数据关联的引用对象的属性值，并自动将属性的结果写入响应体中</li>
+<li>属性名：一定要去引用类型属性名完全一致（包括大小写）</li>
+<li>EL表达式没有提供遍历集合的方法，因此无法从作用域对象读取集合内容输出到响应体中。后续可以通过JSTL来补充</li>
+</ul>
+</li>
+<li><p>EL表达式简化版</p>
+<ul>
+<li><p>命令格式：${共享数据名}</p>
+</li>
+<li><p>命令作用：EL表达式允许开发人员开发时省略作用域对象别名</p>
+</li>
+<li><p>工作原理：EL简化版由于没有指定作用域对象，所有在执行时采用猜算法</p>
+<ul>
+<li>首先到pageContext定位共享数据，如果有就直接读取输出并结束执行</li>
+<li>如果在pageContext没有定位成功，则到request定位共享数据，如果有就直接读取输出并结束执行</li>
+<li>如果在request没有定位成功，则到session定位共享数据，如果有就直接读取输出并结束执行</li>
+<li>如果在session没有定位成功，则到application定位共享数据，如果有就直接读取输出并结束执行</li>
+<li>如果在application没有定位成功，则返回null</li>
+</ul>
+</li>
+<li><p>存在隐患：</p>
+<ul>
+<li>容易降低程序执行速度</li>
+<li>容易造成数据定位错误</li>
+</ul>
+</li>
+<li><p>简化版应用场景：</p>
+<p>  设计目的：简化从pageContext读取共享数据并输出的难度</p>
+</li>
+<li><p>EL表达式简化版尽管存在很多隐患，但是在实际开发过程中，开发人员为了节省时间，一般都使用简化版而拒绝标准版。</p>
+</li>
+</ul>
+</li>
+<li><p>EL表达式——支持运算表达式</p>
+<ul>
+<li>前提：在JSP文件有时需要将读取共享数据进行运算之后，将运算结果写入到响应体中</li>
+<li>运算表达式：<ul>
+<li>数学运算：+，-，*，/</li>
+<li>关系运算：&gt;,&lt;,==</li>
+<li>逻辑运算：&amp;&amp;，||，！</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>EL表达式提供内置对象</p>
+<ul>
+<li><p>命令格式：${param.请求参数名}</p>
+</li>
+<li><p>命令作用：从通过请求对象读取当前请求包中请求对象参数内容，并将请求参数内容写入到响应体中</p>
+</li>
+<li><p>代替命令：</p>
+  <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--index.jsp--&gt;</span><br><span class="line">&lt;!--发送请求:Http:<span class="comment">//localhost:8080/myWeb/index.jsp?userName=mike&amp;password=123--&gt;</span></span><br><span class="line">&lt;%</span><br><span class="line">	String userName = request.getParameter(<span class="string">&quot;userName&quot;</span>);</span><br><span class="line">	String password = request.getParameter(<span class="string">&quot;password&quot;</span>);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;%=userName%&gt;</span><br><span class="line">&lt;%=password%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--使用EL表达式--&gt;</span><br><span class="line"></span><br><span class="line">$&#123;param.userName&#125;</span><br><span class="line">$&#123;param.password&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>命令格式：${paramValues.请求参数名[下标]}</p>
+</li>
+<li><p>命令作用：如果浏览器发送的请求参数是一个请求参数关联多个值，此时可以通过paramValues读取请求参数下指定位置的值并写入响应体中</p>
+</li>
+<li><p>替代命令：</p>
+  <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--index.jsp--&gt;</span><br><span class="line">&lt;!--发送请求:Http:<span class="comment">//localhost:8080/myWeb/index.jsp?pageNo=1&amp;pageNo=2&amp;pageNo=3--&gt;</span></span><br><span class="line">&lt;%</span><br><span class="line">	String array[] = request.getParameterValues(<span class="string">&quot;pageNo&quot;</span>);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;%=array[<span class="number">0</span>]%&gt;</span><br><span class="line">&lt;%=array[<span class="number">1</span>]%&gt;</span><br><span class="line">&lt;%=array[<span class="number">2</span>]%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--使用EL表达式--&gt;</span><br><span class="line"></span><br><span class="line">$&#123;paramValues.pageNo[<span class="number">0</span>]&#125;</span><br><span class="line">$&#123;paramValues.pageNo[<span class="number">1</span>]&#125;</span><br><span class="line">$&#123;paramValues.pageNo[<span class="number">2</span>]&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>EL表达式常见异常</p>
+<ul>
+<li><p>javax.el.PropertyNotFoundException：没有找到属性。</p>
+<p>  常常是在EL表达式中写错了属性名</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><ul>
+<li>JavaScript是一种专门在浏览器编译并执行的编程语言</li>
+<li>JavaScript处理用户与浏览器之间请求问题</li>
+<li>JavaScript采用<strong>弱类型编程语言风格</strong>对<strong>面向对象思想</strong>来进行实现的编程语言</li>
+</ul>
+<h3 id="弱类型编程语言风格vs强类型编程语言风格"><a href="#弱类型编程语言风格vs强类型编程语言风格" class="headerlink" title="弱类型编程语言风格vs强类型编程语言风格"></a>弱类型编程语言风格vs强类型编程语言风格</h3><h4 id="强类型编程语言风格"><a href="#强类型编程语言风格" class="headerlink" title="强类型编程语言风格"></a>强类型编程语言风格</h4><ul>
+<li><p>认为对象行为应该受到其修饰类型严格约束。</p>
+</li>
+<li><p>Java采用<strong>强类型编程语言风格</strong>对<strong>面向对象思想</strong>来实现的编程语言</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> String sname;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.print(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Student stu = <span class="keyword">new</span> Student();</span><br><span class="line">stu.sname = <span class="string">&quot;mike&quot;</span>; <span class="comment">//合法</span></span><br><span class="line">stu.sayHello(); <span class="comment">//合法</span></span><br><span class="line">stu.sid = <span class="number">10</span>; <span class="comment">//在java认为是语法错误，修饰stu对象的Student类型没有提供这个属性</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="弱类型编程语言风格"><a href="#弱类型编程语言风格" class="headerlink" title="弱类型编程语言风格"></a>弱类型编程语言风格</h4><ul>
+<li><p>认为对象行为不应该受到其修饰类型约束。可以根据实际需要来决定对象可以调用属性和方法</p>
+</li>
+<li><p>JavaScript采用<strong>弱类型编程语言风格</strong>对<strong>面向对象思想</strong>来进行实现的编程语言</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> stu = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">stu.car = <span class="string">&quot;劳斯莱斯&quot;</span>; <span class="comment">//合法</span></span><br><span class="line">stu.play = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">&quot;打游戏&quot;</span>&#125; <span class="comment">//合法</span></span><br><span class="line">stu.play();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="JavaScript入门语法"><a href="#JavaScript入门语法" class="headerlink" title="JavaScript入门语法"></a>JavaScript入门语法</h3><h4 id="JavaScript中变量声明方式"><a href="#JavaScript中变量声明方式" class="headerlink" title="JavaScript中变量声明方式"></a>JavaScript中变量声明方式</h4><ul>
+<li><p>命令格式：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> c,d=<span class="number">2</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>注意：在JavaScript变量/对象，在声明不允许指定<strong>修饰类型</strong>，只能通过var来修饰</p>
+</li>
+</ul>
+<h4 id="JavaScript中标识符命名规则"><a href="#JavaScript中标识符命名规则" class="headerlink" title="JavaScript中标识符命名规则"></a>JavaScript中标识符命名规则</h4><ul>
+<li>标识符只能由四种符号组成：英语字母，数字，下划线，美元符号$</li>
+<li>标识符首字母不能以数字开头</li>
+<li>标识符不能采用JavaScript中的关键字，比如var</li>
+</ul>
+<h4 id="JavaScript数据类型"><a href="#JavaScript数据类型" class="headerlink" title="JavaScript数据类型"></a>JavaScript数据类型</h4><ul>
+<li>基本数据类型：<ul>
+<li>数字类型（number）：JS中将整数与小数合称number类型</li>
+<li>字符串类型（string）：JS中字符与字符串合称为string类型；既可以使用**’’<strong>也可以使用</strong>“”**</li>
+<li>布尔类型（boolean）：JS中boolean类型的值只有true和false</li>
+</ul>
+</li>
+<li>高级引用数据类型：<ul>
+<li>object类型：JS中所有通过构造函数生成的对象都是object类型</li>
+<li>function类型：JS所有函数都是function类型</li>
+</ul>
+</li>
+</ul>
+<h4 id="JavaScript中特殊值"><a href="#JavaScript中特殊值" class="headerlink" title="JavaScript中特殊值"></a>JavaScript中特殊值</h4><ul>
+<li>undefined：JS中所有变量在没有赋值时，其默认值都是undefined由于Js根据变量的赋值来判断变量类型，此时由于变量没有赋值因此JS无法判断当前遍历数据类型，此时返回也是undefined，因此初学者认为undefined也是一种数据类型这种理解是错误的。</li>
+<li>null：JS中当一个对象赋值为null时，表示对象引用了一个空<strong>内存</strong>，这个空内存既不能存数据也不能读数据；此时这个对象数据类型，在JS中仍被认为是object类型。</li>
+<li>NaN：JS中当一个变量赋值为NaN，表示变量接收了一个<strong>非法数字</strong>（abc123）此时这个变量数据类型，在JS中仍被认为number类型</li>
+<li>infinity：JS中当一个变量赋值为infinity，表示变量接收到一个无穷大数字，此时JS仍认为是number类型</li>
+</ul>
+<h4 id="JavaScript控制语句"><a href="#JavaScript控制语句" class="headerlink" title="JavaScript控制语句"></a>JavaScript控制语句</h4><ul>
+<li>和Java完全一致、</li>
+</ul>
+<h4 id="JavaScript函数声明方式"><a href="#JavaScript函数声明方式" class="headerlink" title="JavaScript函数声明方式"></a>JavaScript函数声明方式</h4><ul>
+<li><p>命令格式：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">形参<span class="number">1</span>，形参<span class="number">2</span></span>)</span>&#123;</span><br><span class="line">	...</span><br><span class="line">	...</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="comment">//返回运行结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>注意：</p>
+<ul>
+<li>JS中，所有函数在声明时，都需要使用function进行修饰</li>
+<li>JS中，所有函数在声明时，禁止指定函数返回数据类型</li>
+<li>JS中，所有函数在声明时，形参既不能使用var来修饰也不能用数据类型修饰</li>
+<li>JS中，所有函数在声明时，如果有返回值，此时应该通过return返回</li>
+</ul>
+</li>
+</ul>
+<h4 id="JavaScript函数调用方式"><a href="#JavaScript函数调用方式" class="headerlink" title="JavaScript函数调用方式"></a>JavaScript函数调用方式</h4><ul>
+<li>浏览器并不会自动调用JS函数</li>
+<li>可以通过命令行的方式来调用JS函数</li>
+<li>通过绑定在HTML标签上的监听事件通知浏览器调用指定函数进行处理</li>
+</ul>
+<h3 id="JavaScript应用篇"><a href="#JavaScript应用篇" class="headerlink" title="JavaScript应用篇"></a>JavaScript应用篇</h3><h4 id="JavaScript作用"><a href="#JavaScript作用" class="headerlink" title="JavaScript作用"></a>JavaScript作用</h4><p>​    帮助浏览器对用户提出请求进行处理</p>
+<h4 id="DOM对象"><a href="#DOM对象" class="headerlink" title="DOM对象"></a>DOM对象</h4><ul>
+<li>DOM = Document Object Model，<strong>文档模型对象</strong></li>
+<li>JS不能直接操作HTML标签，只能通过HTML标签关联的DOM对象对HTML标签下达指令</li>
+</ul>
+<h4 id="DOM对象生命周期"><a href="#DOM对象生命周期" class="headerlink" title="DOM对象生命周期"></a>DOM对象生命周期</h4><ul>
+<li>浏览器在接收到HTML文件之后，将HTML文件标签加载到浏览器缓存中，每当加载一个HTML标签的时候，自动为这个标签生成生成一个实例对象，这个实例对象就是DOM对象</li>
+<li>在浏览器关闭之前或者浏览器请求其他资源文件之前，本次生成的DOM对象一直存活在浏览器缓存中</li>
+<li>在浏览器关闭时，浏览器缓存中的DOM对象将被销毁</li>
+<li>在浏览器请求到新资源文件后，浏览器缓存中原有的DOM对象将被覆盖</li>
+</ul>
+<h4 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h4><ul>
+<li>document对象被称为<strong>文档对象</strong></li>
+<li>document对象用于在浏览器内存中根据定位条件定位DOM对象</li>
+</ul>
+<h4 id="document对象生命周期"><a href="#document对象生命周期" class="headerlink" title="document对象生命周期"></a>document对象生命周期</h4><ul>
+<li>在浏览器将网页中所有标签加载完毕后，在内存中将使用<strong>树形结构</strong>储存这些DOM对象。在树形结构生成完毕后由浏览器生成一个document对象管理这颗树（DOM树）</li>
+<li>一个浏览器运行期间，只会生成一个document对象</li>
+<li>在浏览器关闭时，会将document对象销毁</li>
+</ul>
+<h4 id="通过document对象定位DOM对象"><a href="#通过document对象定位DOM对象" class="headerlink" title="通过document对象定位DOM对象"></a>通过document对象定位DOM对象</h4><ul>
+<li><p>根据HTML标签的id属性值定位DOM对象</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> domObj = <span class="built_in">document</span>.getElementById(<span class="string">&quot;id属性&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>根据HTML标签的name属性值定位DOM对象</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> domArray = <span class="built_in">document</span>.getElementsByName(<span class="string">&quot;name属性&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>根据HTML标签类型定位DOM对象</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> domArray = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;标签类型&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="DOM对象控制标签属性"><a href="#DOM对象控制标签属性" class="headerlink" title="DOM对象控制标签属性"></a>DOM对象控制标签属性</h4><ul>
+<li><p>DOM对象对标签value属性进行取值与赋值操作</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//取值操作</span></span><br><span class="line">	<span class="keyword">var</span> domObj = <span class="built_in">document</span>.getElementById(<span class="string">&quot;one&quot;</span>);</span><br><span class="line">	<span class="keyword">var</span> num = domObj.value;</span><br><span class="line"><span class="comment">//赋值操作</span></span><br><span class="line">	domObj.value = <span class="string">&quot;abc&quot;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>DOM对象对标签样式属性进行取值与赋值操作</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">var</span> domObj = <span class="built_in">document</span>.getElementById(<span class="string">&quot;one&quot;</span>);</span><br><span class="line"><span class="comment">//取值操作</span></span><br><span class="line">	<span class="keyword">var</span> color = domObj.style.背景颜色属性</span><br><span class="line"><span class="comment">//赋值操作</span></span><br><span class="line">	domObj.style.背景颜色属性 = 值 </span><br></pre></td></tr></table></figure></li>
+<li><p>DOM对象对标签状态属性进行取值与赋值操作</p>
+<ul>
+<li>状态属性：状态属性都是boolean类型<ul>
+<li>disabled：标签是否可用</li>
+<li>checked：标签是否被选中</li>
+</ul>
+</li>
+</ul>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">var</span> domObj = <span class="built_in">document</span>.getElementById(<span class="string">&quot;one&quot;</span>);</span><br><span class="line"><span class="comment">//取值操作</span></span><br><span class="line">	<span class="keyword">var</span> num = domObj.checked;</span><br><span class="line"><span class="comment">//赋值操作</span></span><br><span class="line">	domObj.checked = <span class="literal">true</span>; </span><br></pre></td></tr></table></figure></li>
+<li><p>DOM对象对标签文字显示内容进行取值与赋值操作</p>
+<ul>
+<li>文字显示内容：只存在于双目标签之间</li>
+</ul>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">var</span> domObj = <span class="built_in">document</span>.getElementById(<span class="string">&quot;one&quot;</span>);</span><br><span class="line"><span class="comment">//取值操作</span></span><br><span class="line">	<span class="keyword">var</span> num1 = domObj.innerText;</span><br><span class="line"><span class="comment">//赋值操作</span></span><br><span class="line">	domObj.innerText = 值; </span><br></pre></td></tr></table></figure>
+<ul>
+<li>innerText与innerHTML区别：<ul>
+<li>innerText与innnerHTML都可以对标签文字显示内容属性进行赋值与取值</li>
+<li>innerText只能接收字符串</li>
+<li>innerHTML既可以接收字符串又可以接收HTML标签</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="JavaScript监听事件"><a href="#JavaScript监听事件" class="headerlink" title="JavaScript监听事件"></a>JavaScript监听事件</h4><ul>
+<li><p>监听事件：</p>
+<p>  监听用户在何时以何种方式对当前标签进行操作。当监听到相关行为时，通知浏览器调用对应JavaScript函数对当前用户请求进行处理</p>
+</li>
+<li><p>监听事件分类：</p>
+<ul>
+<li>监听用户何时使用鼠标操作当前标签<ol>
+<li>onclick：监听用户何时使用鼠标单击当前标签</li>
+<li>onmouseover：监听用户何时将鼠标悬停在当前标签上方</li>
+<li>onmouseout：监听用户何时将鼠标从当前标签上方离开</li>
+<li>onfocus：监听用户何时通过鼠标让当前标签获得光标</li>
+<li>onblur：监听用户何时通过鼠标让当前标签丢失光标</li>
+</ol>
+</li>
+<li>监听用户何时使用键盘操作当前标签<ol>
+<li>onkeydown：监听用户何时在当前标签上按下键盘</li>
+<li>onkeyup：监听用户何时在当前标签上抬起键盘</li>
+</ol>
+</li>
+<li>onload监听事件<ul>
+<li>作用：监听浏览器何时将网页中HTML标签加载完毕</li>
+<li>意义：浏览器每加载一个HTML标签时，自动在内存中生成一个DOM对象。在浏览器将网页所有标签加载完毕时，意味当前网页中所有标签都生成对应DOM对象。onload此时就可以触发调用函数对浏览器中标签进行处理，此时不会出现未找到DOM对象。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="基于DOM对象实现监听事件与HTML标签之间的绑定"><a href="#基于DOM对象实现监听事件与HTML标签之间的绑定" class="headerlink" title="基于DOM对象实现监听事件与HTML标签之间的绑定"></a>基于DOM对象实现监听事件与HTML标签之间的绑定</h4><ul>
+<li><p>前提：</p>
+<p>  实际开发过程中，同一个监听事件往往与多个HTML标签进行绑定，这样增加开发难度，在未来维护过程中增加难度</p>
+</li>
+<li><p>命令形式</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> domObj = <span class="built_in">document</span>.getElementByTagName(<span class="string">&quot;&quot;</span>);</span><br><span class="line">domObj.监听事件名 = 处理函数名; <span class="comment">//此处处理函数名后面不能写()</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="JavaScript高级篇"><a href="#JavaScript高级篇" class="headerlink" title="JavaScript高级篇"></a>JavaScript高级篇</h3><h4 id="arguments属性"><a href="#arguments属性" class="headerlink" title="arguments属性"></a>arguments属性</h4><ul>
+<li>JS中每个函数都包含一个arguments属性</li>
+<li>arguments属性是一个数组</li>
+<li>在函数调用时，将实参传入到函数的arguments中，再由arguments将数据传递给形参</li>
+<li>arguments属性存在，可以将JS中函数在调用时传递实参与形参进行格式，增加函数调用的灵活性</li>
+<li>arguments属性只能在函数体内使用，不能在函数体外使用</li>
+</ul>
+<h4 id="function类型对象"><a href="#function类型对象" class="headerlink" title="function类型对象"></a>function类型对象</h4><ul>
+<li><p>介绍：</p>
+<ul>
+<li>function是JS中一个高级数据类型</li>
+<li>一个function类型对象用于管理一个具体函数</li>
+<li>JS中function类型相当于Java中Method类型</li>
+</ul>
+</li>
+<li><p>function类型对象生命周期</p>
+<ul>
+<li><p>标准声明方式</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数对象名(<span class="params">参数<span class="number">1</span>,参数<span class="number">2</span></span>) </span>&#123;</span><br><span class="line">	命令...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>匿名声明方式（<strong>命令行</strong>）</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 函数对象名 = <span class="function"><span class="keyword">function</span> (<span class="params">参数<span class="number">1</span>,参数<span class="number">2</span></span>) </span>&#123;命令...&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>function类型对象的创建时机</p>
+<ul>
+<li>浏览器在加载<script>时，共加载两次</li>
+<li>第一次加载，将<script>标签所有以标准形式声明函数对象进行创建</li>
+<li>第二次加载，将<script>标签所有命令行按照自上而下顺序来执行</li>
+</ul>
+</li>
+</ul>
+<h4 id="全局变量与局部变量"><a href="#全局变量与局部变量" class="headerlink" title="全局变量与局部变量"></a>全局变量与局部变量</h4><ul>
+<li>局部变量：<ul>
+<li>定义：在函数执行体内，通过var修饰符声明的变量</li>
+<li>特征：局部变量只能在当前函数执行体使用，不能再函数执行体外使用</li>
+</ul>
+</li>
+<li>全局变量：<ul>
+<li>定义：<ul>
+<li>全局变量可以在当前HTML文件中所有的函数使用</li>
+<li>全局变量被声明时，自动分配给window对象作为其属性</li>
+</ul>
+</li>
+<li>声明全局变量：<ul>
+<li>第一种方法：直接在script标签下，通过var声明的变量，就是全局变量</li>
+<li>第二种方式：在函数执行体内，没有通过var修饰的变量也是全局变量</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="object类型对象特征"><a href="#object类型对象特征" class="headerlink" title="object类型对象特征"></a>object类型对象特征</h4><ul>
+<li><p>定义：在JS认为所有通过构造函数生成的对象其数据类型都是object类型</p>
+</li>
+<li><p>特征：object类型对象在创建完毕后们可以根据实际情况，任意添加属性和方法，也可以一处属性和方法</p>
+</li>
+<li><p>属性维护：</p>
+<ul>
+<li><p>第一种维护方案：</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加属性</span></span><br><span class="line">	object对象.新属性名 = 值;</span><br><span class="line"><span class="comment">//添加函数</span></span><br><span class="line">	object对象.新函数对象名 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br></pre></td></tr></table></figure></li>
+<li><p>第二种维护方案：</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加属性</span></span><br><span class="line">	object对象[<span class="string">&quot;新属性名&quot;</span>] = 值;</span><br><span class="line"><span class="comment">//添加函数</span></span><br><span class="line">	object对象[<span class="string">&quot;新函数对象名&quot;</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br></pre></td></tr></table></figure></li>
+<li><p>移除对象属性和方法：</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//移除属性</span></span><br><span class="line">	del object对象.属性名;</span><br><span class="line"><span class="comment">//移除函数</span></span><br><span class="line">	del object对象.函数对象名;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="自定义构造函数"><a href="#自定义构造函数" class="headerlink" title="自定义构造函数"></a>自定义构造函数</h4><ul>
+<li><p>命令：</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数对象名(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line"><span class="keyword">var</span> object类型对象 = <span class="keyword">new</span> 函数对象名();</span><br></pre></td></tr></table></figure></li>
+<li><p>普通函数与构造函数区分：</p>
+<ul>
+<li><p>函数没有调用之前，无法区分函数身份，只能根据函数调用形式区分</p>
+</li>
+<li><p>判断普通函数：var num = 函数对象名 ();</p>
+</li>
+<li><p>判断构造函数：var num = new 函数对象名 ();</p>
+</li>
+<li><p>返回值：</p>
+<p>  普通函数运行后需要通过return将执行结果返回；</p>
+<p>  构造函数运行后直接返回一个object类型对象，此时函数return相当于无效的</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="JavaScript中this指向"><a href="#JavaScript中this指向" class="headerlink" title="JavaScript中this指向"></a>JavaScript中this指向</h4><ul>
+<li>JS中this指向与Java中this指向完全一致<ul>
+<li>在构造函数，this指向当前构造函数生成object类型对象</li>
+<li>在普通函数，this指向调用当前函数的实例对象</li>
+</ul>
+</li>
+</ul>
+<h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><ul>
+<li><p>前提：JS中得到object类型对象方式</p>
+<ul>
+<li>方式1：由构造函数生成的对象都是object类型对象</li>
+<li>方式2：由JSON数据描述格式生成对象都是object类型对象</li>
+</ul>
+</li>
+<li><p>JSON数据描述格式：</p>
+<ul>
+<li>JS中获得object类型对象简化版</li>
+</ul>
+</li>
+<li><p>标准命令格式：</p>
+  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;<span class="attr">&quot;属性名1&quot;</span>:值,<span class="attr">&quot;属性名2&quot;</span>:值...&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  开发人员习惯于将由JSON生成object类型对象称为<strong>JSON对象</strong></p>
+</li>
+<li><p>JSON数组：</p>
+<ul>
+<li>专门存放JSON对象的数组被称为JSON数组</li>
+</ul>
+</li>
+</ul>
+<h2 id="MVC开发规则"><a href="#MVC开发规则" class="headerlink" title="MVC开发规则"></a>MVC开发规则</h2><h3 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h3><ul>
+<li>MVC开发规则制定了互联网通信开发过程中必须出现的角色有哪些</li>
+<li>MVC开发规则制定了互联网通信开发过程中必须出现的角色担负职责</li>
+<li>MVC开发规则制定了互联网通信开发过程中必须出现的角色的出现顺序</li>
+</ul>
+<h3 id="角色"><a href="#角色" class="headerlink" title="角色"></a>角色</h3><ul>
+<li><p>DAO对象：</p>
+<p>  DAO对象提供某站表文件的操作细节，降低对表文件操作难度；</p>
+<p>  避免反复开发表文件操作代码提高代码复用性</p>
+</li>
+<li><p>Service对象：</p>
+<p>  服务对象，提供业务的具体解决方案；</p>
+<p>  service对象一个方法指定一个业务的解决方案</p>
+<p>  避免业务开发重复性开发行为，提供复用性</p>
+<p>  网站每一个业务都有一个独立标准解决方案</p>
+</li>
+</ul>
+<h3 id="业务"><a href="#业务" class="headerlink" title="业务"></a>业务</h3><ul>
+<li>概念：浏览器向HTTP服务器发送请求就是一次业务</li>
+<li>业务特征：<ul>
+<li>真实业务场景中，一个业务往往包含多个分支任务。因此解决业务开发工作量往往比较巨大</li>
+<li>真实业务场景中，只有所有分支任务都能顺利成功解决，才可以认为当前业务处理成功</li>
+</ul>
+</li>
+<li>解决业务开发困扰：<ul>
+<li>一个业务可能在网站的多个地方重复出现，如果不去封装，增加开发朗读，进行业务解决代码重复性开发</li>
+<li>不同程序员面对同一个业务时，给出的解决方案往往有偏差，导致最终解决数据会有偏差</li>
+</ul>
+</li>
+</ul>
+<h3 id="互联网通信开发过程中必须出现的角色有哪些"><a href="#互联网通信开发过程中必须出现的角色有哪些" class="headerlink" title="互联网通信开发过程中必须出现的角色有哪些"></a>互联网通信开发过程中必须出现的角色有哪些</h3><p>一次互联网开发过程，必须出现角色有三个：</p>
+<ul>
+<li>C，controller object：控制层对象（servlet对象）</li>
+<li>M，model object：业务模型对象（service对象）</li>
+<li>V，view object：视图层对象（jsp or HttpServletResponse）</li>
+</ul>
+<h3 id="互联网通信开发过程中必须出现的角色担负职责"><a href="#互联网通信开发过程中必须出现的角色担负职责" class="headerlink" title="互联网通信开发过程中必须出现的角色担负职责"></a>互联网通信开发过程中必须出现的角色担负职责</h3><ul>
+<li>C（servlet对象）：<ul>
+<li>可以调用<strong>请求对象</strong>读取请求包参数信息</li>
+<li>必须调用<strong>Service对象</strong>处理业务</li>
+<li>必须调用<strong>视图层对象</strong>将结果写入到响应体中</li>
+</ul>
+</li>
+<li>M（service对象）：<ul>
+<li>处理业务中所有分支任务</li>
+<li>根据分支任务执行情况判断业务是否处理成功</li>
+<li>必须通过return将处理结果返回给<strong>控制层对象</strong></li>
+</ul>
+</li>
+<li>V（jsp or HttpServletResponse）：<ul>
+<li>禁止参与业务处理</li>
+<li>唯一任务将处理结果写入到响应体中</li>
+</ul>
+</li>
+</ul>
+<h3 id="互联网通信开发过程中必须出现的角色的出现顺序"><a href="#互联网通信开发过程中必须出现的角色的出现顺序" class="headerlink" title="互联网通信开发过程中必须出现的角色的出现顺序"></a>互联网通信开发过程中必须出现的角色的出现顺序</h3><ul>
+<li>请求调用顺序：浏览器——》Servlet——》Service——》DAO</li>
+<li>响应顺序：DAO——》Service——》Servlet——》view——》响应体——》浏览器</li>
+</ul>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>John Doe<br>
+        <strong>Link：</strong><a href="http://example.com/2022/01/02/Java%20Web/" title="http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;01&#x2F;02&#x2F;Java%20Web&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;01&#x2F;02&#x2F;Java%20Web&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="Search" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1641541780872"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>

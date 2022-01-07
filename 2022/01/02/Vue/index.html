@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>Hexo</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="1 前端知识体系1.1 前端三件套 HTML（结构）：超文本标记型语言，决定网页的结构和内容。 CSS（表现）：层叠样式表，设定页面的表现样式。 JavaScript（行为）：弱类型交互式脚本语言，控制网页的行为。  1.1.1 结构层HTML略 1.1.2 表现层CSSCSS是一门标记型语言，他不能用于编程，所以无法自定义变量，不可以引用，有如下缺点：  语法不够强大，无法嵌套书写，导致模块化开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/01/02/Vue/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 前端知识体系1.1 前端三件套 HTML（结构）：超文本标记型语言，决定网页的结构和内容。 CSS（表现）：层叠样式表，设定页面的表现样式。 JavaScript（行为）：弱类型交互式脚本语言，控制网页的行为。  1.1.1 结构层HTML略 1.1.2 表现层CSSCSS是一门标记型语言，他不能用于编程，所以无法自定义变量，不可以引用，有如下缺点：  语法不够强大，无法嵌套书写，导致模块化开">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/01/02/Vue/image/Vue/1638867249118.png">
+<meta property="og:image" content="http://example.com/2022/01/02/Vue/image/Vue/1638867989693.png">
+<meta property="og:image" content="http://example.com/2022/01/02/Vue/image/Vue/1638868130741.png">
+<meta property="og:image" content="http://example.com/2022/01/02/Vue/image/Vue/1638868478412.png">
+<meta property="og:image" content="http://example.com/2022/01/02/Vue/image/Vue/1638949418455.png">
+<meta property="og:image" content="http://example.com/2022/01/02/Vue/image/Vue/1638961906051.png">
+<meta property="og:image" content="http://example.com/2022/01/02/Vue/image/Vue/1639057934782.png">
+<meta property="og:image" content="http://example.com/2022/01/02/Vue/image/Vue/1639069792482.png">
+<meta property="og:image" content="http://example.com/2022/01/02/Vue/image/Vue/1639127416537.png">
+<meta property="og:image" content="http://example.com/2022/01/02/Vue/image/Vue/1639127533412.png">
+<meta property="og:image" content="http://example.com/2022/01/02/Vue/image/Vue/1639127639906.png">
+<meta property="og:image" content="http://example.com/2022/01/02/Vue/image/Vue/1639127684875.png">
+<meta property="article:published_time" content="2022-01-02T09:58:01.249Z">
+<meta property="article:modified_time" content="2021-12-12T03:57:15.298Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/01/02/Vue/image/Vue/1638867249118.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+    <link rel="stylesheet" href="/css/style.css?v=1641541780844">
+     
+    
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1641541780844">
+    
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://avatars.githubusercontent.com/u/74764646" alt="John Doe"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="John Doe">
+            <img src="https://avatars.githubusercontent.com/u/74764646" alt="John Doe" alt="John Doe">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>15</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=pjh202522.github.io" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/11767462" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/pjh202522" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+    
+    
+
+    
+    
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 John Doe
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a><script data-ad-client="ca-pub-2058306854838448" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="" class="lazyload">
+              <h1></h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年01月02日</a>
+    <a><i class="nexmoefont icon-areachart"></i>9.4k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 42 分钟</a>
+</div>
+
+      
+
+      <h1 id="1-前端知识体系"><a href="#1-前端知识体系" class="headerlink" title="1 前端知识体系"></a>1 前端知识体系</h1><h2 id="1-1-前端三件套"><a href="#1-1-前端三件套" class="headerlink" title="1.1 前端三件套"></a>1.1 前端三件套</h2><ul>
+<li>HTML（结构）：超文本标记型语言，决定网页的结构和内容。</li>
+<li>CSS（表现）：层叠样式表，设定页面的表现样式。</li>
+<li>JavaScript（行为）：弱类型交互式脚本语言，控制网页的行为。</li>
+</ul>
+<h3 id="1-1-1-结构层HTML"><a href="#1-1-1-结构层HTML" class="headerlink" title="1.1.1 结构层HTML"></a>1.1.1 结构层HTML</h3><p>略</p>
+<h3 id="1-1-2-表现层CSS"><a href="#1-1-2-表现层CSS" class="headerlink" title="1.1.2 表现层CSS"></a>1.1.2 表现层CSS</h3><p>CSS是一门标记型语言，他不能用于编程，所以无法自定义变量，不可以引用，有如下缺点：</p>
+<ul>
+<li>语法不够强大，无法嵌套书写，导致模块化开发中需要重复写很多选择器。</li>
+<li>没有变量和合理的样式复用机制，使得逻辑上的属性值必须以字面量的形式重复输出，导致难以维护。</li>
+</ul>
+<p>为了解决这些拖累开发的问题，前端程序员会使用一种称为CSS预处理器的工具。</p>
+<p>CSS预处理器：</p>
+<p>CSS预处理器定义了一种新的语言，其基本思想是，用一种专门的编程语言，为CSS增加了一些编程的特性，将CSS作为目标生成文件，然后开发者就只要使用这种语言进行CSS的编码工作。转化成通俗易懂的话来说就是**”用一种专门的编程语言，进行Web页面样式设计，再通过编译器转化为正常的CSS文件，以供项目使用”**。</p>
+<p>常用的CSS预处理器：</p>
+<ul>
+<li>SASS：基于Ruby，通过服务端处理，功能强大。解析效率高。需要学习Ruby语言，上手难度高于LESS。</li>
+<li>LESS：基于NodeJS，通过客户端处理，使用简单。功能比SASS简单，解析效率也低于SASS，但在实际开发中足够了，所以我们后台人员如果需要的话，建议使用LESS。</li>
+</ul>
+<h3 id="1-1-3-行为层JavaScript"><a href="#1-1-3-行为层JavaScript" class="headerlink" title="1.1.3 行为层JavaScript"></a>1.1.3 行为层JavaScript</h3><p>JavaScript一门弱类型脚本语言，其源代码在发往客户端运行之前不需经过编译，而是将文本格式的字符代码发送给浏览器由浏览器解释运行。</p>
+<p><strong>Native 原生JS开发：</strong></p>
+<p>原生JS开发，也就是让我们按照<strong>【ECMAScript】</strong>标准的开发方式，简称是ES，特点是所有浏览器都支持。截止到目前，ES标准已发布如下版本：</p>
+<ul>
+<li>ES3</li>
+<li>ES4（内部，未正式发布）</li>
+<li>ES5（全浏览器支持）</li>
+<li>ES6（常用，当前主流版本）</li>
+<li>ES7</li>
+<li>ES8</li>
+<li>ES9（草案阶段）</li>
+</ul>
+<p>区别就是逐步增加新特性。</p>
+<p><strong>TypeScript微软的标准：</strong></p>
+<p>TypeScript是一种由微软开发的自由和开源的编程语言。它是JavaScript的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。由安德斯·海尔斯伯格（C#、Delphi、TypeScript之父；。NET创立者）主导。</p>
+<p>该语言的特点就是除了具备ES的特性之外还纳入了许多不在标准范围内的新特性，所以会导致很多浏览器不能直接支持TypeScript语法，需要编译后（编译成JS）才能被浏览器正确执行。</p>
+<p><strong>JavaScript框架：</strong></p>
+<ul>
+<li>jQuery：大家熟知的JavaScript 框架，优点是简化了DOM操作，缺点是DOM操作太频繁，影响前端性能；在前端眼里使用它仅仅是为了兼容IE6、7、8；</li>
+<li>Angular：Google收购的前端框架，由一群Java程序员开发，其特点是将后台的MVC模式搬到了前端并增加了模块化开发的理念，与微软合作，采用TypeScript语法开发；对后台程序员友好，对前端程序员不太友好；最大的缺点是版本迭代不合理（如：1代-&gt;2代，除了名字，基本就是两个东西）；</li>
+<li>React：Facebook出品，一款高性能的JS前端框架;特点是提出了新概念<strong>【虚拟DOM】</strong>用于减少真实DOM操作，在内存中模拟DOM操作，有效的提升了前端渲染效率；缺点是使用复杂，因为需要额外学习一门【JSX】语言;</li>
+<li>vue：一款渐进式JavaScript 框架，所谓渐进式就是逐步实现新特性的意思，如实现模块化开发、路由、状态管理等新特性。其特点是综合了Angular(模块化)和React(虚拟DOM）的优点；</li>
+<li>Axios：前端通信框架；因为vue的边界很明确，就是为了处理DOM，所以并不具备通信能力，此时就需要额外使用一个通信框架与服务器交互；当然也可以直接选择使用jQuery提供的AJAX通信功能；</li>
+</ul>
+<p><strong>UI框架：</strong></p>
+<ul>
+<li>Ant-Design：阿里巴巴出品，基于React的UI框架</li>
+<li>ElementUl：饿了么出品，基于Vue的UI框架</li>
+<li>Bootstrap: Twitter推出的一个用于前端开发的开源工具包</li>
+<li>AmazeUI：又叫”妹子UI”，一款HTML5跨屏前端框架</li>
+</ul>
+<p><strong>JavaScript构建工具：</strong></p>
+<ul>
+<li>Babel：JS编译工具，主要用于浏览器不支持的ES新特性，比如用于编译TypeScript</li>
+<li>WebPack：模块打包器，主要作用是打包、压缩、合并及按序加载</li>
+</ul>
+<h2 id="1-2-前后端分离史"><a href="#1-2-前后端分离史" class="headerlink" title="1.2 前后端分离史"></a>1.2 前后端分离史</h2><h3 id="1-2-1-以后端为主的MVC时代"><a href="#1-2-1-以后端为主的MVC时代" class="headerlink" title="1.2.1 以后端为主的MVC时代"></a>1.2.1 以后端为主的MVC时代</h3><p>为了降低开发的复杂度，以后端为出发点，比如:Struts2、SpringMVC等框架的使用，就是后端的MVC时代；</p>
+<p>以SpringMVC流程为例：</p>
+<p><img src="image/Vue/1638867249118.png"></p>
+<ul>
+<li>发起请求到前端控制器(DispatcherServlet)</li>
+<li>前端控制器请求HandlerMapping查找 Handler，可以根据xml配置、注解进行查找</li>
+<li>处理器映射器HandlerMapping向前端控制器返回Hand1er</li>
+<li>前端控制器调用处理器适配器去执行Handler</li>
+<li>处理器适配器去执行Handler</li>
+<li>HandTer执行完成给适配器返回ModelAndview</li>
+<li>处理器适配器向前端控制器返回ModelAndvView，ModelAndview是 SpringNvC框架的一个底层对象，包括Model和View</li>
+<li>前端控制器请求视图解析器去进行视图解析，根据逻辑视图名解析成真正的视图(JSP)</li>
+<li>视图解析器向前端控制器返回View</li>
+<li>前端控制器进行视图渲染，视图渲染将模型数据(在Mode1Andview对象中)填充到request域</li>
+<li>前端控制器向用户响应结果</li>
+</ul>
+<p><strong>优点：</strong></p>
+<p>MVC是一个非常好的协作模式，能够有效降低代码的耦合度，从架构上能够让开发者明白代码应该写在哪里。为了让View更纯粹，还可以使用Thymeleaf、Freemarker等模板引擎，使模板里无法写入Java代码，让前后端分工更加清晰。</p>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>前端开发重度依赖开发环境，开发效率低，这种架构下，前后端协作有两种模式：<ul>
+<li>第一种是前端写DEMO，写好后，让后端去套模板。好处是DEMO可以本地开发，很高效。不足是还需要后端套模板，有可能套错，套完后还需要前端确定，来回沟通调整的成本比较大；</li>
+<li>另一种协作模式是前端负责浏览器端的所有开发和服务器端的View层模板开发。好处是UI相关的代码都是前端去写就好，后端不用太关注，不足就是前端开发重度绑定后端环境，环境成为影响前端开发效率的重要因素。</li>
+</ul>
+</li>
+<li>前后端职责纠缠不清：模板引擎功能强大，依旧可以通过拿到的上下文变量来实现各种业务逻辑。这样，只要前端弱势一点，往往就会被后端要求在模板层写出不少业务代码。还有一个很大的灰色地带是Controller ，页面路由等功能本应该是前端最关注的，但却是由后端来实现。Controller本身与Mode1往往也会纠缠不清，看了让人咬牙的业务代码经常会出现在Controller层。这些问题不能全归结于程序员的素养，否则JSP就够了。</li>
+<li>对前端发挥的局限性：性能优化如果只在前端做空间非常有限，于是我们经常需要后端合作，但由于后端框架限制，我们很难使用【Comet】、【BigPipe】等技术方案来优化性能。</li>
+</ul>
+<h3 id="1-2-2-基于AJAX带来的SPA时代"><a href="#1-2-2-基于AJAX带来的SPA时代" class="headerlink" title="1.2.2 基于AJAX带来的SPA时代"></a>1.2.2 基于AJAX带来的SPA时代</h3><p>时间回到2005年 AJAX （Asynchronous JavaScript And XML，异步JavaScript和XML，老技术新用法）被正式提出并开始使用CDN作为静态资源存储，于是出现了JavaScript 王者归来（在这之前JS都是用来在网页上贴狗皮膏药广告的）的SPA（Single Page Application）单页面应用时代。</p>
+<p><img src="image/Vue/1638867989693.png"></p>
+<p><strong>优点：</strong></p>
+<p>这种模式下，<strong>前后端的分工非常清晰，前后端的关键协作点是AJAX接口</strong>。看起来是如此美妙，但回过头来看看的话，这与JSP时代区别不大。复杂度从服务端的JSP里移到了浏览器的JavaScript，浏览器端变得很复杂。类似Spring MVC，这个时代开始出现浏览器端的分层架构：</p>
+<p><img src="image/Vue/1638868130741.png"></p>
+<p><strong>缺点：</strong></p>
+<ul>
+<li><strong>前后端接口的约定</strong>：如果后端的接口一塌糊涂，如果后端的业务模型不够稳定，那么前端开发会很痛苦；不少团队也有类似尝试，通过接口规则、接口平台等方式来做。<strong>有了和后端一起沉淀的接口规则，还可以用来模拟数据，使得前后端可以在约定接口后实现高效并行开发</strong>。</li>
+<li><strong>前端开发的复杂度控制</strong>：SPA应用大多以功能交互型为主，JavaScript代码过十万行很正常。大量JS代码的组织，与View层的绑定等，都不是容易的事情。</li>
+</ul>
+<h3 id="1-2-3-前端为主的MV-时代"><a href="#1-2-3-前端为主的MV-时代" class="headerlink" title="1.2.3 前端为主的MV*时代"></a>1.2.3 前端为主的MV*时代</h3><p>此处的MV*模式如下：</p>
+<ul>
+<li>MVC (同步通信为主) ：Model、View、Controller</li>
+<li>MVP (异步通信为主) ：Model、View、Presenter</li>
+<li>MVVM (异步通信为主) ：Model、View、ViewModel</li>
+</ul>
+<p>为了降低前端开发复杂度，涌现了大星的前端框架，比如: Angular JS、React 、vue.js、EmberJS 等，这些框架总的原则是先按类型分层，比如Templates、Controllers、Models，然后再在层内做切分，如下图:</p>
+<p><img src="image/Vue/1638868478412.png"></p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>前后端职责很清晰：前端工作在浏览器端，后端工作在服务端。清晰的分工，可以让开发并行，测试数据的模拟不难，前端可以本地开发。后端则可以专注于业务逻辑的处理，输出 RESTful。</li>
+<li>前端开发的复杂度可控：前端代码很重，但合理的分层，让前端代码能各司其职。这一块蛮有意思的，简单如模板特性的选择，就有很多很多讲究。并非越强大越好，限制什么，留下哪些自由，代码应该如何组织，所有这一切设计，得花一本书的厚度去说明。</li>
+<li>部署相对独立：可以快速改进产品体验。</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>代码不能复用。比如后端依旧需要对数据做各种校验，校验逻辑无法复用浏览器端的代码。如果可以复用，那么后端的数据校验可以相对简单化。</li>
+<li>全异步，对SEO不利。往往还需要服务端做同步渲染的降级方案。</li>
+<li>性能并非最佳，特别是移动互联网环境下。</li>
+<li>SPA不能满足所有需求，依旧存在大量多页面应用。URL Design需要后端配合，前端无法完全掌控。</li>
+</ul>
+<h3 id="1-2-4-NodeJS带来全栈时代"><a href="#1-2-4-NodeJS带来全栈时代" class="headerlink" title="1.2.4 NodeJS带来全栈时代"></a>1.2.4 NodeJS带来全栈时代</h3><p>前端为主的MV*模式解决了很多很多问题，但如上所述，依旧存在不少不足之处。随着NodeJS的兴起JavaScript开始有能力运行在服务端。这意味着可以有一种新的研发模式。</p>
+<p>在这种研发模式下，前后端的职责很清晰。对前端来说，两个UI层各司其职：</p>
+<ul>
+<li>Front-end Ul layer处理浏览器层的展现逻辑。通过CSS渲染样式，通过JavaScript添加交互功能，HTML的生成也可以放在这层，具体看应用场景。</li>
+<li>Back-end Ul layer处理路由、模板、数据获取、Cookie等。通过路由，前端终于可以自主把控URLDesign，这样无论是单页面应用还是多页面应用，前端都可以自由调控。后端也终于可以摆脱对展现的强关注，转而可以专心于业务逻辑层的开发。</li>
+</ul>
+<p>通过Node，Web Server 层也是JavaScript代码，这意味着部分代码可前后复用，需要SEO的场景可以在服务端同步渲染，由于异步请求太多导致的性能问题也可以通过服务端来缓解。前一种模式的不足，通过这种模式几乎都能完美解决掉。</p>
+<p>与JSP模式相比，全栈模式看起来是一种回归，也的确是一种向原始开发模式的回归，不过是一种螺旋上升式的回归。</p>
+<p>基于NodeJS的全栈模式，依旧面临很多挑战：</p>
+<ul>
+<li>需要前端对服务端编程有更进一步的认识。比如TCP/IP等网络知识的掌握。</li>
+<li>NodeJS层与Java层的高效通信。NodeJS模式下，都在服务器端，RESTful HTTP通信未必高效，通过SOAP等方式通信更高效。一切需要在验证中前行。</li>
+<li>对部署、运维层面的熟练了解，需要更多知识点和实操经验。</li>
+<li>大量历史遗留问题如何过渡。这可能是最大最大的阻力。</li>
+</ul>
+<h2 id="1-3-前端MVVM模式"><a href="#1-3-前端MVVM模式" class="headerlink" title="1.3 前端MVVM模式"></a>1.3 前端MVVM模式</h2><h3 id="1-3-1-什么是MVVM"><a href="#1-3-1-什么是MVVM" class="headerlink" title="1.3.1 什么是MVVM"></a>1.3.1 什么是MVVM</h3><p>MVVM (Model-View-ViewModel)是一种软件架构设计模式，由微软WPF（用于替代 WinForm，以前就是用这个技术开发桌面应用程序的）和Silverlight（类似于Java Applet，简单点说就是在浏览器上运行的WPF）的架构师Ken Cooper和Ted Peters 开发，是一种简化用户界面的事件驱动编程方式。由John Gossman（同样也是WPF和Silverlight的架构师）于2005年在他的博客上发表。</p>
+<p>MVVM源自于经典的 MVC（Model-View-Controller）模式（期间还演化出了MVP（Model-View-Presenter）模式）。MVVM的核心是viewModel层，负责转换Model 中的数据对象来让数据变得更容易管理和使用，其作用如下：</p>
+<ul>
+<li>该层向上与视图层进行双向数据绑定</li>
+<li>向下与Model 层通过接口请求进行数据交互</li>
+</ul>
+<p><img src="image/Vue/1638949418455.png"></p>
+<p>MVVM已经相当成熟了，主要运用但不仅仅在网络应用程序开发中。当下流行的MWVM框架有vue.js，AngularJS等。</p>
+<h3 id="1-3-2-为什么要使用MVVM"><a href="#1-3-2-为什么要使用MVVM" class="headerlink" title="1.3.2 为什么要使用MVVM"></a>1.3.2 为什么要使用MVVM</h3><p>MVVM模式和MVC模式一样，主要目的是分离视图(View）和模型(Model)，有几大好处：</p>
+<ul>
+<li>低耦合：视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的View上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。</li>
+<li>可复用：你可以把一些视图逻辑放在一个ViewModel里面，让很多View重用这段视图逻辑。</li>
+<li>独立开发：开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计。</li>
+<li>可测试：界面素来是比较难于测试的，而现在测试可以针对ViewModel来写。</li>
+</ul>
+<h3 id="1-3-3-MVVM的组成部分"><a href="#1-3-3-MVVM的组成部分" class="headerlink" title="1.3.3 MVVM的组成部分"></a>1.3.3 MVVM的组成部分</h3><p><strong>View：</strong></p>
+<p>View是视图层，也就是用户界面。前端主要由HTML和CSS来构建，为了更方便地展现ViewModel或者Model层的数据，已经产生了各种各样的前后端模板语言，比如FreeMarker 、Thymeleaf 等等，各大MVVM框架如Vue.js , Angular JS，EJS 等也都有自己用来构建用户界面的内置模板语言。</p>
+<p><strong>Model：</strong></p>
+<p>Model是指数据模型，泛指后端进行的各种业务逻辑处理和数据操控，主要围绕数据库系统展开。这里的难点主要在于需要和前端约定统—的<strong>接口规则</strong></p>
+<p><strong>ViewModel：</strong></p>
+<p>ViewModel是由前端开发人员组织生成和维护的视图数据层。在这一层，前端开发者对从后端获取的Model数据进行转换处理，做二次封装，以生成符合View层使用预期的视图数据模型。</p>
+<p><strong>需要注意的是ViewModel所封装出来的数据模型包括视图的状态和行为两部分，而Model层的数据模型是只包含状态的</strong></p>
+<ul>
+<li>比如页面的这一块展示什么，那一块展示什么这些都属于视图状态（展示）</li>
+<li>页面加载进来时发生什么，点击这一块发生什么，这一块滚动时发生什么这些都属于视图行为（交互）</li>
+</ul>
+<p>视图状态和行为都封装在了ViewModel里。这样的封装使得ViewM   odel可以完整地去描述View层。由于实现了双向绑定，ViewModel的内容会实时展现在View层，这是激动人心的，因为前端开发者再也不必低效又麻烦地通过操纵DOM去更新视图。</p>
+<p>MVVM框架已经把最脏最累的一块做好了，我们开发者只需要处理和维护ViewModel，更新数据视图就会自动得到相应更新，真正实现事件驱动编程。</p>
+<p>View层展现的不是Model层的数据，而是ViewModel的数据，由ViewModel负责与Model层交互，这就完全解耦了view层和 Model层，这个解耦是至关重要的，它是前后端分离方案实施的重要一环。</p>
+<h1 id="2-概述"><a href="#2-概述" class="headerlink" title="2 概述"></a>2 概述</h1><p>Vue (读音/vju:/，类似于view)是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue被设计为可以自底向上逐层应用。Vue的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时,Vue也完全能够为复杂的单页应用提供驱动。</p>
+<h2 id="2-1-MVVM模式的实现者"><a href="#2-1-MVVM模式的实现者" class="headerlink" title="2.1 MVVM模式的实现者"></a>2.1 MVVM模式的实现者</h2><p>我们知道MVVM表示如下:</p>
+<ul>
+<li>Model：模型层，在这里表示JavaScript对象</li>
+<li>View：视图层，在这里表示DOM（HTML 操作的元素）</li>
+<li>ViewModel：连接视图和数据的中间件，Vue.js就是MVVM中的ViewModel层的实现者</li>
+</ul>
+<p>在MWVM架构中，是不允许数据和视图直接通信的，只能通过ViewModel来通信，而ViewModel就是定义了一个 observer观察者</p>
+<ul>
+<li>ViewModel 能够观察到数据的变化，并对视图对应的内容进行更新</li>
+<li>ViewModel 能够监听到视图的变化，并能够通知数据发生改变</li>
+</ul>
+<p>至此，我们就明白了，Vue.js就是一个MVVM的实现者，他的核心就是实现了DOM监听与数据绑定</p>
+<h2 id="2-2-为什么要使用Vue-js"><a href="#2-2-为什么要使用Vue-js" class="headerlink" title="2.2 为什么要使用Vue.js"></a>2.2 为什么要使用Vue.js</h2><ul>
+<li>轻星级，体积小是一个重要指标。Vue.,js压缩后有只有30多kb (Angular压缩后56kb+，React压缩44kb+)</li>
+<li>移动优先。更适合移动端，比如移动端的Touch 事件</li>
+<li>易上手，学习曲线平稳，文档齐全</li>
+<li>吸取了Angular（模块化）和React（虚拟 DOM）的长处，并拥有自己独特的功能，如：计算属性</li>
+<li>开源，社区活跃度高</li>
+</ul>
+<h2 id="2-3-Vue-js的两个核心要素"><a href="#2-3-Vue-js的两个核心要素" class="headerlink" title="2.3 Vue.js的两个核心要素"></a>2.3 Vue.js的两个核心要素</h2><h3 id="2-3-1-数据驱动"><a href="#2-3-1-数据驱动" class="headerlink" title="2.3.1 数据驱动"></a>2.3.1 数据驱动</h3><p><img src="image/Vue/1638961906051.png"></p>
+<p>当你把一个普通的JavaScript对象传给Vue实例的data选项，Vue将遍历此对象所有的属性，并使用object.defineProperty把这些属性全部转为getter/setter。<strong>O****bject.defineProperty是ES5中一个无法shim的特性，这也就是为什么Vue不支持IE8以及更低版本浏览器。</strong></p>
+<p>这些getter/setter对用户来说是不可见的，但是在内部它们让Vue追踪依赖，在属性被访问和修改时通知变化。这里需要注意的问题是浏览器控制台在打印数据对象时getter/setter的格式化并不同，所以你可能需要安装vue-devtools来获取更加友好的检查接口。</p>
+<p>每个组件实例都有相应的watcher实例对象，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的setter被调用时，会通知watcher重新计算，从而致使它关联的组件得以更新。</p>
+<h3 id="2-3-2-组件化"><a href="#2-3-2-组件化" class="headerlink" title="2.3.2 组件化"></a>2.3.2 组件化</h3><ul>
+<li>页面上每个独立的可交互的区域视为一个组件</li>
+<li>每个组件对应一个工程目录，组件所需的各种资源在这个目录下就近维护</li>
+<li>页面不过是组件的容器，组件可以嵌套自由组合（复用）形成完整的页面</li>
+</ul>
+<h1 id="3-第一个Vue应用程序"><a href="#3-第一个Vue应用程序" class="headerlink" title="3 第一个Vue应用程序"></a>3 第一个Vue应用程序</h1><h2 id="3-1-兼容性"><a href="#3-1-兼容性" class="headerlink" title="3.1 兼容性"></a>3.1 兼容性</h2><p>Vue<strong>不支持</strong>IE8及以下版本，因为Vue使用了IE8无法模拟的ECMAScript 5特性。但它支持所有<strong>兼容ECMAScript 5的浏览器</strong>。</p>
+<h2 id="3-2-实例"><a href="#3-2-实例" class="headerlink" title="3.2 实例"></a>3.2 实例</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>第一个Vue应用程序<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span>   </span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">            &#123;&#123;message&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">                <span class="comment">// el : element的缩写，挂载元素</span></span></span><br><span class="line"><span class="javascript">                <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line"><span class="javascript">                <span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="attr">message</span>:<span class="string">&quot;Hello Vue!&quot;</span></span></span><br><span class="line"><span class="javascript">                &#125;</span></span><br><span class="line"><span class="javascript">            &#125;)</span></span><br><span class="line"><span class="javascript">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="4-Vue实例的生命周期"><a href="#4-Vue实例的生命周期" class="headerlink" title="4 Vue实例的生命周期"></a>4 Vue实例的生命周期</h1><p><img src="image/Vue/1639057934782.png"></p>
+<h1 id="5-条件渲染"><a href="#5-条件渲染" class="headerlink" title="5 条件渲染"></a>5 条件渲染</h1><h2 id="5-1-条件渲染语句"><a href="#5-1-条件渲染语句" class="headerlink" title="5.1 条件渲染语句"></a>5.1 条件渲染语句</h2><ul>
+<li>v-if</li>
+<li>v-else</li>
+</ul>
+<h3 id="5-1-1-HTML"><a href="#5-1-1-HTML" class="headerlink" title="5.1.1 HTML"></a>5.1.1 HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no /(ㄒoㄒ)/~~<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-1-2-JavaScript"><a href="#5-1-2-JavaScript" class="headerlink" title="5.1.2 JavaScript"></a>5.1.2 JavaScript</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	<span class="comment">// el : element的缩写，挂载元素</span></span><br><span class="line">	<span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span><br><span class="line">	<span class="attr">data</span>:&#123;</span><br><span class="line">		<span class="attr">awesome</span>: <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-1-3-效果"><a href="#5-1-3-效果" class="headerlink" title="5.1.3 效果"></a>5.1.3 效果</h3><p>awesome: true</p>
+<p><strong>Vue is awesome</strong></p>
+<p>awesome: false</p>
+<p><strong>Oh no /(ㄒoㄒ)/~~</strong></p>
+<h2 id="5-2-连续判断语句"><a href="#5-2-连续判断语句" class="headerlink" title="5.2 连续判断语句"></a>5.2 连续判断语句</h2><ul>
+<li>v-else-if</li>
+</ul>
+<h3 id="5-2-1-HTML"><a href="#5-2-1-HTML" class="headerlink" title="5.2.1 HTML"></a>5.2.1 HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;type === &#x27;A&#x27;&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">&quot;type === &#x27;B&#x27;&quot;</span>&gt;</span>B<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">&quot;type === &#x27;C&#x27;&quot;</span>&gt;</span>C<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span>Not A/B/C<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-2-JavaScript"><a href="#5-2-2-JavaScript" class="headerlink" title="5.2.2 JavaScript"></a>5.2.2 JavaScript</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    <span class="comment">// el : element的缩写，挂载元素</span></span><br><span class="line">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span><br><span class="line">    <span class="attr">data</span>:&#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&#x27;A&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-3-效果"><a href="#5-2-3-效果" class="headerlink" title="5.2.3 效果"></a>5.2.3 效果</h3><p>略</p>
+<h1 id="6-列表渲染"><a href="#6-列表渲染" class="headerlink" title="6 列表渲染"></a>6 列表渲染</h1><h2 id="6-1-循环遍历语句"><a href="#6-1-循环遍历语句" class="headerlink" title="6.1 循环遍历语句"></a>6.1 循环遍历语句</h2><ul>
+<li>v-for</li>
+</ul>
+<h3 id="6-1-1-HTML"><a href="#6-1-1-HTML" class="headerlink" title="6.1.1 HTML"></a>6.1.1 HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;example-1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span>&gt;</span></span><br><span class="line">        &#123;&#123;item.message&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-1-2-JavaScript"><a href="#6-1-2-JavaScript" class="headerlink" title="6.1.2 JavaScript"></a>6.1.2 JavaScript</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    <span class="comment">// el : element的缩写，挂载元素</span></span><br><span class="line">    <span class="attr">el</span>:<span class="string">&quot;#example-1&quot;</span>,</span><br><span class="line">    <span class="attr">data</span>:&#123;</span><br><span class="line">        <span class="attr">items</span>:[</span><br><span class="line">            &#123;<span class="attr">message</span>:<span class="string">&#x27;Foo&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">message</span>:<span class="string">&#x27;bar&#x27;</span>&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-1-3-效果"><a href="#6-1-3-效果" class="headerlink" title="6.1.3 效果"></a>6.1.3 效果</h3><p>略</p>
+<h1 id="7-事件处理"><a href="#7-事件处理" class="headerlink" title="7 事件处理"></a>7 事件处理</h1><h2 id="7-1-监听事件"><a href="#7-1-监听事件" class="headerlink" title="7.1 监听事件"></a>7.1 监听事件</h2><ul>
+<li>v-on</li>
+</ul>
+<h3 id="7-1-1-HTML"><a href="#7-1-1-HTML" class="headerlink" title="7.1.1 HTML"></a>7.1.1 HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;example-1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;greet&quot;</span>&gt;</span>Greet<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-1-2-JavaScript"><a href="#7-1-2-JavaScript" class="headerlink" title="7.1.2 JavaScript"></a>7.1.2 JavaScript</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    <span class="comment">// el : element的缩写，挂载元素</span></span><br><span class="line">    <span class="attr">el</span>:<span class="string">&quot;#example-1&quot;</span>,</span><br><span class="line">    <span class="attr">data</span>:&#123;</span><br><span class="line">        <span class="attr">message</span>: <span class="string">&#x27;Hello Vue!!!&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">methods</span>:&#123;</span><br><span class="line">        <span class="attr">greet</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="built_in">this</span>.message)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-1-3-效果"><a href="#7-1-3-效果" class="headerlink" title="7.1.3 效果"></a>7.1.3 效果</h3><p>略</p>
+<h1 id="8-Axios实现异步通信"><a href="#8-Axios实现异步通信" class="headerlink" title="8 Axios实现异步通信"></a>8 Axios实现异步通信</h1><h2 id="8-1-什么是Axios"><a href="#8-1-什么是Axios" class="headerlink" title="8.1 什么是Axios"></a>8.1 什么是Axios</h2><p>Axios是一个开源的可以用在浏览器端和NodeJS的异步通信框架，她的主要作用就是实现AJAX异步通信，其功能特点如下:</p>
+<ul>
+<li>从浏览器中创建XMLHttpRequests</li>
+<li>从node.js创建http请求。</li>
+<li>支持promise API</li>
+<li>拦截请求和响应</li>
+<li>转换请求数据和响应数据</li>
+<li>取消请求</li>
+<li>自动转换JSON数据</li>
+<li>客户端支持防御XSRF(跨站请求伪造)</li>
+</ul>
+<p>GitHub: <a target="_blank" rel="noopener" href="https://github.com/axios/axios">https://github.com/axios/axios</a></p>
+<h2 id="8-2-为啥要使用Axios"><a href="#8-2-为啥要使用Axios" class="headerlink" title="8.2 为啥要使用Axios"></a>8.2 为啥要使用Axios</h2><p>由于Vue.js是一个<strong>视图层框架</strong>并且作者（尤雨溪）严格准守 SoC（关注度分离原则），所以Vue.js并不包含AJAX的通信项能，为了解决通信问题，作者单独开发了一个名为vue-resource 的插件，不过在进入2.0版本以后停止了对该插件的维护并推荐了Axios框架。</p>
+<h2 id="8-3-第一个Axios应用程序"><a href="#8-3-第一个Axios应用程序" class="headerlink" title="8.3 第一个Axios应用程序"></a>8.3 第一个Axios应用程序</h2><h3 id="8-3-1-JSON数据"><a href="#8-3-1-JSON数据" class="headerlink" title="8.3.1 JSON数据"></a>8.3.1 JSON数据</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;百度&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;http://www.baicu.com&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;page&quot;</span>:<span class="number">66</span>,</span><br><span class="line">    <span class="attr">&quot;isNonProfit&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;address&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;street&quot;</span>: <span class="string">&quot;海定区&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;city&quot;</span>: <span class="string">&quot;北京市&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;country&quot;</span>: <span class="string">&quot;中国&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;links&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Google&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;http://www.google.com&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Baidu&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;http://www.baidu.com&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span> : <span class="string">&quot;sougou&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;http://www.sougou.com&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-3-2-HTMl"><a href="#8-3-2-HTMl" class="headerlink" title="8.3.2 HTMl"></a>8.3.2 HTMl</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        名称：&#123;&#123;info.name&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        URL：<span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:href</span>=<span class="string">&quot;info.url&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>&#123;&#123;info.url&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;link in info.links&quot;</span>&gt;</span></span><br><span class="line">            &#123;&#123;link.name&#125;&#125; : <span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:href</span>=<span class="string">&quot;link.url&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>&#123;&#123;link.url&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-3-3-JavaScript"><a href="#8-3-3-JavaScript" class="headerlink" title="8.3.3 JavaScript"></a>8.3.3 JavaScript</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">      <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">          <span class="comment">// el : element的缩写，挂载元素</span></span><br><span class="line">          <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span><br><span class="line">          <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">return</span>&#123;</span><br><span class="line">                  <span class="attr">info</span>:&#123;</span><br><span class="line">  </span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="function"><span class="title">mounted</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"><span class="comment">//get：请求的地址</span></span><br><span class="line"><span class="comment">//then：请求之后的处理</span></span><br><span class="line"><span class="comment">//response：请求后得到的一个结果，包括数据data</span></span><br><span class="line"><span class="comment">//=&gt;：lambda表达式，简约写法</span></span><br><span class="line">              axios.get(<span class="string">&#x27;data.json&#x27;</span>).then(<span class="function"><span class="params">response</span> =&gt;</span> <span class="built_in">this</span>.info=response.data)</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-3-4-效果"><a href="#8-3-4-效果" class="headerlink" title="8.3.4 效果"></a>8.3.4 效果</h3><p>略</p>
+<h1 id="9-表单输入绑定"><a href="#9-表单输入绑定" class="headerlink" title="9 表单输入绑定"></a>9 表单输入绑定</h1><h2 id="9-1-什么是双向数据绑定"><a href="#9-1-什么是双向数据绑定" class="headerlink" title="9.1 什么是双向数据绑定"></a>9.1 什么是双向数据绑定</h2><p>Vue.js 是一个MVVM框架，即数据双向绑定，即当数据发生变化的时候，视图也就发生变化，当视图发生变化的时候，数据也会跟着同步变化。这也算是Vue.js的精髓之处了。值得注意的是，我们所说的数据双向绑定，一定是对于UI控件来说的，非UI控件不会涉及到数据双向绑定。单向数据绑定是使用状态管理工具的前提。如果我们使用vuex，那么数据流也是单项的，这时就会和双向数据绑定有冲突。</p>
+<h2 id="9-2-为什么要实现数据的双向绑定"><a href="#9-2-为什么要实现数据的双向绑定" class="headerlink" title="9.2 为什么要实现数据的双向绑定"></a>9.2 为什么要实现数据的双向绑定</h2><p>在Vue.js中，如果使用vuex，实际上数据还是单向的，之所以说是数据双向绑定，这是用的UI控件来说，对于我们处理表单，Vue.js 的双向数据绑定用起来就特别舒服了。</p>
+<p>即两者并不互斥，在全局性数据流使用单项，方便跟踪；</p>
+<p>局部性数据流使用双向，简单易操作。</p>
+<h2 id="9-3-在表单中使用双向数据绑定"><a href="#9-3-在表单中使用双向数据绑定" class="headerlink" title="9.3 在表单中使用双向数据绑定"></a>9.3 在表单中使用双向数据绑定</h2><p>你可以用v-model指令在表单 <code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code>及 <code>&lt;select&gt;</code>元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。尽管有些神奇，但 <code>v-model</code> 本质上不过是语法糖。它负责监听用户的输入事件以更新数据，并对—些极端场景进行一些特殊处理。</p>
+<p><code>v-model</code> 会忽略所有表单元素的 <code>value</code>、<code>checked</code>、<code>selected</code> attribute 的初始值。它将始终将当前活动实例的数据作为数据来源。你应该通过 JavaScript 在组件的 <code>data</code> 选项中声明初始值。</p>
+<h1 id="10-组件基础"><a href="#10-组件基础" class="headerlink" title="10 组件基础"></a>10 组件基础</h1><h2 id="10-1-什么是组件"><a href="#10-1-什么是组件" class="headerlink" title="10.1 什么是组件"></a>10.1 什么是组件</h2><p>组件是可复用的Vue 实例，说白了就是一组可以重复使用的模板，跟STL 的自定义标签、Thymeleaf 的th:fragment以及 Sitemesh3框架有着异曲同工之妙。通常一个应用会以一棵嵌套的组件树的形式来组织：</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="image/Vue/1639069792482.png" alt="img" class="lazyload"></p>
+<h2 id="10-2-第一个vue组件"><a href="#10-2-第一个vue组件" class="headerlink" title="10.2 第一个vue组件"></a>10.2 第一个vue组件</h2><p>实际开发中我们不会用这种形式写组件，而是采用 <code>vue-cli</code>来创建 <code>.vue</code>组件，仅供参考：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>第一个Vue应用程序<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span>   </span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--将for里面的item绑给组件中的props的item属性，</span></span><br><span class="line"><span class="comment">                    在bind中等号左边是子组件中的属性，等号右侧是for中遍历的item--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">my-component</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span> <span class="attr">v-bind:item</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">	    <span class="comment">//注册一个组件</span></span></span><br><span class="line"><span class="javascript">            Vue.component(<span class="string">&quot;my-component&quot;</span>,&#123;</span></span><br><span class="line"><span class="javascript">                <span class="comment">//给模板中的item绑定上可以接收父组件传来参数的属性</span></span></span><br><span class="line"><span class="javascript">                <span class="attr">props</span>:[<span class="string">&quot;item&quot;</span>],</span></span><br><span class="line"><span class="javascript">                <span class="attr">template</span>: <span class="string">&#x27;&lt;li&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;&#x27;</span></span></span><br><span class="line"><span class="javascript">            &#125;)</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">                <span class="comment">// el : element的缩写，挂载元素</span></span></span><br><span class="line"><span class="javascript">                <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line"><span class="javascript">                <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="attr">items</span>:[<span class="string">&quot;111&quot;</span>,<span class="string">&quot;222&quot;</span>,<span class="string">&quot;333&quot;</span>]</span></span><br><span class="line"><span class="javascript">                    &#125;</span></span><br><span class="line"><span class="javascript">                &#125;</span></span><br><span class="line"><span class="javascript">            &#125;)</span></span><br><span class="line"><span class="javascript">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="11-计算属性"><a href="#11-计算属性" class="headerlink" title="11 计算属性"></a>11 计算属性</h1><h2 id="11-1-什么是计算属性"><a href="#11-1-什么是计算属性" class="headerlink" title="11.1 什么是计算属性"></a>11.1 什么是计算属性</h2><p>计算属性是用来声明式的描述一个值依赖了其它的值。当你在模板里把数据绑定到一个计算属性上时，Vue 会在其依赖的任何值导致该计算属性改变时更新DOM。这个功能非常强大，它可以让你的代码更加声明式、数据驱动并且易于维护。简单点说，它就是一个能够将计算结果缓存起来的属性（将行为转化成了静态的属性)，仅此而已；</p>
+<h2 id="11-2-计算属性与方法的区别"><a href="#11-2-计算属性与方法的区别" class="headerlink" title="11.2 计算属性与方法的区别"></a>11.2 计算属性与方法的区别</h2><h3 id="11-2-1-实例"><a href="#11-2-1-实例" class="headerlink" title="11.2.1 实例"></a>11.2.1 实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>第一个Vue应用程序<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span>   </span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>当前时间方法:&#123;&#123;getCurrentTime()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	    <span class="comment">&lt;!-- 这里调用的是一个值 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>当前时间属性:&#123;&#123;getCurrentTime2&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">                <span class="comment">// el : element的缩写，挂载元素</span></span></span><br><span class="line"><span class="javascript">                <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line"><span class="javascript">		<span class="comment">//方法</span></span></span><br><span class="line"><span class="javascript">                <span class="attr">methods</span>:&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="attr">getCurrentTime</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> <span class="built_in">Date</span>.now();</span></span><br><span class="line"><span class="javascript">                    &#125;</span></span><br><span class="line"><span class="javascript">                &#125;,</span></span><br><span class="line"><span class="javascript">		<span class="comment">//计算属性</span></span></span><br><span class="line"><span class="javascript">                <span class="attr">computed</span>:&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="attr">getCurrentTime2</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> <span class="built_in">Date</span>.now();</span></span><br><span class="line"><span class="javascript">                    &#125;</span></span><br><span class="line"><span class="javascript">                &#125;</span></span><br><span class="line"><span class="javascript">            &#125;)</span></span><br><span class="line"><span class="javascript">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="12-插槽与自定义事件"><a href="#12-插槽与自定义事件" class="headerlink" title="12 插槽与自定义事件"></a>12 插槽与自定义事件</h1><h2 id="12-1-插槽内容"><a href="#12-1-插槽内容" class="headerlink" title="12.1 插槽内容"></a>12.1 插槽内容</h2><p>Vue实现了一套内容分发的API，这套API的设计灵感源自Web Components规范草案，将 <code>&lt;slot&gt;</code>元素作为承载分发内容的出口。</p>
+<p><strong>利用插槽功能实现一个组合组件</strong></p>
+<p>比如准备制作一个待办事项组件（todo），该组件由待办标题（todo-title）和待办内容（todo-items）组成，但这三个组件又是相互独立的，该如何操作呢?</p>
+<h2 id="12-2-实现一个todo组件"><a href="#12-2-实现一个todo组件" class="headerlink" title="12.2 实现一个todo组件"></a>12.2 实现一个todo组件</h2><h3 id="12-2-1-HTML"><a href="#12-2-1-HTML" class="headerlink" title="12.2.1 HTML"></a>12.2.1 HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">todo</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">todo-title</span> <span class="attr">slot</span>=<span class="string">&quot;todo-title&quot;</span> <span class="attr">v-bind:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">todo-items</span> <span class="attr">slot</span>=<span class="string">&quot;todo-items&quot;</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span> <span class="attr">v-bind:item</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-items</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">todo</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="12-2-2-JavaScript"><a href="#12-2-2-JavaScript" class="headerlink" title="12.2.2 JavaScript"></a>12.2.2 JavaScript</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义代办事项组件</span></span><br><span class="line">       Vue.component(<span class="string">&quot;todo&quot;</span>,&#123;</span><br><span class="line">           <span class="attr">template</span>:<span class="string">&quot;&lt;div&gt;&lt;slot name=&#x27;todo-title&#x27;&gt;&lt;/slot&gt;&lt;ul&gt;&lt;slot name=&#x27;todo-items&#x27;&gt;&lt;/slot&gt;&lt;/ul&gt;&lt;/div&gt;&quot;</span></span><br><span class="line">       &#125;);</span><br><span class="line">       <span class="comment">//定义待办事项标题组件</span></span><br><span class="line">       Vue.component(<span class="string">&quot;todo-title&quot;</span>,&#123;</span><br><span class="line">           <span class="attr">props</span>:[<span class="string">&#x27;title&#x27;</span>],</span><br><span class="line">           <span class="attr">template</span>:<span class="string">&#x27;&lt;div&gt;&#123;&#123;title&#125;&#125;&lt;/div&gt;&#x27;</span></span><br><span class="line">       &#125;);</span><br><span class="line">       <span class="comment">//定义待办事项内容组件</span></span><br><span class="line">       Vue.component(<span class="string">&quot;todo-items&quot;</span>,&#123;</span><br><span class="line">           <span class="attr">props</span>:[<span class="string">&#x27;item&#x27;</span>],</span><br><span class="line">           <span class="attr">template</span>:<span class="string">&#x27;&lt;li&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;&#x27;</span></span><br><span class="line">       &#125;);</span><br><span class="line">       <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">           <span class="comment">// el : element的缩写，挂载元素</span></span><br><span class="line">           <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span><br><span class="line">           <span class="attr">data</span>:&#123;</span><br><span class="line">               <span class="attr">title</span>:<span class="string">&#x27;Todo-List&#x27;</span>,</span><br><span class="line">               <span class="attr">items</span>:[<span class="string">&quot;吃饭&quot;</span>,<span class="string">&quot;睡觉&quot;</span>,<span class="string">&quot;打豆豆&quot;</span>]</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-2-3-效果"><a href="#12-2-3-效果" class="headerlink" title="12.2.3 效果"></a>12.2.3 效果</h3><p>略</p>
+<h2 id="12-3-自定义事件"><a href="#12-3-自定义事件" class="headerlink" title="12.3 自定义事件"></a>12.3 自定义事件</h2><p>子组件中调用的事件与父组件中事件的绑定，实现按钮删除父组件元素的功能。</p>
+<h3 id="12-3-1-HTML"><a href="#12-3-1-HTML" class="headerlink" title="12.3.1 HTML"></a>12.3.1 HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">todo</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">todo-title</span> <span class="attr">slot</span>=<span class="string">&quot;todo-title&quot;</span> <span class="attr">v-bind:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-title</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 这里v-for使用的另一种写法，可以得到当前元素在集合中的位置index --&gt;</span> </span><br><span class="line">              <span class="tag">&lt;<span class="name">todo-items</span> <span class="attr">slot</span>=<span class="string">&quot;todo-items&quot;</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in items&quot;</span> <span class="attr">v-bind:item</span>=<span class="string">&quot;item&quot;</span> <span class="attr">v-bind:index</span>=<span class="string">&quot;index&quot;</span> <span class="attr">v-on:remove</span>=<span class="string">&quot;removeItems(index)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-items</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">todo</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="12-3-2-JavaScript"><a href="#12-3-2-JavaScript" class="headerlink" title="12.3.2 JavaScript"></a>12.3.2 JavaScript</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">         <span class="comment">//定义代办事项组件</span></span><br><span class="line">         Vue.component(<span class="string">&quot;todo&quot;</span>,&#123;</span><br><span class="line">             <span class="attr">template</span>:<span class="string">&quot;&lt;div&gt;&lt;slot name=&#x27;todo-title&#x27;&gt;&lt;/slot&gt;&lt;ul&gt;&lt;slot name=&#x27;todo-items&#x27;&gt;&lt;/slot&gt;&lt;/ul&gt;&lt;/div&gt;&quot;</span></span><br><span class="line">         &#125;);</span><br><span class="line">         <span class="comment">//定义待办事项标题组件</span></span><br><span class="line">         Vue.component(<span class="string">&quot;todo-title&quot;</span>,&#123;</span><br><span class="line">             <span class="attr">props</span>:[<span class="string">&#x27;title&#x27;</span>],</span><br><span class="line">             <span class="attr">template</span>:<span class="string">&#x27;&lt;div&gt;&#123;&#123;title&#125;&#125;&lt;/div&gt;&#x27;</span></span><br><span class="line">         &#125;);</span><br><span class="line">         <span class="comment">//定义待办事项内容组件</span></span><br><span class="line">         Vue.component(<span class="string">&quot;todo-items&quot;</span>,&#123;</span><br><span class="line">             <span class="attr">props</span>:[<span class="string">&#x27;item&#x27;</span>,<span class="string">&#x27;index&#x27;</span>],</span><br><span class="line">             <span class="attr">template</span>:<span class="string">&quot;&lt;li&gt;&#123;&#123;item&#125;&#125;&lt;button @click=&#x27;remove&#x27;&gt;删除&lt;/button&gt;&lt;/li&gt;&quot;</span>,</span><br><span class="line">             <span class="attr">methods</span>:&#123;</span><br><span class="line">   <span class="comment">//将父组件需要的参数传出去</span></span><br><span class="line">                 <span class="attr">remove</span>:<span class="function"><span class="keyword">function</span>(<span class="params">index</span>)</span>&#123;</span><br><span class="line">                     <span class="built_in">this</span>.$emit(<span class="string">&quot;remove&quot;</span>,index)</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;);</span><br><span class="line">         <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">             <span class="comment">// el : element的缩写，挂载元素</span></span><br><span class="line">             <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span><br><span class="line">             <span class="attr">data</span>:&#123;</span><br><span class="line">                 <span class="attr">title</span>:<span class="string">&#x27;Todo-List&#x27;</span>,</span><br><span class="line">                 <span class="attr">items</span>:[<span class="string">&quot;吃饭&quot;</span>,<span class="string">&quot;睡觉&quot;</span>,<span class="string">&quot;打豆豆&quot;</span>]</span><br><span class="line">             &#125;,</span><br><span class="line">             <span class="attr">methods</span>:&#123;</span><br><span class="line">                 <span class="attr">removeItems</span>:<span class="function"><span class="keyword">function</span>(<span class="params">index</span>)</span>&#123;</span><br><span class="line"><span class="comment">//这里调用splice方法将数组中的元素删除，所以需要的阿斗index下标</span></span><br><span class="line">                     <span class="built_in">this</span>.items.splice(index,<span class="number">1</span>)</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-3-3-效果"><a href="#12-3-3-效果" class="headerlink" title="12.3.3 效果"></a>12.3.3 效果</h3><p>略</p>
+<h1 id="13-Vue-CLI"><a href="#13-Vue-CLI" class="headerlink" title="13 Vue-CLI"></a>13 Vue-CLI</h1><h2 id="13-1-什么是vue-cli"><a href="#13-1-什么是vue-cli" class="headerlink" title="13.1 什么是vue-cli"></a>13.1 什么是vue-cli</h2><p>vue-cli官方提供的一个脚手架（预先定义好的目录结构及基础代码，咱们在创建Maven项目时可以选择创建一个骨架项目，这个骨架项目就是脚手架)，用于快速生成一个 vue的项目模板。</p>
+<h3 id="13-1-1-主要功能"><a href="#13-1-1-主要功能" class="headerlink" title="13.1.1 主要功能"></a>13.1.1 主要功能</h3><ul>
+<li>统一的目录结构</li>
+<li>本地调试</li>
+<li>热部署</li>
+<li>单元测试</li>
+<li>集成打包上线</li>
+</ul>
+<h3 id="13-1-2-环境准备"><a href="#13-1-2-环境准备" class="headerlink" title="13.1.2 环境准备"></a>13.1.2 环境准备</h3><ul>
+<li>Node.js (&gt;= 6.x，首选8.x)</li>
+<li>git</li>
+</ul>
+<h3 id="13-1-3-安装vue-cli"><a href="#13-1-3-安装vue-cli" class="headerlink" title="13.1.3 安装vue-cli"></a>13.1.3 安装vue-cli</h3><ul>
+<li>安装Node.js</li>
+</ul>
+<p>官网下载地址 <a target="_blank" rel="noopener" href="http://nodejs.cn/download">http://nodejs.cn/download</a></p>
+<p>安装Node.js的同时还会安装npm，类似于安装工具。</p>
+<p>解决npm速度过慢的问题：<br><code>npm config set registry https://registry.npm.taobao.org</code></p>
+<p>运行 <code>npm install -g @vue/cli</code> 来安装vue-cli</p>
+<p>安装完毕后，输入 <code>vue -V</code> 如果出现</p>
+<p><code>@vue/cli 4.5.15</code></p>
+<p>则说明安装成功。</p>
+<h2 id="13-2-使用vue-cli创建demo"><a href="#13-2-使用vue-cli创建demo" class="headerlink" title="13.2 使用vue-cli创建demo"></a>13.2 使用vue-cli创建demo</h2><p>在命令行窗口运行 <code>vue ui</code> 来vue-cli的可视化窗口</p>
+<p>然后选择对应的项目文件夹创建项目，填写项目名和包管理器：</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="image/Vue/1639127416537.png" alt="img" class="lazyload"></p>
+<p>然后预设页选择手动配置：</p>
+<p><img src="image/Vue/1639127533412.png"></p>
+<p>记得在功能页选择要添加的，比如router或者vuex，千万不要选linter：</p>
+<p><img src="image/Vue/1639127639906.png"></p>
+<p>在配置页选择vue-cli的版本：</p>
+<p><img src="image/Vue/1639127684875.png"></p>
+<p>最后完成创建，等待依赖下载完毕。</p>
+<h1 id="14-Webpack"><a href="#14-Webpack" class="headerlink" title="14 Webpack"></a>14 Webpack</h1><h2 id="14-1-Webpack简介"><a href="#14-1-Webpack简介" class="headerlink" title="14.1.Webpack简介"></a>14.1.Webpack简介</h2><h3 id="14-1-1-简介"><a href="#14-1-1-简介" class="headerlink" title="14.1.1 简介"></a>14.1.1 简介</h3><p>本质上，webpack是一个现代JavaScript应用程序静态模块打包器(module bundler)。当webpack处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个bundle。</p>
+<h3 id="14-1-2-现状"><a href="#14-1-2-现状" class="headerlink" title="14.1.2 现状"></a>14.1.2 现状</h3><p>伴随着移动互联网的大潮，当今越来越多的网站已经从网页模式进化到了WebApp模式。它们运行在现代浏览器里，使用HTML5、CSS3、ES6等新的技术来开发丰富的功能，网页已经不仅仅是完成浏览器的基本需求；WebApp通常是一个SPA(单页面应用)，每一个视图通过异步的方式加载，这导致页面初始化和使用过程中会加载越来越多的JS代码，这给前端的开发流程和资源组织带来了巨大挑战。</p>
+<p>前端开发和其他开发工作的主要区别，首先是前端基于多语言、多层次的编码和组织工作，其次前端产基于浏览器的，这些资源是通过增量加载的方式运行到浏览器端，如何在开发环境组织好这些碎片化的代码和资源，并且保证他们在浏览器端快速、优雅的加载和更新，就需要一个模块化系统，这个理想中的模块化系统是前端工程师多年来一直探索的难题。</p>
+<h3 id="14-1-3-模块化的演进"><a href="#14-1-3-模块化的演进" class="headerlink" title="14.1.3 模块化的演进"></a>14.1.3 模块化的演进</h3><p><strong>Script标签</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;module1.js &quot;</span>&gt;</span><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">scirpt</span>&gt;</span></span></span></span><br><span class="line"><span class="xml"><span class="handlebars"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;module2.js &quot;</span>&gt;</span><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">scirpt</span>&gt;</span></span></span></span></span></span><br><span class="line"><span class="xml"><span class="handlebars"><span class="xml"><span class="handlebars"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;module3.js &quot;</span>&gt;</span><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">scirpt</span>&gt;</span></span></span></span></span></span></span></span><br><span class="line"><span class="xml"><span class="handlebars"><span class="xml"><span class="handlebars"><span class="xml"><span class="handlebars"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;module4.js &quot;</span>&gt;</span><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">scirpt</span>&gt;</span></span></span></span></span></span></span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>这是最原始的JavaScript 文件加载方式，如果把每一个文件看做是一个模块，那么他们的接口通常是暴露在全局作用域下，也就是定义在 <code>window</code>对象中，不同模块的调用都是一个作用域。<br>这种原始的加载方式暴露了一些显而易见的弊端：</p>
+<ul>
+<li>全局作用域下容易造成变量冲突</li>
+<li>文件只能按照 <code>&lt;script&gt;</code>的书写顺序进行加载</li>
+<li>开发人员必须主观解决模块和代码库的依赖关系</li>
+<li>在大型项目中各种资源难以管理，长期积累的问题导致代码库混乱不堪</li>
+</ul>
+<p><strong>CommonsJs</strong></p>
+<p>服务器端的NodeJS遵循CommonsJS规范，该规范核心思想是允许模块通过 <code>require</code>方法来同步加载所需依赖的其它模块，然后通过 <code>exports</code>或 <code>module.exports</code>来导出需要暴露的接口。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>( <span class="string">&quot;module&quot;</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;../module.js &quot;</span>);</span><br><span class="line"><span class="keyword">export</span>.doStuff = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="built_in">module</span>.exports = somevalue;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>优点<ul>
+<li>服务器端模块便于重用</li>
+<li>NPM中已轻有超过45万个可以使用的模块包。简单易用</li>
+</ul>
+</li>
+<li>缺点<br>同步的模块加载方式不适合在浏览器环境中，同步意味着阻塞加载，浏览器资源是异步加载的。不能非阻塞的并行加载多个模块</li>
+<li>实现<ul>
+<li>服务端的NodeJs\</li>
+<li>Browserify，浏览器端的CommonsJS实现，可以使用NPM的模块，但是编译打包后的文件体积较大</li>
+<li>modules-webmake，类似 Browserify，但不如Browserify灵活</li>
+<li>wreq，Browserify 的前身</li>
+</ul>
+</li>
+</ul>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>John Doe<br>
+        <strong>Link：</strong><a href="http://example.com/2022/01/02/Vue/" title="http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;01&#x2F;02&#x2F;Vue&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;01&#x2F;02&#x2F;Vue&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="Search" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1641541780845"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>

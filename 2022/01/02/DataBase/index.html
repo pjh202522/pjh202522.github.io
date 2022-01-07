@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>Hexo</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="大学数据库考试纲要1 第一章1.1 数据管理发展阶段 人工管理阶段 特点：  不保存数据 应用程序管理数据 数据不共享，冗余度大 程序与数据不具有独立性   文件系统管理阶段 优点：  数据可以长期保存 文件系统管理数据 程序与数据之间存在一定的独立性  缺点：  数据共享性差，冗余度大 数据独立性差。   数据库系统管理阶段 统一管理数据的专门的软件系统，即数据库管理系统。  NoSQL非结构化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/01/02/DataBase/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="大学数据库考试纲要1 第一章1.1 数据管理发展阶段 人工管理阶段 特点：  不保存数据 应用程序管理数据 数据不共享，冗余度大 程序与数据不具有独立性   文件系统管理阶段 优点：  数据可以长期保存 文件系统管理数据 程序与数据之间存在一定的独立性  缺点：  数据共享性差，冗余度大 数据独立性差。   数据库系统管理阶段 统一管理数据的专门的软件系统，即数据库管理系统。  NoSQL非结构化">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-02T09:58:01.220Z">
+<meta property="article:modified_time" content="2021-12-26T13:23:10.868Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+    <link rel="stylesheet" href="/css/style.css?v=1641541780873">
+     
+    
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1641541780873">
+    
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://avatars.githubusercontent.com/u/74764646" alt="John Doe"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="John Doe">
+            <img src="https://avatars.githubusercontent.com/u/74764646" alt="John Doe" alt="John Doe">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>15</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=pjh202522.github.io" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/11767462" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/pjh202522" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+    
+    
+
+    
+    
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 John Doe
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a><script data-ad-client="ca-pub-2058306854838448" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="" class="lazyload">
+              <h1></h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年01月02日</a>
+    <a><i class="nexmoefont icon-areachart"></i>7.9k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 32 分钟</a>
+</div>
+
+      
+
+      <h1 id="大学数据库考试纲要"><a href="#大学数据库考试纲要" class="headerlink" title="大学数据库考试纲要"></a>大学数据库考试纲要</h1><h1 id="1-第一章"><a href="#1-第一章" class="headerlink" title="1 第一章"></a>1 第一章</h1><h2 id="1-1-数据管理发展阶段"><a href="#1-1-数据管理发展阶段" class="headerlink" title="1.1 数据管理发展阶段"></a>1.1 数据管理发展阶段</h2><ul>
+<li><p><strong>人工管理阶段</strong></p>
+<p>特点：</p>
+<ol>
+<li>不保存数据</li>
+<li>应用程序管理数据</li>
+<li>数据不共享，冗余度大</li>
+<li>程序与数据不具有独立性</li>
+</ol>
+</li>
+<li><p><strong>文件系统管理阶段</strong></p>
+<p>优点：</p>
+<ol>
+<li>数据可以长期保存</li>
+<li>文件系统管理数据</li>
+<li>程序与数据之间存在一定的独立性</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>数据共享性差，冗余度大</li>
+<li>数据独立性差。</li>
+</ol>
+</li>
+<li><p><strong>数据库系统管理阶段</strong></p>
+<p>统一管理数据的专门的<strong>软件系统</strong>，即数据库管理系统。</p>
+</li>
+<li><p><strong>NoSQL非结构化数据库</strong></p>
+<p>四大分类：</p>
+<ol>
+<li>键值存储数据库</li>
+<li>列存储数据库</li>
+<li>文档型数据库</li>
+<li>图形数据库</li>
+</ol>
+<p>常见NoSQL数据库：</p>
+<ol start="5">
+<li>MongoDB：基于分布式文件存储的数据库</li>
+<li>HBase：一个分布式的、面向列的开源数据库</li>
+<li>Redis：是一个键值存储系统</li>
+</ol>
+</li>
+</ul>
+<h2 id="1-2-数据库相关概念"><a href="#1-2-数据库相关概念" class="headerlink" title="1.2 数据库相关概念"></a>1.2 数据库相关概念</h2><ul>
+<li><p><strong>数据和信息</strong></p>
+<p>数据是信息的载体，而信息是数据的内涵。统一信息可以有不同的数据表示形式，而同一数据也可能有不同的解释。</p>
+</li>
+<li><p><strong>数据库</strong></p>
+<p>存放数据的仓库，是长期存储在计算机内有组织的、可共享的大量数据集合。其中的数据按照一定的数据模型组织、描述和存储。</p>
+<p>具有以下三个特点：</p>
+<ol>
+<li>永久存储</li>
+<li>有组织</li>
+<li>可共享</li>
+</ol>
+</li>
+<li><p><strong>数据库系统</strong></p>
+<p>是指引入数据库后的系统，包括数据库、数据库管理系统、应用系统和数据库管理员四部分组成。</p>
+</li>
+<li><p><strong>数据库管理系统（DBMS）</strong></p>
+<p>DBMS是位于用户和操作系统之间的一种数据管理软件，用于管理、控制和维护数据库，方便用户使用且提供对数据的保护。</p>
+</li>
+</ul>
+<h1 id="2-第二章"><a href="#2-第二章" class="headerlink" title="2 第二章"></a>2 第二章</h1><h2 id="2-1-数据模型"><a href="#2-1-数据模型" class="headerlink" title="2.1 数据模型"></a>2.1 数据模型</h2><p>数据库需要将现实中的事物抽象成能够存储进数据库的数据，即数字化，数据模型就是对现实世界的模拟和抽象，用来描述数据是如何组成存储和操作的。</p>
+<p>将实体数字化需要经过三个阶段：现实世界、信息世界和机器世界。</p>
+<p>数据模型应当满足以下三种条件：</p>
+<ol>
+<li>能比较真实地模拟现实世界</li>
+<li>数据模型容易被人所理解</li>
+<li>数据模型要能够很方便的再计算机上实现</li>
+</ol>
+<p>根据数据模型应用的目的不同，分为现实世界到信息世界的<strong>概念层数据模型</strong>和信息世界到机器世界的<strong>组织层数据模型</strong>。</p>
+<p>数据结构的组成元素包括：</p>
+<ol>
+<li>数据结构</li>
+<li>数据操作</li>
+<li>数据的完整约束条件</li>
+</ol>
+<p>根据数据模型的不同应用层次分类：</p>
+<ol>
+<li><strong>概念模型</strong></li>
+<li><strong>逻辑模型</strong></li>
+<li>物理模型</li>
+</ol>
+<h2 id="2-2-概念模型"><a href="#2-2-概念模型" class="headerlink" title="2.2 概念模型"></a>2.2 概念模型</h2><p>用于对信息世界的组织和建模，是现实世界到机器世界的一个中间过程，是用户和数据库设计人员进行交流的语言。因此应当具有较强的语义性和简单性。</p>
+<p><strong>基本概念</strong>：</p>
+<ol>
+<li>实体：现实世界相同事物或者概念的<strong>集合</strong>。</li>
+<li>属性：实体所具有的某一特性。</li>
+<li>码：唯一标识实体的属性集称为码。</li>
+<li>实体型：用实体名和其属性集来抽象刻画所有同类实体，称为实体型。</li>
+<li>实体集：统一类型实体的集合。</li>
+<li>联系：实体内部和实体之间的联系。</li>
+</ol>
+<p><strong>联系</strong>：</p>
+<ol>
+<li>两个实体之间的联系：<ol>
+<li>一对一联系（1 : 1）：对于实体集A中的每一个实体，在实体集B中至多有一个与之联系，反之亦然。</li>
+<li>一对多联系（1 : n）：对于实体集A中的每一个实体，在实体集B中存在n个实体与之联系；对于实体集B中的每一个实体，在实体集A中仅有一个与之联系。</li>
+<li>多对多联系（m : n）：对于实体集A中的每一个实体，在实体集B中存在n个实体与之联系；对于实体集B中的每一个实体，在实体集A中也有m个与之联系。</li>
+</ol>
+</li>
+<li>两个以上实体之间的联系：<br>同样有一对一（1 : 1），一对多（1 : n），多对多（m : n : p）的联系</li>
+<li>单个实体之间的联系：<br>同样有一对一（1 : 1），一对多（1 : n），多对多（m : n : p）的联系</li>
+</ol>
+<p><strong>ER方法（实体-联系方法）</strong>：</p>
+<ol>
+<li>用来描述现实世界信息结构的常用方法，通常使用ER图来描述，描述结果也被称为ER模型。</li>
+<li>ER图由实体、属性和联系组成：<ol>
+<li>实体：用矩形表示。</li>
+<li>属性：用椭圆表示，主码用下划线标明，用无向线段将其与实体连接。</li>
+<li>联系：用菱形表示，用无向线段与有关实体连接。</li>
+</ol>
+</li>
+</ol>
+<h2 id="2-3-逻辑模型"><a href="#2-3-逻辑模型" class="headerlink" title="2.3 逻辑模型"></a>2.3 逻辑模型</h2><p>必须要把概念模型转换为逻辑数据模型才能在DBMS中实现，因此逻辑模型既面向用户又面向系统。</p>
+<p>逻辑数据模型就是一种组织数据的数据结构，是具体的DBMS支持的数据模型。</p>
+<p><strong>常见的逻辑数据模型</strong>：</p>
+<ol>
+<li>层次模型：<br>优点是实现简单、结构清晰、数据呈现完整；缺点是不能表示两种以上实体的联系和多对多联系、插入删除复杂、查询孩子节点必须经过双亲节点。</li>
+<li>网状模型：<br>优点是更直观的表现现实世界的复杂关系、具有良好的性能和存储效率；缺点是结构复杂、数据独立性差。</li>
+<li>关系模型：就是我们常说的给关系表（employee表、student表……）<ol>
+<li>优点在于与其他模型相比，关系模型具有较强数据理论根据、数据结构简单清晰、关系模型的存取路径对用户不可见，方便程序员工作，也确保了更高的数据独立性和安全性；</li>
+<li>缺点在于由于存取路径不可见，导致对数据的查询效率低需要优化，增加了开发DBMS的负担、关系必须是规范化的（即属性是不可再分的数据项，不允许表中有表）。</li>
+</ol>
+</li>
+</ol>
+<h2 id="2-4-三层结构体系结构和数据独立性"><a href="#2-4-三层结构体系结构和数据独立性" class="headerlink" title="2.4 三层结构体系结构和数据独立性"></a>2.4 三层结构体系结构和数据独立性</h2><p>三层结构体系基于不同级别用户对数据库的认知不同，分为三层：外模式、模式（又称概念模式）、内模式。三级模式有助于<strong>提高数据库的逻辑独立性和物理独立性</strong>。</p>
+<p><strong>三级模式结构</strong>：</p>
+<ol>
+<li>外模式：也称子模式或者用户模式，是用户或应用程序员能看到的<strong>一部分数据的逻辑结构和特征描述</strong>。外模式一般是模式的子集，可以有多个外模式。</li>
+<li>模式：是介于内模式和外模式之间的模式，包含<strong>所有数据的逻辑结构和特征描述</strong>，因此只有一个概念模式。外模式都是模式的一部分体现。</li>
+<li>内模式：也称存储模式，是<strong>所有数据的物理结构和存储结构的描述</strong>，即数据在数据库中是以什么方式存储的。只有一个内模式。</li>
+</ol>
+<p><strong>二级映像</strong>：</p>
+<ol>
+<li>为了实现三级模式的联系和转换，DBMS在三级模式之间增加了二级映像。</li>
+<li>外模式/模式映像：定义了外模式和模式的映射关系，当模式改变时，可以通过管理员手动调整映像的方式，让外模式也不会因此随之改变，确保了数据的<strong>逻辑独立性</strong>。由于存在多个外模式，所以也要<strong>存在多个</strong>外模式/模式映像。</li>
+<li>模式/内模式映像：定义了数据的逻辑结构和存储结构的映射关系，当数据库存储结构改变时，可以通过管理员手动调整映像的方式，让模式也不会因此随之改变，确保了数据的<strong>物理独立性</strong>。由于模式和内模式都只有一个，所以模式/内模式映像也<strong>只有一个</strong>。</li>
+</ol>
+<h1 id="3-第三章"><a href="#3-第三章" class="headerlink" title="3 第三章"></a>3 第三章</h1><p>关系是个体之间的关系，联系是实体之间的一对一、一对多、多对多联系。</p>
+<p>在数据库领域，关系是一种特殊的表。</p>
+<h2 id="3-1-关系模型"><a href="#3-1-关系模型" class="headerlink" title="3.1 关系模型"></a>3.1 关系模型</h2><p>对关系的描述一般称为关系模式，形如：关系名（属性名1，属性名2……）</p>
+<p><strong>关系模型基础概念</strong>：</p>
+<ol>
+<li>元组：关系中的每一行数据称为一个元组或者一条记录。</li>
+<li>属性：关系种的每一列称为一个属性，列名就是属性名。</li>
+<li>域：属性的取值范围就是域。</li>
+<li>码：码也被称为键，指取值具有唯一性的属性，可以唯一确定一条记录的属性，他可以是一个属性也可以由多个属性组成。</li>
+<li>主码：一个关系中的所有码构成候选码，为了方便管理，选择<strong>一个</strong>候选码作为主码，主码取值具有唯一性且不可为空。</li>
+<li>外码：关系模式中某一个属性不是该关系模式的主码但是是另外一个关系模式的主码，就称其为外码。外码必须和参照主码具有相同的域，取值只能引用参照主码的值或者取null值。</li>
+</ol>
+<h2 id="3-2-关系的完整性约束"><a href="#3-2-关系的完整性约束" class="headerlink" title="3.2 关系的完整性约束"></a>3.2 关系的完整性约束</h2><p>完整性约束是为了保证数据的正确和相容性，对关系模型提出的某些约束条件或者规则。</p>
+<p><strong>完整性约束分类</strong>：</p>
+<ol>
+<li>域完整性约束：指属性的取值域的范围约束，包括数据类型、格式、取值范围、是否可为空值等。</li>
+<li>实体完整性约束：指所有的关系表都必须具有主码，且每个主码取唯一值和不能为空。</li>
+<li>参照完整性约束：指所有外码的取值必须来自于参照主码，或者取空值，不能取不存在的值。</li>
+<li>用户定义完整性约束：指针对某一具体关系数据库的约束条件，一般来说就是用户自定义的约束。</li>
+</ol>
+<h2 id="3-3-关系代数"><a href="#3-3-关系代数" class="headerlink" title="3.3 关系代数"></a>3.3 关系代数</h2><p>关系代数是对表中记录的操作，其中，选择、投影、并、差、笛卡尔积是五种基本查询操作。</p>
+<p><strong>关系代数运算符</strong>：</p>
+<ol>
+<li>集合运算符：并（⋃）、交（⋂）、差（-）、笛卡尔积（×）。</li>
+<li>关系运算符：选择（）、投影（Π）、连接（⋈）、除（÷）。</li>
+<li>算术比较符：大于（＞）、大于等于（≥）、小于（＜）、小于等于（≤）、等于（=）、不等于（≠）。</li>
+<li>逻辑运算符：与（⋀）、或（⋁）、非（）。</li>
+<li>其他运算符：更名（ρ）、赋值（⬅）。</li>
+</ol>
+<p><strong>集合运算</strong>：</p>
+<ol>
+<li>并相容性：集合R和S要进行并差交运算，集合R和S必须拥有相同的属性个数。</li>
+<li>并：R和S种的所有元组的集合，相同的元组会被消除。</li>
+<li>差：集合R种不属于S的元组的集合。</li>
+<li>交：集合R和S种共有的元组的集合。由并和差两种操作组合衍生而来。</li>
+<li>笛卡尔积：集合R种的元组和S中的元组的所有组合的集合。</li>
+</ol>
+<p><strong>关系运算</strong>：</p>
+<ol>
+<li>选择：筛选出集合R中所有符合选择条件的元组。</li>
+<li>投影：筛选出集合R中的某些列（属性）而丢弃其他列。</li>
+<li>连接：将集合R和S关联起来，且仅保留符合连接条件的元组。是由笛卡尔积和选择两种操作组合衍生而来。</li>
+<li>除：集合R中同时包含集合S中相同属性的元组的集合。</li>
+</ol>
+<p><strong>其他运算</strong>：</p>
+<ol>
+<li>赋值运算：如果关系表达式的结果没有能够引用的名字，就无法运用于后面的运算，用赋值号给运算结果指定一个关系名。</li>
+<li>更名运算：同样输给运算结果取名，还可以给运算结果中的属性名改名。</li>
+</ol>
+<h1 id="4-第四章"><a href="#4-第四章" class="headerlink" title="4 第四章"></a>4 第四章</h1><p>略</p>
+<h1 id="5-第五章"><a href="#5-第五章" class="headerlink" title="5 第五章"></a>5 第五章</h1><h2 id="5-1-函数依赖"><a href="#5-1-函数依赖" class="headerlink" title="5.1 函数依赖"></a>5.1 函数依赖</h2><p>函数依赖属于数据依赖的一种，当集合R中的两个元组在任意时刻，属性A相同时属性B也相同，则称A<strong>函数决定</strong>B，或称B<strong>函数依赖</strong>A。</p>
+<p><strong>函数依赖的分类</strong>：</p>
+<ol>
+<li>完全函数依赖：属性Y函数依赖于属性X，但是属性Y不依赖X的任何真子集。</li>
+<li>部分函数依赖：属性Y函数依赖于属性X，而且属性Y依赖于X的真子集。</li>
+<li>传递函数依赖：属性Y函数依赖于属性X，属性X不依赖于Y，属性Z依赖于属性Y，则称属性Z（传递）依赖于X。</li>
+</ol>
+<h2 id="5-2-范式"><a href="#5-2-范式" class="headerlink" title="5.2 范式"></a>5.2 范式</h2><p>指规范的表现形式，在关系型数据库中指符合某一种级别的关系模式的集合。</p>
+<p>满足第一范式被称为1NF，在此基础上，满足第二范式被称为2NF，以此类推。</p>
+<p>六级范式：</p>
+<ol>
+<li>第一范式：指一个关系模式种的所有属性都是不可再分的基本数据项。</li>
+<li>第二范式：在满足第一范式的基础上，关系模式中的每个非主属性（主码，主键）都完全依赖于主属性。</li>
+<li>第三范式：在满足第二范式的基础上，关系模式中的属性不依赖于其他非主属性。</li>
+<li>BC范式：略</li>
+<li>第四范式：略</li>
+<li>第五范式：略</li>
+</ol>
+<h2 id="5-3-关系模式的规范化和反规范化"><a href="#5-3-关系模式的规范化和反规范化" class="headerlink" title="5.3 关系模式的规范化和反规范化"></a>5.3 关系模式的规范化和反规范化</h2><p><strong>规范化</strong>：</p>
+<p>关系的规范化越低，越容易出现插入异常、删除异常等情况，因此需要对其进行规范化，将其转换为高级范式。<strong>规范化的过程是对关系进行分解的过程，目的在于减少冗余，消除更新、插入、删除的异常</strong>。需要注意的是并不是越高级的范式越好。</p>
+<p><strong>反规范化</strong>：</p>
+<p>正如上述所说，并非越高级的范式越好，因此需要对关系进行反规范化，即对范式降级。<strong>反规范化就是对关系进行合成的过程，其目的在于通过引入部分合理的冗余，提高查询的效率降低查询的难度</strong>。</p>
+<h1 id="6-第六章"><a href="#6-第六章" class="headerlink" title="6 第六章"></a>6 第六章</h1><h2 id="6-1-数据库设计的阶段"><a href="#6-1-数据库设计的阶段" class="headerlink" title="6.1 数据库设计的阶段"></a>6.1 数据库设计的阶段</h2><p>数据库设计就是在现有的硬件设施、DBMS、系统软件来满足用户的需求转换为有效的数据库模型的过程。</p>
+<p><strong>数据库设计的基本过程</strong>：</p>
+<ol>
+<li>需求分析阶段：主要是收集数据和对其进行分析整理。</li>
+<li>概念结构设计阶段：负责对用户需求进行分析，将其和数据转换为独立于DBMS的概念模型。</li>
+<li>逻辑结构设计阶段：负责将概念模型转换为某个具体DBMS所支持的数据模型，并对其进行优化。</li>
+<li>物理结构设计阶段：负责找到合适的物理模型存储逻辑模型。</li>
+<li>数据库实施阶段：负责根据逻辑模型和物理模型建立数据库，将数据录入，并进行试运营。</li>
+<li>数据库运行与维护阶段：数据库应用程序经过试运营后投入正式使用，在运行过程中不断对其进行优化和迭代。</li>
+</ol>
+<h2 id="6-2-概念结构设计阶段"><a href="#6-2-概念结构设计阶段" class="headerlink" title="6.2 概念结构设计阶段"></a>6.2 概念结构设计阶段</h2><p>该阶段负责将用户需求转换为概念模型，该模型独立于DBMS仅专注于信息的组织结构和处理模式。</p>
+<p>采用ER模型方法的概念结构设计通常可分为三步：抽象数据设计局部ER图、集成局部ER图得到全局概念结构、优化全局ER模型。</p>
+<h2 id="6-3-逻辑结构设计阶段"><a href="#6-3-逻辑结构设计阶段" class="headerlink" title="6.3 逻辑结构设计阶段"></a>6.3 逻辑结构设计阶段</h2><p>该阶段负责将概念模型转换为适合DBMS的逻辑结构，分为三步：概念模型转换为关系数据模型、优化数据模型、针对具体应用设计用户外模式。</p>
+<p>概念模型转换为关系数据模型就是将ER图表示的实体联系转换成关系模式，通常包含以下两个原则：</p>
+<ol>
+<li>每个实体类型转换成一个关系模式，实体的属性就是关系模式的属性，实体的码就是关系模式的主码。</li>
+<li>实体间联系根据不同情况有不同的处理，一般来讲需要注意，m:n的联系必须要转换成一个单独的关系模式。</li>
+</ol>
+<h1 id="7-第七章"><a href="#7-第七章" class="headerlink" title="7 第七章"></a>7 第七章</h1><h2 id="7-1-事务"><a href="#7-1-事务" class="headerlink" title="7.1 事务"></a>7.1 事务</h2><p><strong>定义</strong>：</p>
+<p>事务是用户定义的一个数据操作序列，这些操作要么全部执行，要么全部不执行，是一个不可分割的工作单元。</p>
+<p><strong>操作</strong>：</p>
+<p>事务可以由用户开启，也可以让DBMS自动决定事务是否开启。事务相关的操作：</p>
+<ol>
+<li>BEGIN TRANSACTION：开启事务。</li>
+<li>COMMIT：提交事务。</li>
+<li>ROLLBACK：回滚事务。</li>
+</ol>
+<p><strong>特征（ACID特性）</strong>：</p>
+<ol>
+<li>原子性（Atomicity）：指事务的操作要么全部做要么都不做，<strong>不可分割</strong>。</li>
+<li>一致性（Consistency）：是指数据库必须从一个一致性转为另一个一致性，不允许部分改变。一致性和原子性紧密相关。</li>
+<li>隔离性（Isolation）：指事务不能受到其他事务的干扰，事务之间必须是相互隔离互不干扰的。</li>
+<li>持久性（Durability）：也称永久性，事务一旦提交，对数据库的修改就是永久性的。</li>
+</ol>
+<h2 id="7-2-并发控制"><a href="#7-2-并发控制" class="headerlink" title="7.2 并发控制"></a>7.2 并发控制</h2><p>让事务串行执行虽然可以有效保持数据库的一致性，但是效率颇低，于是<strong>为了提高数据库的并行度，避免数据库资源的闲置浪费</strong>，可以让多个事务同时执行，即并发执行。</p>
+<p>而在这个过程中，可能存在多个事务同时对一段数据进行读取或改写，出现各种各样的错误，破坏数据库的一致性，因此<strong>保护数据库一致性的这个过程就是并发控制</strong>。</p>
+<p><strong>并发操作引起的问题</strong>：</p>
+<ol>
+<li>丢失更新问题：两个事务<strong>同时读取并修改同一段数据</strong>，事务2的提交<strong>覆盖</strong>了事务1的提交，导致事务1的更新丢失。</li>
+<li>读“脏”数据问题：事务1对一段数据进行修改后，事务2读取了该段数据，但是由于某种原因，事务1<strong>撤销</strong>了自己的修改操作，导致事务2<strong>之前读取到的数据与现在数据库中的数据不同</strong>，称之为读脏数据。读到脏数据的原因就是读取了未提交事务的数据（或称未提交数据）。</li>
+<li>不可重复读问题：事务1读取一段数据后，事务2<strong>修改</strong>了该段数据，此时事务1再读取该段数据却<strong>得到了不同的数据</strong>，读取数据被称为检索，所有又称检索不一致。</li>
+</ol>
+<p><strong>并发控制的手段——封锁技术（或简称锁）</strong>：</p>
+<ol>
+<li>封锁（Locking）：就是事务T在操作某一个数据对象之前，向DBMS发送一段请求对操作对象上锁，被上锁的数据对象不能被除事务T以外的事务修改，确保了数据库的一致性。</li>
+<li>锁的分类：<ol>
+<li>排他锁（简称X锁）：又称写锁，事务T对数据对象上了X锁之后，<strong>只有事务T能够读取和更新该数据对象，其他事务就不能再对该对象上任何锁，也不能读取和更新该数据对象</strong>，直到事务T释放X锁。</li>
+<li>共享锁（简称S锁）：又称读锁，事务T对数据对象上了S锁之后，事务T只能读取该数据对象而不能更新，其他事务<strong>只能对该数据对象上S锁而不能加X锁</strong>，直到事务T释放S锁。注意<strong>上了S锁之后，所有事务都只能读而不能修改</strong>。</li>
+</ol>
+</li>
+<li>封锁协议：<ol>
+<li>封锁协议规定了何时上锁，何时释放锁和封锁的时间等，不同等级的封锁协议在一定程度上保证了数据库的一致性避免并发操作引起问题。</li>
+<li>一级封锁协议：在需要<strong>修改数据之前</strong>，必须对数据上<strong>X锁</strong>，<strong>直到事务完成</strong>（事务完成包括commit提交和roolback回滚）。一级协议保证了<strong>不会出现丢失更新的问题</strong>，但是如果只读数据就不用上锁，因此还是可能出现脏数据和不可重复读问题。</li>
+<li>二级封锁协议：在一级封锁协议的基础上，事务在<strong>读取数据之前</strong>，必须对数据上<strong>S锁</strong>，<strong>直到数据读取完成就释放S锁</strong>。二级协议除了保证了不会出现丢失更新问题，还保证<strong>避免了读脏数据的问题</strong>。但是由于数据在读取完成后就释放S锁，这时其他事务就可以修改数据了，所以还是会存在不可重复读的问题。</li>
+<li>三级封锁协议：在一级封锁协议的基础上，事务在<strong>读取数据之前</strong>，必须对数据上<strong>S锁</strong>，<strong>直到事务完成后才释放S锁</strong>。这样就可以保证在事务完成之前，无论读多少次数据都能得到相同的结果，因此<strong>避免了不可重复读的问题</strong>。</li>
+<li>死锁：同操作系统的死锁，两个事务都在等待对方释放上锁的数据，导致两个事务都不能完成。</li>
+</ol>
+</li>
+<li>并发调度的可串行性：见下一节。</li>
+</ol>
+<h2 id="7-3-并发调度的可串行性"><a href="#7-3-并发调度的可串行性" class="headerlink" title="7.3 并发调度的可串行性"></a>7.3 并发调度的可串行性</h2><p><strong>串行调度</strong>：</p>
+<p>即每个事务都顺序执行，这种情况下虽然串行的顺序不一定相同，但<strong>执行结果总是正确的</strong>；</p>
+<p><strong>并发调度</strong>：</p>
+<p>区别于串行调度，时刻可以同时执行，这时并行的顺序就可能影响执行结果的正确性。</p>
+<p><strong>并发调度的可串行性</strong>：</p>
+<p>指找到并行执行的某个顺序下的结果，与某一串行执行的结果相同，就可以说这个并行执行是正确的。</p>
+<p><strong>二段锁协议</strong>：</p>
+<p>是DBMS确保并发调度可串行性的手段，其含义是：将事务分为两个阶段，第一阶段只允许申请封锁，第二阶段只允许释放封锁。</p>
+<p>实现了二段锁协议的事务只是具备了可串行化的充分条件而不是必要条件，意思是可串行化的事务同样可以不遵守二段锁协议。</p>
+<h2 id="7-4-数据恢复"><a href="#7-4-数据恢复" class="headerlink" title="7.4 数据恢复"></a>7.4 数据恢复</h2><p>数据库在运行中可能发生各种各样的故障：</p>
+<ol>
+<li>事务内部故障：及时回滚事务，并且检查并修复事务内部错误即可。</li>
+<li>系统故障：因为各种原因导致系统重启，使部分事务错误提交或未执行导致数据库内部数据错误，需要根据日志还大批量回滚和重做事务来修复。</li>
+<li>介质故障：因为外界因素导致数据库严重损坏、数据丢失等问题，需要将数据库恢复到之前的<strong>备份</strong>。</li>
+<li>计算机病毒：略</li>
+</ol>
+<h1 id="10-第十章"><a href="#10-第十章" class="headerlink" title="10 第十章"></a>10 第十章</h1><h2 id="10-1-安全控制模型"><a href="#10-1-安全控制模型" class="headerlink" title="10.1 安全控制模型"></a>10.1 安全控制模型</h2><p>数据库的安全控制包括四个过程，分别是：操作系统安全、SQL Server验证、数据库访问权限、数据库对象访问权限。其中只有最后三个过程由SQL Server负责。</p>
+<p><strong>三个过程</strong>：</p>
+<ol>
+<li>SQL Server验证：确定用户是否使数据库服务器的合法用户，即拥有登陆账号。</li>
+<li>数据库访问权限：确定用户是否是某个数据库的合法用户。</li>
+<li>数据库对象访问权限：确定用户是否有合适的操作权限。</li>
+</ol>
+<h2 id="10-2-身份验证模式"><a href="#10-2-身份验证模式" class="headerlink" title="10.2 身份验证模式"></a>10.2 身份验证模式</h2><p>SQL Server提供了两种身份验证模式：</p>
+<ol>
+<li>windows身份验证模式：即SQL Server通过验证当前用户是否是Windows系统的合法用户来确定是否是数据库服务器的合法用户</li>
+<li>混合身份认证模式：即同时允许Windows合法用户和SQL Server单独授权的用户登录到数据库服务器上。</li>
+</ol>
+<h2 id="10-3-登录名、用户、角色管理"><a href="#10-3-登录名、用户、角色管理" class="headerlink" title="10.3 登录名、用户、角色管理"></a>10.3 登录名、用户、角色管理</h2><p><strong>登录名、用户、角色的区分</strong>：</p>
+<ol>
+<li>登录名：数据库访问者需要登录到数据库服务器中，因此需要有一个登录号来通过安全控制的SQL Server验证的过程。</li>
+<li>用户：是指对某个数据库具有访问和操作权限的访问者，这个用户身份需要被授予给登录名。</li>
+<li>角色：特指具有一系列权限的身份，这个角色身份可以赋予给用户，此时这个用户就具有了该角色所有的权限。</li>
+</ol>
+<p><strong>登录名管理</strong>：</p>
+<ol>
+<li>创建：<code>CREATE LOGIN login_name WITH PASSWORD = &#39;...&#39;</code></li>
+<li>删除：<code>DROP LOGIN login_name</code></li>
+</ol>
+<p><strong>用户管理</strong>：</p>
+<ol>
+<li>创建：<code>CREATE USER user_name FOR LOGIN login_name</code></li>
+<li>删除：<code>DROP USER user_name</code></li>
+</ol>
+<p><strong>角色管理</strong>：</p>
+<ol>
+<li>创建：<code>CREATE ROLE role_name</code></li>
+<li>在创建时赋予用户角色或覆盖其他角色：<code>CREATE ROLE role_name AUTHORIZATION owner_name</code></li>
+<li>将某用户添加到角色中：<code>EXEC sp_addrolemember &#39;role_name&#39;, &#39;user_name&#39;</code></li>
+<li>将某用户从角色中删除：<code>EXEC sp_droprolemember &#39;role_name&#39;, &#39;user_name&#39;</code></li>
+<li>删除：<code>DROP ROLE role_name</code></li>
+</ol>
+<h2 id="10-4-权限管理"><a href="#10-4-权限管理" class="headerlink" title="10.4 权限管理"></a>10.4 权限管理</h2><p><strong>权限分类</strong>：</p>
+<ol>
+<li>对象权限：即增删改查.</li>
+<li>语句权限：即CREATE.</li>
+<li>隐含权限：DBMS默认创建的权限。</li>
+</ol>
+<p><strong>权限管理</strong>：</p>
+<ol>
+<li>赋予权限：允许用户或角色具有某种操作权。</li>
+<li>收回权限：不允许用户或角色具有某种操作权，或者收回之前赋予的权限。</li>
+<li>拒绝权限：拒绝用户或角色因为继承而获得某种操作权。</li>
+</ol>
+<p><strong>T-SQL语句</strong>：</p>
+<ol>
+<li>赋予：<ol>
+<li>对象权限：<code>GRANT SELECT, DELETE, INSERT, UPDATE ON table_name TO owner_name</code></li>
+<li>语句权限：<code>GRANT CREATE TABLE, CREATE VIEW, CREATE DATABASE TO owner_name</code></li>
+</ol>
+</li>
+<li>收回：<ol>
+<li>对象权限：<code>REVOKE SELECT, DELETE, INSERT, UPDATE ON table_name FROM owner_name</code></li>
+<li>语句权限：<code>REVOKE CREATE TABLE, CREATE VIEW, CREATE DATABASE FROM owner_name</code></li>
+</ol>
+</li>
+<li>拒绝：<ol>
+<li>对象权限：<code>DENY SELECT, DELETE, INSERT, UPDATE ON table_name TO owner_name</code></li>
+<li>语句权限：<code>DENY  CREATE TABLE, CREATE VIEW, CREATE DATABASE TO owner_name</code></li>
+</ol>
+</li>
+</ol>
+<h1 id="11-第十一章"><a href="#11-第十一章" class="headerlink" title="11 第十一章"></a>11 第十一章</h1><h2 id="11-1-备份"><a href="#11-1-备份" class="headerlink" title="11.1 备份"></a>11.1 备份</h2><p><strong>备份的目的</strong>：</p>
+<p>为了能够在发生某种故障（见7.4小节）时，及时将已损坏的数据库恢复正常。</p>
+<p><strong>备份的分类</strong>：</p>
+<ol>
+<li>完整备份：将所有数据库信息都进行备份，备份下来的时一个完整的数据库。数据库的备份需要时间，在备份中用户同样可以进行操作，且备份会将备份过程中执行的操作记录下来。</li>
+<li>差异备份：是对最近一次备份以来发生的数据变化进行备份，它的特点是速度快体积小，通过增加差异备份的次数，可以有效减少数据丢失的风险。</li>
+<li>事务日志备份：仅对事务日志进行备份，事务日志中包含了从上一次备份以来所有已经完成的事务。事务日志备份由于只备份事务日志，所以速度更快、占据磁盘空间更小。</li>
+<li>需要注意的是，差异备份和事务日志备份尽管都只备份一部分数据加快了备份速度，但是差异备份只保留最近一次修改，事务日志保留了从上一次备份以来的所有事务。</li>
+</ol>
+<p><strong>备份内容</strong>：</p>
+<ol>
+<li>系统数据库：记录了重要的系统信息，必须<strong>完整备份</strong>。一旦进行修改，最好立刻备份。</li>
+<li>用户数据库：记录了重要的用户数据，必须<strong>完整备份</strong>。可以进行周期性的备份。</li>
+<li>事务日志：事务日志体积小，备份时间短，但是<strong>恢复需要的时间长</strong>。</li>
+</ol>
+<p><strong>建立备份</strong>：（其实不重要，强迫症迫使我写了）</p>
+<ol>
+<li>完整备份：<ol>
+<li>追加式：<code>BACKUP DATABASE database_name TO DISK=&#39;备份设备路径.bak&#39;</code></li>
+<li>覆盖式：<code>BACKUP DATABASE database_name TO DISK=&#39;备份设备路径.bak&#39; WITH INIT</code></li>
+</ol>
+</li>
+<li>差异备份：<ol>
+<li>追加式：<code>BACKUP DATABASE database_name TO DISK=&#39;备份设备路径.bak&#39; WITH DIFFERENTIAL</code></li>
+<li>覆盖式：<code>BACKUP DATABASE database_name TO DISK=&#39;备份设备路径.bak&#39; WITH DIFFERENTIAL, INIT</code></li>
+</ol>
+</li>
+<li>日志备份：<ol>
+<li>截断式：<code>BACKUP LOG database_name TO DISK=&#39;备份设备路径_log&#39;</code></li>
+<li>不截断式：<code>BACKUP LOG database_name TO DISK=&#39;备份设备路径_log&#39; WITH NO_TRUNCATE</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="11-2-备份策略"><a href="#11-2-备份策略" class="headerlink" title="11.2 备份策略"></a>11.2 备份策略</h2><p><strong>策略一：完整备份</strong></p>
+<p>适合于数据量不大，或者不平凡修改的数据库。</p>
+<p><strong>策略二：完整备份+日志备份</strong></p>
+<p>适用于用户不允许丢失太多数据，但又不想经常完整备份的情况。</p>
+<p><strong>策略三：完整备份+差异备份+日志备份</strong></p>
+<p>适用于用户不允许丢失太多数据，但又不想经常完整备份的情况，而且恢复速度比较块的情况。</p>
+<h2 id="11-3-备份恢复"><a href="#11-3-备份恢复" class="headerlink" title="11.3 备份恢复"></a>11.3 备份恢复</h2><p><strong>恢复顺序（流程）</strong>：</p>
+<ol>
+<li>恢复最近的完整数据库备份。</li>
+<li>恢复完整备份之后的最近的差异数据库备份。</li>
+<li>按事务日志的备份的先后顺序回资完整备份的所有日志备份。</li>
+</ol>
+<h1 id="12-第十二章"><a href="#12-第十二章" class="headerlink" title="12 第十二章"></a>12 第十二章</h1><p>我们可以在数据库里面完成做一些编程相关的事。</p>
+<h2 id="12-1-变量"><a href="#12-1-变量" class="headerlink" title="12.1 变量"></a>12.1 变量</h2><p><strong>变量分类</strong>：</p>
+<ol>
+<li>局部变量：用户自定义的变量，可以用来存储数值或者字符串，以@开头。</li>
+<li>全局变量：不能又用户定义的变量，是DBMS自带的变量，以@@开头，一般存有某些特定的值。</li>
+</ol>
+<p><strong>变量声明和赋值</strong>：</p>
+<ol>
+<li>声明：<code>DECLARE @local_variable_name datatype</code></li>
+<li>赋值：<code>SET @local_variable_name = expression</code> 或者 <code>SELECT @local_variable_name = expression</code></li>
+</ol>
+<p><strong>运算符</strong>:</p>
+<p>略</p>
+<h2 id="12-2-流程控制"><a href="#12-2-流程控制" class="headerlink" title="12.2 流程控制"></a>12.2 流程控制</h2><p><strong>选择判断</strong>：</p>
+<p><code>IF...ELSE</code> 和 <code>CASE...ELSE</code></p>
+<p><strong>循环</strong>：</p>
+<p><code>WHILE...CONTINUE...BREAK</code></p>
+<p><strong>分段符</strong>：</p>
+<p><code>BEGIN...END</code></p>
+<h2 id="12-3-存储过程"><a href="#12-3-存储过程" class="headerlink" title="12.3 存储过程"></a>12.3 存储过程</h2><p><strong>存储过程定义</strong>：</p>
+<p>是为了实现某一功能的语句集合体，这些语句集合为一个完整单元并给他取一个名字。</p>
+<p><strong>优点</strong>：</p>
+<ol>
+<li>存储编译结果，执行速度快、效率高。</li>
+<li>可被多次调用。</li>
+<li>存储过程存储在数据库中，可以方便的被用户调用。</li>
+<li>存储过程可以接收传出数据，可以被嵌套使用。</li>
+<li>开发者可以不必在客户端编写大量代码。</li>
+</ol>
+<p><strong>创建</strong>：</p>
+<ol>
+<li>不带参数：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> name</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line">(...) </span><br></pre></td></tr></table></figure></li>
+<li>带参数：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> name</span><br><span class="line"><span class="variable">@v1</span> datatype,</span><br><span class="line"><span class="variable">@v2</span> datatype,</span><br><span class="line"><span class="variable">@result</span> datatype OUTPUT</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line">(...) </span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><strong>删除</strong>：</p>
+<p><code>DROP PROCEDURE name</code></p>
+<p><strong>执行</strong>：</p>
+<p><code>EXEC name &#39;v1&#39;, &#39;v2&#39;, @answer OUTPUT</code></p>
+<h2 id="12-4-触发器"><a href="#12-4-触发器" class="headerlink" title="12.4 触发器"></a>12.4 触发器</h2><p><strong>触发器定义</strong>：</p>
+<p>触发器是在对表进行插入、更新或者删除操作时自动执行的<strong>存储过程</strong>，触发器时一种高级约束。</p>
+<p><strong>触发器类型</strong>：</p>
+<ol>
+<li>AFTER触发器：在执行INSERT、UPDATE、DELETE<strong>之后</strong>执行的触发器。</li>
+<li>INSTEAD OF触发器：在执行指定操作<strong>之前</strong>触发，<strong>不执行指定操作而是执行INSTEAD OF触发器中定义的操作</strong>。</li>
+</ol>
+<p><strong>inserted和deleted表</strong>：</p>
+<ol>
+<li>这两张表是在触发器触发时临时创建的两张表，只可读不可写，触发器执行完之后自动删除。</li>
+<li>inserted表：临时保存了插入或者更新之后的记录行。</li>
+<li>deleted表：临时保存了删除或者更新之前的记录行。</li>
+<li>可以在触发器内查询这两张表来决定是否进行某种操作。</li>
+</ol>
+<p><strong>创建</strong>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> trigger_name</span><br><span class="line"><span class="keyword">ON</span> table_name</span><br><span class="line"><span class="keyword">FOR</span> [<span class="keyword">DELEtE</span>, <span class="keyword">INSERT</span>, UPDATE]</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line">(...)</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除</strong>：</p>
+<p><code>DROP TRIGGER trigger_name</code> 大概</p>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>John Doe<br>
+        <strong>Link：</strong><a href="http://example.com/2022/01/02/DataBase/" title="http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;01&#x2F;02&#x2F;DataBase&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;01&#x2F;02&#x2F;DataBase&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="Search" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1641541780874"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>

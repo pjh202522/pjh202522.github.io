@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>Hexo</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="MyBatis 框架1 总体概述1.1 软件开发常用结构1.1.1 三层架构三层架构包括的三层： ​    界面层、业务逻辑层、数据访问层 三层的职责：  界面层：接受用户数据，显示请求的处理结果。（jsp，html，servlet） 业务逻辑层：接受界面层传递过来的数据，检查数据，计算业务逻辑，调用数据访问层获取数据。（service） 数据访问层：与数据库打交道。实现对数据的增删改查。（dao">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/01/02/MyBatis/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="MyBatis 框架1 总体概述1.1 软件开发常用结构1.1.1 三层架构三层架构包括的三层： ​    界面层、业务逻辑层、数据访问层 三层的职责：  界面层：接受用户数据，显示请求的处理结果。（jsp，html，servlet） 业务逻辑层：接受界面层传递过来的数据，检查数据，计算业务逻辑，调用数据访问层获取数据。（service） 数据访问层：与数据库打交道。实现对数据的增删改查。（dao">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/yueyinghaibao/Desktop===/影像资料/临时截图文件夹/1.png">
+<meta property="article:published_time" content="2022-01-02T09:58:01.234Z">
+<meta property="article:modified_time" content="2021-09-19T12:21:24.207Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/yueyinghaibao/Desktop===/影像资料/临时截图文件夹/1.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+    <link rel="stylesheet" href="/css/style.css?v=1641541780860">
+     
+    
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1641541780860">
+    
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://avatars.githubusercontent.com/u/74764646" alt="John Doe"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="John Doe">
+            <img src="https://avatars.githubusercontent.com/u/74764646" alt="John Doe" alt="John Doe">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>15</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=pjh202522.github.io" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/11767462" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/pjh202522" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+    
+    
+
+    
+    
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 John Doe
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a><script data-ad-client="ca-pub-2058306854838448" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="" class="lazyload">
+              <h1></h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年01月02日</a>
+    <a><i class="nexmoefont icon-areachart"></i>5.6k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 26 分钟</a>
+</div>
+
+      
+
+      <h1 id="MyBatis-框架"><a href="#MyBatis-框架" class="headerlink" title="MyBatis 框架"></a>MyBatis 框架</h1><h2 id="1-总体概述"><a href="#1-总体概述" class="headerlink" title="1 总体概述"></a>1 总体概述</h2><h3 id="1-1-软件开发常用结构"><a href="#1-1-软件开发常用结构" class="headerlink" title="1.1 软件开发常用结构"></a>1.1 软件开发常用结构</h3><h4 id="1-1-1-三层架构"><a href="#1-1-1-三层架构" class="headerlink" title="1.1.1 三层架构"></a>1.1.1 三层架构</h4><p>三层架构包括的三层：</p>
+<p>​    界面层、业务逻辑层、数据访问层</p>
+<p>三层的职责：</p>
+<ol>
+<li>界面层：接受用户数据，显示请求的处理结果。（jsp，html，servlet）</li>
+<li>业务逻辑层：接受界面层传递过来的数据，检查数据，计算业务逻辑，调用数据访问层获取数据。（service）</li>
+<li>数据访问层：与数据库打交道。实现对数据的增删改查。（dao）</li>
+</ol>
+<p>三层对应的包：</p>
+<ol>
+<li>界面层：controller  （servlet）</li>
+<li>业务逻辑层：service   （service类）</li>
+<li>数据访问层：dao   （dao类）</li>
+</ol>
+<p>三层中类的交互：</p>
+<p>​    用户使用界面层——》业务逻辑层——》数据访问层——》数据库</p>
+<p>三层对应的处理框架：</p>
+<p>​    界面层——servlet——springmvc</p>
+<p>​    业务逻辑层——service类——spring</p>
+<p>​    数据访问层——dao类——mybatis</p>
+<h3 id="1-2-框架（Framework）"><a href="#1-2-框架（Framework）" class="headerlink" title="1.2 框架（Framework）"></a>1.2 框架（Framework）</h3><h4 id="1-2-1-框架是一个模板"><a href="#1-2-1-框架是一个模板" class="headerlink" title="1.2.1 框架是一个模板"></a>1.2.1 框架是一个模板</h4><ol>
+<li>框架中定义好了一些功能，这些功能时可用的。</li>
+<li>可以加入项目中自己的功能，这些功能可以利用框架中写好的功能。</li>
+</ol>
+<p>框架是一个半成品软件，定义好了一些基础功能，需要加入自己的功能来完善。基础功能是可重复使用的，可升级的。</p>
+<h4 id="1-2-2-框架特点"><a href="#1-2-2-框架特点" class="headerlink" title="1.2.2 框架特点"></a>1.2.2 框架特点</h4><ol>
+<li>框架是有局限的，不能干所有事情</li>
+<li>框架是针对某一个领域有效。</li>
+<li>框架是一个软件</li>
+</ol>
+<h3 id="1-3-JDBC的缺陷"><a href="#1-3-JDBC的缺陷" class="headerlink" title="1.3 JDBC的缺陷"></a>1.3 JDBC的缺陷</h3><p>使用JDBC的缺陷：</p>
+<ol>
+<li>代码比较多，开发效率低</li>
+<li>需要关注Connection，Statement，ResultSet对象创建和销毁</li>
+<li>对Result查询的结果，需要自己封装为list</li>
+<li>重复的代码比较多</li>
+<li>业务代码和数据库的操作混在一起</li>
+</ol>
+<p>总之，我们需要一个新的工具代替JDBC，以弥补JDBC的缺陷。那就是我们今天所学的MyBatis</p>
+<h3 id="1-4-MyBatis框架是什么"><a href="#1-4-MyBatis框架是什么" class="headerlink" title="1.4 MyBatis框架是什么"></a>1.4 MyBatis框架是什么</h3><h4 id="1-4-1-MyBatis的背景"><a href="#1-4-1-MyBatis的背景" class="headerlink" title="1.4.1 MyBatis的背景"></a>1.4.1 MyBatis的背景</h4><p>MyBatis本是 apache 的一个开源项目 iBatis, 2010年这个项目由 apache software foundation迁移到了google code，并且改名为MyBatis 。2013年11月迁移到Github。</p>
+<p>iBATIS一词来源于“internet”和“abatis”的组合，是一个基于Java的持久层框架。iBATIS提供的持久层框架包括SQL Maps和Data Access Objects (DAOs)</p>
+<h4 id="1-4-2-MyBatis"><a href="#1-4-2-MyBatis" class="headerlink" title="1.4.2 MyBatis"></a>1.4.2 MyBatis</h4><p>mybatis是MyBatis SQL Mapper Framework for Java （sql映射框架）</p>
+<ol>
+<li><p>sql mapper：sql映射</p>
+<p> 可以把数据库表中的一行数据映射为一个java对象</p>
+<p> 一行数据可以看作是一个java对象，操作这个对象，就相当于操作表中的数据</p>
+</li>
+<li><p>Data Access Objects （DAOs）：数据访问</p>
+<p> 对数据库执行增删改查</p>
+</li>
+</ol>
+<h4 id="1-4-3-MyBatis提供了哪些功能"><a href="#1-4-3-MyBatis提供了哪些功能" class="headerlink" title="1.4.3 MyBatis提供了哪些功能"></a>1.4.3 MyBatis提供了哪些功能</h4><ol>
+<li>提供了创建Connection，Statement，ResultSet的能力，不用开发人员创建这些对象</li>
+<li>提供了执行sql语句的能力，不用你执行sql</li>
+<li>提供了循环sql，把sql的结果转为java对象List集合的能力</li>
+<li>提供了关闭资源的能力，不用你关闭connection，statement，resulset</li>
+</ol>
+<p>开发人员需要做的是：提供sql语句（工作量大幅减少了）</p>
+<p>流程：开发人员提供sql语句——》mybatis处理sql——》开发人员得到List集合或者java对象</p>
+<h4 id="1-4-4-总结"><a href="#1-4-4-总结" class="headerlink" title="1.4.4  总结"></a>1.4.4  总结</h4><p>mybatis是一个sql映射框架，提供数据库的操作能力。增强的JDBC，使用mybatis让开发人员集中精神写sql就可以了，不必关心Connection等的创建销毁，sql的执行。</p>
+<h2 id="2-快速入门"><a href="#2-快速入门" class="headerlink" title="2 快速入门"></a>2 快速入门</h2><h3 id="2-1-入门案例"><a href="#2-1-入门案例" class="headerlink" title="2.1 入门案例"></a>2.1 入门案例</h3><h4 id="2-1-1-使用MyBatis的准备"><a href="#2-1-1-使用MyBatis的准备" class="headerlink" title="2.1.1 使用MyBatis的准备"></a>2.1.1 使用MyBatis的准备</h4><p>下载mybatis,此处我们使用的是3.5.1版本</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/mybatis/mybatis-3/releases">https://github.com/mybatis/mybatis-3/releases</a></p>
+<h4 id="2-1-2-创建一张表"><a href="#2-1-2-创建一张表" class="headerlink" title="2.1.2 创建一张表"></a>2.1.2 创建一张表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS student;</span><br><span class="line"></span><br><span class="line">CREATE TABLE student (</span><br><span class="line">	id int(11) NOT NULL,</span><br><span class="line">    name varchar(255) DEFAULT NULL,</span><br><span class="line">    email varchar(255) DEFAULT NULL,</span><br><span class="line">    age int(11) DEFAULT NULL,</span><br><span class="line">    PRIMARY KEY(id)</span><br><span class="line">)ENGINE=innoDB DEFAULT CHARSET=utf8;</span><br><span class="line"></span><br><span class="line">INSERT INTO student VALUES(1001,&quot;李四&quot;,&quot;lisi@163.com&quot;,20);</span><br><span class="line">INSERT INTO student VALUES(1002,&quot;张三&quot;,&quot;zhangsan@163.com&quot;,28);</span><br></pre></td></tr></table></figure>
+
+<p>创建好的表：</p>
+<p><img src="C:\Users\yueyinghaibao\Desktop===\影像资料\临时截图文件夹\1.png"></p>
+<h4 id="2-1-3-创建项目（略）"><a href="#2-1-3-创建项目（略）" class="headerlink" title="2.1.3 创建项目（略）"></a>2.1.3 创建项目（略）</h4><h4 id="2-1-4-编辑POM文件增加MYSQL-connector和MyBatis依赖"><a href="#2-1-4-编辑POM文件增加MYSQL-connector和MyBatis依赖" class="headerlink" title="2.1.4 编辑POM文件增加MYSQL-connector和MyBatis依赖"></a>2.1.4 编辑POM文件增加MYSQL-connector和MyBatis依赖</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.19<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-5-创建Student实体类和对应的Dao类（略）"><a href="#2-1-5-创建Student实体类和对应的Dao类（略）" class="headerlink" title="2.1.5 创建Student实体类和对应的Dao类（略）"></a>2.1.5 创建Student实体类和对应的Dao类（略）</h4><h4 id="2-1-6-创建MyBatis使用的配置文件——sql映射文件"><a href="#2-1-6-创建MyBatis使用的配置文件——sql映射文件" class="headerlink" title="2.1.6 创建MyBatis使用的配置文件——sql映射文件"></a>2.1.6 创建MyBatis使用的配置文件——sql映射文件</h4><p>sql映射文件：</p>
+<ol>
+<li>一个xml文件</li>
+<li>一般一个表对应一个sql映射表</li>
+<li>应当存放在dao接口所在的目录</li>
+<li>文件名称和接口保持一致</li>
+</ol>
+<p>其作用在于：写与接口中方法对应的sql语句</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">mapper</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;org.mybatis.example.BlogMapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">		id:你要执行的sql语法的唯一标识，mybatis会使用这个id的值来找到要执行的sql语句</span></span><br><span class="line"><span class="comment"> 		   可以自定义，但是要求你使用接口中的方法名称</span></span><br><span class="line"><span class="comment">		resultType:表示结果类型，是sql语句执行后得到的ResultSet</span></span><br><span class="line"><span class="comment">				   遍历这个Res得到的java对象的类型</span></span><br><span class="line"><span class="comment">				   值写的是类型的全限定名称</span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;selectBlog&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;Blog&quot;</span>&gt;</span></span><br><span class="line">        select * from Blog where id = #&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 以上为官方文档的示例代码 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">    sql映射文件：写sql语句的，mybatis会执行这些sql</span></span><br><span class="line"><span class="comment">    1.指定约束文件</span></span><br><span class="line"><span class="comment">        &lt;!DOCTYPE mapper</span></span><br><span class="line"><span class="comment">        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span></span><br><span class="line"><span class="comment">        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span></span><br><span class="line"><span class="comment">      mybatis-3-mapper.dtd 约束文件的作用，拓展名是dtd。</span></span><br><span class="line"><span class="comment">    2.约束文件的作用：限制，检查在当前文件中出现的标签，属性必须符合mybatis要求</span></span><br><span class="line"><span class="comment">    3.mapper 当前文件的根标签，必需的。</span></span><br><span class="line"><span class="comment">      namespace 命名空间，唯一值，可以是自定义的字符串。</span></span><br><span class="line"><span class="comment">                要求你使用dao接口的全限定名称。</span></span><br><span class="line"><span class="comment">	4.在当前文件中，可以使用特定标签，表示数据库的特定操作。</span></span><br><span class="line"><span class="comment">	  &lt;select&gt; 查询，在标签内写select语句</span></span><br><span class="line"><span class="comment">	  &lt;update&gt; 更新，在标签内写update语句</span></span><br><span class="line"><span class="comment">	  ...</span></span><br><span class="line"><span class="comment">	  基本与sql语句相同</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-7-创建主配置文件"><a href="#2-1-7-创建主配置文件" class="headerlink" title="2.1.7 创建主配置文件"></a>2.1.7 创建主配置文件</h4><p>文件名可以自定义，文件类型为xml，文件应当被放置在resources的根目录下</p>
+<p>其目的在于：</p>
+<ol>
+<li>连接数据库</li>
+<li>指定mapper文件的位置</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">configuration</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">		环境配置：数据库的连接信息</span></span><br><span class="line"><span class="comment"> 		default:必须和某个environment的id值一样</span></span><br><span class="line"><span class="comment">				告诉mybatis使用哪个数据库的连接信息。就是访问哪个数据库</span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">            environment:一个数据库的配置，环境</span></span><br><span class="line"><span class="comment">            id:一个唯一值，自定义，表示环境的名称</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">                transactionManager:mybatis的事务类型</span></span><br><span class="line"><span class="comment">                    type:JDBC(表示使用jdbc中的connection对象的commit，rollback做事务处理)</span></span><br><span class="line"><span class="comment">						 MANAGED:把mybatis的事务处理委托给其他容器(一个服务器软件，一个框架spring)</span></span><br><span class="line"><span class="comment">            --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">&quot;JDBC&quot;</span>/&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">                dataSource:表示数据源，连接数据库</span></span><br><span class="line"><span class="comment">				数据源:表示连接connection对象的;</span></span><br><span class="line"><span class="comment">					  在java中的规范中，实现了javax.sql.DataSource的都是数据源。</span></span><br><span class="line"><span class="comment">                type:表示数据源类型</span></span><br><span class="line"><span class="comment">				pooled:表示使用连接池,mybatis会创建pooledDataSource类</span></span><br><span class="line"><span class="comment">				unpooled:不使用连接池，在每次执行sql语句，先创建连接，执行sql，再关闭连接</span></span><br><span class="line"><span class="comment">						 mybatis会创建一个unpooledDataSource类</span></span><br><span class="line"><span class="comment">				JNDI:java命名和目录服务（windows注册表）</span></span><br><span class="line"><span class="comment">            --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">&quot;POOLED&quot;</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">                    driver:数据库的驱动类型名</span></span><br><span class="line"><span class="comment">                    url:连接数据库的url字符串</span></span><br><span class="line"><span class="comment">                    username:访问数据库的用户名</span></span><br><span class="line"><span class="comment">                    password:访问数据库的密码</span></span><br><span class="line"><span class="comment">                    name是固定的不能修改</span></span><br><span class="line"><span class="comment">                --&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driver&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;driver&#125;&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;url&#125;&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;username&#125;&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;password&#125;&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- sql mapper(sql映射文件)的位置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">			一个mapper标签指定一个文件的位置 </span></span><br><span class="line"><span class="comment">			文件位置：要包括target/classes之后的文件路径</span></span><br><span class="line"><span class="comment">		 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">&quot;org/mybatis/example/BlogMapper.xml&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">&quot;org/mybatis/example/OrderMapper.xml&quot;</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">			指定多个mapper文件 可以一条一条mapper，如上面</span></span><br><span class="line"><span class="comment">			也可以使用package，一次性添加多条mapper</span></span><br><span class="line"><span class="comment">		--&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">			name:xml文件所在得包的名称，这个包中所有xml文件一次加载进mybatis</span></span><br><span class="line"><span class="comment">			使用要求：</span></span><br><span class="line"><span class="comment">				mapper文件名称需要和接口名称一样，区分大小写</span></span><br><span class="line"><span class="comment">				mapper文件和dao接口需要在同一目录</span></span><br><span class="line"><span class="comment">		--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">&quot;com.mybatis.example&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">    mybatis的主配置文件：主要定义了数据库的配置信息，sql映射文件的位置</span></span><br><span class="line"><span class="comment">    1.约束文件</span></span><br><span class="line"><span class="comment">    &lt;!DOCTYPE configuration</span></span><br><span class="line"><span class="comment">        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span><br><span class="line"><span class="comment">        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</span></span><br><span class="line"><span class="comment">    mybatis-3-config.dtd是约束文件的名称</span></span><br><span class="line"><span class="comment">    2.&lt;configuration&gt;根标签。</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>为了能在maven编译后读取到资源文件（sql映射文件）需要加入一个插件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span><span class="comment">&lt;!--所在目录--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">includes</span>&gt;</span><span class="comment">&lt;!--包括目录下的.properties,.xml文件都会扫描到--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>false<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-8-使用mybatis进行数据库的查询"><a href="#2-1-8-使用mybatis进行数据库的查询" class="headerlink" title="2.1.8 使用mybatis进行数据库的查询"></a>2.1.8 使用mybatis进行数据库的查询</h4><p>使用mybatis的对象SqlSession，通过它的方法执行sql语句</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//访问mybatis读取student数据</span></span><br><span class="line">        <span class="comment">//1.定义mybatis主配置文件的名称，从根目录开始（target/classes）</span></span><br><span class="line">        String config = <span class="string">&quot;mybatis.xml&quot;</span>;</span><br><span class="line">        <span class="comment">//2.读取这个文件</span></span><br><span class="line">        InputStream in = Resources.getResourceAsStream(config);</span><br><span class="line">        <span class="comment">//3.创建SqlSessionFactoryBuilder对象</span></span><br><span class="line">        SqlSessionFactoryBuilder builder = <span class="keyword">new</span> SqlSessionFactoryBuilder();</span><br><span class="line">        <span class="comment">//4.创建SqlSessionFactory对象</span></span><br><span class="line">        SqlSessionFactory factory = builder.build(in);</span><br><span class="line">        <span class="comment">//5.**取SqlSession对象，从SqlSessionFactory中获取SqlSession**</span></span><br><span class="line">        SqlSession sqlSession = factory.openSession();</span><br><span class="line">        <span class="comment">//6.拼接sql语句标识。sql映射文件中的namespace+&quot;.&quot;+标签的id值</span></span><br><span class="line">        String sqlId = <span class="string">&quot;com.pjh.dao.StudentDao&quot;</span>+<span class="string">&quot;.&quot;</span>+<span class="string">&quot;findAll&quot;</span>;</span><br><span class="line">        <span class="comment">//7.执行sql语句，通过sqlId找到语句</span></span><br><span class="line">        List&lt;Student&gt; studentList = sqlSession.selectList(sqlId);</span><br><span class="line">        <span class="comment">//8.输出结果</span></span><br><span class="line">        <span class="keyword">for</span>(Student stu:studentList) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;查询的学生=&quot;</span>+stu);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//9.关闭SqlSession对象</span></span><br><span class="line">        sqlSession.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>得到结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">查询的学生=Student&#123;id=<span class="number">1001</span>, name=<span class="string">&#x27;李四&#x27;</span>, email=<span class="string">&#x27;lisi@163.com&#x27;</span>, age=<span class="number">20</span>&#125;</span><br><span class="line">查询的学生=Student&#123;id=<span class="number">1002</span>, name=<span class="string">&#x27;张三&#x27;</span>, email=<span class="string">&#x27;zhangsan@163.com&#x27;</span>, age=<span class="number">28</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-9-使用MyBatis进行增删改"><a href="#2-1-9-使用MyBatis进行增删改" class="headerlink" title="2.1.9 使用MyBatis进行增删改"></a>2.1.9 使用MyBatis进行增删改</h4><p>mybatis默认不会自动提交事务，需要手动进行提交</p>
+<p>具体：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = sqlSession.insert(sqlId,student);</span><br><span class="line">sqlSession.commit();<span class="comment">//****</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-10-sql映射文件中sql语句的写法"><a href="#2-1-10-sql映射文件中sql语句的写法" class="headerlink" title="2.1.10 sql映射文件中sql语句的写法"></a>2.1.10 sql映射文件中sql语句的写法</h4><p>sql语句中用#{字段名}来读取类的属性，并填入sql语句中</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into student values(#&#123;id&#125;,#&#123;name&#125;,#&#123;email&#125;,#&#123;age&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-主要类的介绍"><a href="#2-2-主要类的介绍" class="headerlink" title="2.2 主要类的介绍"></a>2.2 主要类的介绍</h3><ol>
+<li><p>Resources：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">InputStream in = Resources.getResourceAsStream(config);</span><br></pre></td></tr></table></figure>
+
+<p> mybatis中的一个，负责读取主配置文件的类</p>
+</li>
+<li><p>SqlSessionFactoryBuilder：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SqlSessionFactoryBuilder builder = <span class="keyword">new</span> SqlSessionFactoryBuilder();</span><br><span class="line">SqlSessionFactory factory = builder.build(in);</span><br></pre></td></tr></table></figure>
+
+<p> 负责创建SqlSessionFactory对象</p>
+</li>
+<li><p>SqlSessionFactory：需要使用大量资源，整个程序只需创建一次就够了；它是一个接口，实现类为DefaultSqlFactory。</p>
+<p> 作用：获取SqlSession对象</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SqlSession sqlSession = factory.openSession();</span><br></pre></td></tr></table></figure>
+
+<p> openSession()方法说明：</p>
+<ol>
+<li>openSession()：无参，获取非自动提交事务的SqlSession对象</li>
+<li>openSession(boolean)：为true时，获取自动提交事务的SqlSession；为false，获取非自动提交事务的SqlSession</li>
+</ol>
+</li>
+<li><p>SqlSession：接口，实现类为DefaultSqlSession</p>
+<p> 定义了操作数据的方法，例如selectOne，selectList，insert，delete等等</p>
+<p> 使用要求：SqlSession对象不是线程安全的，需要在方法内部使用，在执行sql语句之前，使用openSession（）获取SqlSession对象，在执行完sql语句后，需要关闭它，执行SqlSession.close（），这样能保证它的使用是线程完全的</p>
+</li>
+</ol>
+<h3 id="2-3-Mybatis工具类"><a href="#2-3-Mybatis工具类" class="headerlink" title="2.3 Mybatis工具类"></a>2.3 Mybatis工具类</h3><p>以上入门案例使用的调用dao的方法十分繁琐，且有大量的代码复用问题，因此可以引入一个mybatis工具类，以减轻开发的繁琐程度。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.pjh.uitls;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.io.Resources;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSession;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSessionFactory;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSessionFactoryBuilder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyBatisUtils</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SqlSessionFactory factory = <span class="keyword">null</span>;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        String config = <span class="string">&quot;mybatis.xml&quot;</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            InputStream in = Resources.getResourceAsStream(config);</span><br><span class="line">            factory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(in);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//主要提供的方法，返回一个sqlSession</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SqlSession <span class="title">getSqlSession</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        SqlSession sqlSession = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span>(factory != <span class="keyword">null</span>) &#123;</span><br><span class="line">             sqlSession = factory.openSession();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sqlSession;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>再创建这个工具类后，2.1.8中的代码可以改写为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.pjh;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.pjh.domain.Student;</span><br><span class="line"><span class="keyword">import</span> com.pjh.uitls.MyBatisUtils;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSession;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApp2</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        SqlSession sqlSession = MyBatisUtils.getSqlSession();</span><br><span class="line"></span><br><span class="line">        String sqlId = <span class="string">&quot;com.pjh.dao.StudentDao.findAll&quot;</span>;</span><br><span class="line"></span><br><span class="line">        List&lt;Student&gt; studentList = sqlSession.selectList(sqlId);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(Student stu:studentList) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;查询的学生=&quot;</span>+stu);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        sqlSession.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-深入理解"><a href="#3-深入理解" class="headerlink" title="3 深入理解"></a>3 深入理解</h2><h3 id="3-1-Mybatis动态代理"><a href="#3-1-Mybatis动态代理" class="headerlink" title="3.1 Mybatis动态代理"></a>3.1 Mybatis动态代理</h3><p>在引入了工具类后尽管稍微减少了开发的难度，但是仍然存在部分代码相似度比较高的情况，可以进一步优化，由此引出Mybatis的动态代理。</p>
+<p>简要原理如下：</p>
+<ol>
+<li>mybatis根据dao方法的调用，获取执行sql语句的信息。</li>
+<li>mybatis根据你的dao接口，创建出一个dao接口的实现类，并创建这个类的对象。</li>
+<li>完成sqlSession调用方法，访问数据库。</li>
+</ol>
+<p>再次对2.1.8进行修改：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.pjh;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.pjh.dao.StudentDao;</span><br><span class="line"><span class="keyword">import</span> com.pjh.domain.Student;</span><br><span class="line"><span class="keyword">import</span> com.pjh.uitls.MyBatisUtils;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSession;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMyBatis</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 使用mybatis的动态代理机制，使用SqlSession.getMapper(dao接口)</span></span><br><span class="line"><span class="comment">     * getMapper能获取dao接口对应的实现类对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SqlSession sqlSession = MyBatisUtils.getSqlSession();</span><br><span class="line">        StudentDao dao = sqlSession.getMapper(StudentDao.class);</span><br><span class="line">        <span class="comment">//调用dao方法，执行数据库操作</span></span><br><span class="line">        List&lt;Student&gt; students = dao.findAll();</span><br><span class="line">        <span class="keyword">for</span>(Student stu : students) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;学生=&quot;</span>+stu);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用动态代理后，程序员仅需创建Dao接口和对应的mapper文件，即可完成对数据库的操作。</p>
+<h3 id="3-2-传入参数"><a href="#3-2-传入参数" class="headerlink" title="3.2 传入参数"></a>3.2 传入参数</h3><p>从java代码中把数据传入mapper文件的sql语句中。</p>
+<ol>
+<li><p>parameterType：写在mapper文件中的一个属性。表示dao接口中方法参数的数据类型。其值为java数据类型的全限定名称或者mybatis定义的别名。</p>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Mapped Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>_byte</td>
+<td>byte</td>
+</tr>
+<tr>
+<td>_longlong</td>
+<td>long</td>
+</tr>
+<tr>
+<td>_short</td>
+<td>short</td>
+</tr>
+<tr>
+<td>_int</td>
+<td>int</td>
+</tr>
+<tr>
+<td>_integer</td>
+<td>int</td>
+</tr>
+<tr>
+<td>_double</td>
+<td>double</td>
+</tr>
+<tr>
+<td>_float</td>
+<td>float</td>
+</tr>
+<tr>
+<td>_boolean</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>string</td>
+<td>String</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>integer</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>BigDecimal</td>
+</tr>
+<tr>
+<td>bigdecimal</td>
+<td>BigDecimal</td>
+</tr>
+<tr>
+<td>object</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>map</td>
+<td>Map</td>
+</tr>
+<tr>
+<td>hashmap</td>
+<td>HashMap</td>
+</tr>
+<tr>
+<td>list</td>
+<td>List</td>
+</tr>
+<tr>
+<td>arraylist</td>
+<td>ArrayList</td>
+</tr>
+<tr>
+<td>collection</td>
+<td>Collection</td>
+</tr>
+<tr>
+<td>iterator</td>
+<td>Iterator</td>
+</tr>
+</tbody></table>
+<p> mapper文件中：</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 全限定名称 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;selectById&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;java.lang.Integer&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.pjh.domain.Student&quot;</span>&gt;</span></span><br><span class="line">        select * from student where id=#&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 别名 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;selectById&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;int&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.pjh.domain.Student&quot;</span>&gt;</span></span><br><span class="line">        select * from student where id=#&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> 但实际上parameterType可以不写，mybatis通过反射机制可以发现接口参数类型。</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;selectById&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.pjh.domain.Student&quot;</span>&gt;</span></span><br><span class="line">        select * from student where id=#&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>简单类型参数：mybatis把java的基本数据类型和string都叫做简单类型。</p>
+<p> 在mapper文件获取简单类型的一个参数的值，使用#{任意字符}</p>
+</li>
+<li><p>多个参数，使用@Param命名参数</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接口</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Student&gt; <span class="title">selectMulitParam</span><span class="params">(String name, Integer age)</span></span>;</span><br><span class="line"><span class="comment">//使用@Param(&quot;参数名&quot;) </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Student&gt; <span class="title">selectMulitParam</span><span class="params">(<span class="meta">@Param(&quot;myname&quot;)</span> String name, </span></span></span><br><span class="line"><span class="params"><span class="function">									  <span class="meta">@Param(&quot;myage&quot;)</span> Integer age)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p> mapper文件：</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">        select * from student where name=#&#123;myname&#125; and age=#&#123;myage&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>多个参数，使用java对象参数</p>
+<p> 使用对象语法：#{属性名, javaType=类型名称, jdbcType=数据类型} 完整格式</p>
+<p> ​                            javaType：指java中的属性数据类型</p>
+<p> ​                            jdbcType：指数据库中的数据类型</p>
+<table>
+<thead>
+<tr>
+<th>JDBCTypes：</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BIT</td>
+<td>FLOAT</td>
+<td>CHAR</td>
+<td>TIMESTAMP</td>
+<td>OTHER</td>
+<td>UNDEFINED</td>
+</tr>
+<tr>
+<td>TINYINT</td>
+<td>REAL</td>
+<td>VARCHAR</td>
+<td>BINARY</td>
+<td>BLOB</td>
+<td>NVARCHAR</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td>DOUBLE</td>
+<td>LONGVARCHAR</td>
+<td>VARBINARY</td>
+<td>CLOB</td>
+<td>NCHAR</td>
+</tr>
+<tr>
+<td>INTEGER</td>
+<td>NUMERIC</td>
+<td>DATE</td>
+<td>LONGVARBINARY</td>
+<td>BOOLEAN</td>
+<td>NCLOB</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>DECIMAL</td>
+<td>TIME</td>
+<td>NULL</td>
+<td>CURSOR</td>
+<td>ARRAY</td>
+</tr>
+</tbody></table>
+<p> 简化的格式：#{属性值}，javaType和jdbcType的值mybatis反射可以获取，不用提供</p>
+</li>
+<li><p>多个参数，按参数位置传参</p>
+<p> 语法格式：#{arg0}，其中0是参数的位置，其他是固定的</p>
+</li>
+<li><p>多个参数，使用Map传参</p>
+<p> 定义一个map：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">map.add(<span class="string">&quot;myname&quot;</span>,<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">map.add(<span class="string">&quot;myage&quot;</span>,<span class="number">22</span>);</span><br></pre></td></tr></table></figure>
+
+<p> Dao接口：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Student&gt; <span class="title">select</span><span class="params">(Map&lt;String, Object&gt; map)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p> 语法格式：#{myname}，其中大括号中写map中的key值</p>
+</li>
+<li><p>#与$</p>
+<p> #：占位符，用来代替实际参数值，并使用PrepareStatement对象执行sql语句，#{}代替了sql语句中的？。这样做更加安全、迅速，建议使用。</p>
+<p> $：字符串替换，使用的Statement对象执行，效率比ps低，且存在sql注入的问题。一般用于替换列名或者表名</p>
+</li>
+</ol>
+<h3 id="3-3-Mybatis内部机制其实是JDBC"><a href="#3-3-Mybatis内部机制其实是JDBC" class="headerlink" title="3.3 Mybatis内部机制其实是JDBC"></a>3.3 Mybatis内部机制其实是JDBC</h3><p>略</p>
+<h3 id="3-4-封装MyBatis输出结果"><a href="#3-4-封装MyBatis输出结果" class="headerlink" title="3.4 封装MyBatis输出结果"></a>3.4 封装MyBatis输出结果</h3><p>mybatis执行了sql语句，得到的java对象</p>
+<h4 id="3-4-1-resultType"><a href="#3-4-1-resultType" class="headerlink" title="3.4.1 resultType"></a>3.4.1 resultType</h4><p>结果类型，指sql语句执行完毕后，数据转为的java对象类型，该java类型是任意的。 </p>
+<p>处理方法：</p>
+<ol>
+<li>mybatis执行sql语句，然后mybatis调用类的无参数构造方法，创建对象。</li>
+<li>mybatis把ResultSet指定列值付给同名的属性。</li>
+</ol>
+<p>类型：</p>
+<ol>
+<li>简单类型：同3.2.2</li>
+<li>定义自定义类型的别名<ol>
+<li>在mybatis主配置文件中定义，使用<typeAlias>定义别名</li>
+<li>或者使用<package>，name是包名，这个包中的所有类，类名就是别名（类名不区分大小写）</li>
+<li>可以在resultType中使用自定义的别名</li>
+</ol>
+</li>
+</ol>
+<h4 id="3-4-2-查询返回Map"><a href="#3-4-2-查询返回Map" class="headerlink" title="3.4.2 查询返回Map"></a>3.4.2 查询返回Map</h4><p>mybatis可以把查询结果组织成一个map并返回</p>
+<p>注意：</p>
+<ol>
+<li>列名是map的key，列值是map的value</li>
+<li>只能返回一行记录，多余一行会报错</li>
+</ol>
+<h4 id="3-4-3-resultMap"><a href="#3-4-3-resultMap" class="headerlink" title="3.4.3 resultMap"></a>3.4.3 resultMap</h4><p>结果映射，指定列名和java对象的属性对应关系的</p>
+<p>用途：</p>
+<ol>
+<li>自定义列值赋值给哪个属性</li>
+<li>当你的列名和属性名不一样时，一定使用resultMap</li>
+</ol>
+<p>语法格式：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 定义resultMap</span></span><br><span class="line"><span class="comment">	 id:自定义名称，表示你定义的这个resultMap</span></span><br><span class="line"><span class="comment"> 	 type:java类型的全限定名称</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">&quot;stuMap&quot;</span> <span class="attr">type</span>=<span class="string">&quot;com.pjh.domain.student&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">		列名和java属性将的关系</span></span><br><span class="line"><span class="comment">		主键列，使用id标签</span></span><br><span class="line"><span class="comment">		column:列名</span></span><br><span class="line"><span class="comment">		property:java类型的属性名</span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">&quot;&quot;</span> <span class="attr">property</span>=<span class="string">&quot;&quot;</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 非主键列，使用result标签 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;&quot;</span> <span class="attr">property</span>=<span class="string">&quot;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 在select标签中使用resultMap属性，其中写id名 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;selectById&quot;</span> <span class="attr">resultMap</span>=<span class="string">&quot;stuMap&quot;</span>&gt;</span></span><br><span class="line">        select * from student where id=#&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ol>
+<li>resultType和resultMap不要一起用</li>
+<li>除了使用resultMap来解决列名和属性名不一致的方法，还可以通过sql语句中的as给列名取和属性名相同的别名来解决。</li>
+</ol>
+<h3 id="3-5-模糊查询like"><a href="#3-5-模糊查询like" class="headerlink" title="3.5 模糊查询like"></a>3.5 模糊查询like</h3><p>在mybatis1中有两种方法：</p>
+<ol>
+<li><p>java代码中指定like的内容（推荐）</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;selectByName&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.pjh.domain.Student&quot;</span>&gt;</span></span><br><span class="line">        select * from student where name like #&#123;name&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> 此方法需要提前准备传入的name属性，例如：</p>
+<p> String name = “%李%”</p>
+</li>
+<li><p>在mapper文件中拼接like的内容</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;selectByName&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.pjh.domain.Student&quot;</span>&gt;</span></span><br><span class="line">        select * from student where name like &quot;%&quot; #&#123;name&#125; &quot;%&quot;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="4-动态sql"><a href="#4-动态sql" class="headerlink" title="4 动态sql"></a>4 动态sql</h2><p>sql的内容是变化的，可以根据条件获取到不同的sql语句，主要是where部分发生变化</p>
+<p>动态sql的实现，主要使用mybatis提供的标签。</p>
+<p>在使用动态sql时，使用java对象作为参数</p>
+<h3 id="4-1-lt-if-gt-标签"><a href="#4-1-lt-if-gt-标签" class="headerlink" title="4.1 &lt;if&gt;标签"></a>4.1 &lt;if&gt;标签</h3><p>if标签通过判断test中的判断结果是否为true，来判断是否将if标签中的sql语句加入</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;判断java对象的属性值&quot;</span>&gt;</span></span><br><span class="line">	部分sql语句</span><br><span class="line"><span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-lt-where-gt-标签"><a href="#4-2-lt-where-gt-标签" class="headerlink" title="4.2 &lt;where&gt;标签"></a>4.2 &lt;where&gt;标签</h3><p>where标签用来包含多个if的，当多个if有一个成立，where会自动增加一个where关键字，并去掉if中多余的and，or等。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;判断java对象的属性值&quot;</span>&gt;</span></span><br><span class="line">		部分sql语句</span><br><span class="line">	<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;判断java对象的属性值&quot;</span>&gt;</span></span><br><span class="line">		部分sql语句</span><br><span class="line">	<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-lt-foreach-gt-标签"><a href="#4-3-lt-foreach-gt-标签" class="headerlink" title="4.3 &lt;foreach&gt;标签"></a>4.3 &lt;foreach&gt;标签</h3><p>循环java中的数组，list集合，主要用在sql的in语句中。</p>
+<p>例如：学生id是1001，1002，1003的三个学生</p>
+<p>select * from student where id in (1001,1002,1003)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">&quot;&quot;</span> <span class="attr">item</span>=<span class="string">&quot;&quot;</span> <span class="attr">open</span>=<span class="string">&quot;&quot;</span> <span class="attr">close</span>=<span class="string">&quot;&quot;</span> <span class="attr">separator</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	collection:表示接口中的方法参数的类型，如果是数组使用array，如果是list集合使用list</span></span><br><span class="line"><span class="comment">	item:自定义的表示数组和集合成员的变量</span></span><br><span class="line"><span class="comment">	open:循环开始的字符</span></span><br><span class="line"><span class="comment">	close:循环结束的字符</span></span><br><span class="line"><span class="comment">	separator:集合成员之间的分隔符</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-代码片段"><a href="#4-4-代码片段" class="headerlink" title="4.4 代码片段"></a>4.4 代码片段</h3><p>能够复用一些重复语句</p>
+<p>步骤：</p>
+<ol>
+<li><p>先定义</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">&quot;自定义名称唯一&quot;</span>&gt;</span>sql语句，表名，字段等<span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>再使用</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">&quot;id的值&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="5-MyBatis配置文件"><a href="#5-MyBatis配置文件" class="headerlink" title="5 MyBatis配置文件"></a>5 MyBatis配置文件</h2><h3 id="5-1-主配置文件，见2-1-7"><a href="#5-1-主配置文件，见2-1-7" class="headerlink" title="5.1 主配置文件，见2.1.7"></a>5.1 主配置文件，见2.1.7</h3><p>settings：略</p>
+<h3 id="5-2-属性配置文件"><a href="#5-2-属性配置文件" class="headerlink" title="5.2 属性配置文件"></a>5.2 属性配置文件</h3><p>把数据库连接信息放到一个单独的文件中。和mybatis主配置文件分开</p>
+<p>便于修改，保存，处理多个数据库的信息。</p>
+<p>步骤：</p>
+<ol>
+<li><p>在resources目录中定义一个属性配置文件，xxxx.properties；在属性配置文件中，定义数据，格式是key=value。</p>
+<p> key：一般使用’.’做多级目录的。例如jdbc.mysql.driver,jdbc.driver</p>
+</li>
+<li><p>在mybatis的主配置文件，使用&lt;properties&gt;指定文件位置</p>
+<p> 在需要使用值的地方，${key}</p>
+</li>
+</ol>
+<h2 id="6-拓展——PageHelper"><a href="#6-拓展——PageHelper" class="headerlink" title="6 拓展——PageHelper"></a>6 拓展——PageHelper</h2><p>PageHelper可以便捷的帮你实现数据分页的功能，现已支持包括oricle，mysql在内的多达13种数据库。</p>
+<p>安装步骤：</p>
+<ol>
+<li><p>在pom中添加依赖：</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.pagehelper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pagehelper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.10<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> 记得加载一下pom</p>
+</li>
+<li><p>在mybatis主配置文件中的&lt;environments&gt;之间添加插件</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">plugin</span> <span class="attr">interceptor</span>=<span class="string">&quot;com.github.pagehelper.PageInterceptor&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在使用时调用PageHelper的静态方法startPage，会自动为你的sql语句加上limit</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSelectAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    SqlSession sqlSession = MyBatisUtils.getSqlSession();</span><br><span class="line">    StudentDao dao = sqlSession.getMapper(StudentDao.class);</span><br><span class="line">    <span class="comment">//加入PageHelper的方法，分页</span></span><br><span class="line">    <span class="comment">//pageNum表示：第几页P</span></span><br><span class="line">    <span class="comment">//pageSize：一页中有多少数据</span></span><br><span class="line">    PageHelper.startPage(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">    List&lt;Student&gt; studentList = dao.selectAll();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(Student stu : studentList) &#123;</span><br><span class="line">        System.out.println(stu);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>John Doe<br>
+        <strong>Link：</strong><a href="http://example.com/2022/01/02/MyBatis/" title="http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;01&#x2F;02&#x2F;MyBatis&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;01&#x2F;02&#x2F;MyBatis&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="Search" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1641541780861"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>
